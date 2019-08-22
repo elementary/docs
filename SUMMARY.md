@@ -11,6 +11,7 @@
   * [Translations](writing-apps/untitled/translations.md)
   * [Packaging](writing-apps/untitled/packaging.md)
 * [Creating Layouts](writing-apps/creating-layouts.md)
+* [Code Style](writing-apps/code-style.md)
 
 ## APIs
 
