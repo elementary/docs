@@ -1,3 +1,7 @@
+---
+description: Sending Notification Bubbles with GLib.Notification
+---
+
 # Notifications
 
 By now you've probably already seen the white notification bubbles that appear on the top right of the screen. Notifications are a simple way to notify a user about the state of your app. For example, they can inform the user that a long process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
@@ -11,7 +15,7 @@ By now you've probably already seen the white notification bubbles that appear o
 
 When using notifications, it's important that your desktop file has the same name as your application's ID. This is because elementary OS uses desktop files to find extra information about the app who sends the notification such as a default icon, or the name of the app. To keep things simple, we'll be using the same RDNN everywhere.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 If you don't have a desktop file whose name matches the application id, your notification might not be displayed. 
 {% endhint %}
 
