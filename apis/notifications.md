@@ -6,8 +6,8 @@ By now you've probably already seen the white notification bubbles that appear o
 
 1. Create a new folder inside of "~/Projects" called "notifications-app"
 2. Create a new folder inside of that folder called "src" and add a file inside of it called `Application.vala`
-3. Create a `meson.build` file. If you don't remember how to set up Meson, go back to the [previous section](untitled/the-build-system.md) and review.
-4. Remember how to [make a .desktop file](untitled/#the-desktop-file)? Excellent! Make one for this project, but this time, since your app will be displaying notifications, add `X-GNOME-UsesNotifications=true` to the end of the file. This is needed so that users will be able to set notification preferences for your app in the system's notification settings.
+3. Create a `meson.build` file. If you don't remember how to set up Meson, go back to the [previous section](../writing-apps/untitled/the-build-system.md) and review.
+4. Remember how to [make a .desktop file](../writing-apps/untitled/#the-desktop-file)? Excellent! Make one for this project, but this time, since your app will be displaying notifications, add `X-GNOME-UsesNotifications=true` to the end of the file. This is needed so that users will be able to set notification preferences for your app in the system's notification settings.
 
 When using notifications, it's important that your desktop file has the same name as your application's ID. This is because elementary OS uses desktop files to find extra information about the app who sends the notification such as a default icon, or the name of the app. To keep things simple, we'll be using the same RDNN everywhere.
 
@@ -19,7 +19,7 @@ If you don't have a desktop file whose name matches the application id, your not
 
 In order to display notifications, you're going to need another `Gtk.Application` with a `Gtk.ApplicationWindow`. Remember what we learned in the last few sections and set up a new `Gtk.Application`!
 
-Now that we have a simple window, let's use what we learned in [creating layouts](creating-layouts.md) and make a grid containing one button that will show a notification.
+Now that we have a simple window, let's use what we learned in [creating layouts](../writing-apps/creating-layouts.md) and make a grid containing one button that will show a notification.
 
 In between `var main_window...` and `main_window.show ();`, write the folowing lines of code:
 

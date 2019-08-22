@@ -11,7 +11,12 @@
   * [Translations](writing-apps/untitled/translations.md)
   * [Packaging](writing-apps/untitled/packaging.md)
 * [Creating Layouts](writing-apps/creating-layouts.md)
-* [Notifications](writing-apps/notifications.md)
+
+## APIs
+
+* [Notifications](apis/notifications.md)
+* [Launchers](apis/launchers.md)
+* [State Saving](apis/state-saving.md)
 
 ## AppCenter
 
