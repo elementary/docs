@@ -270,6 +270,19 @@ Gtk widgets are intended to respond to click events that can be described as "pr
 
 Ideally, lines should have no more than 80 characters per line, because this is the default terminal size. However, as an exception, more characters could be added, because most people have wide-enough monitors nowadays. The hard limit is 120 characters.
 
+### Splitting Arguments Into Lines
+
+For methods that take multiple arguments, it is not uncommon to have very long line lengths. In this case, treat parenthesis like brackets and split lines at commas like so:
+
+```text
+var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+    "Basic Information and a Suggestion",
+    "Further details, including information that explains any unobvious consequences of actions.",
+    "phone",
+    Gtk.ButtonsType.CANCEL
+);
+```
+
 ## EditorConfig
 
 If you are using elementary Code or your code editor supports [EditorConfig](https://editorconfig.org/), you can use this as a default `.editorconfig` file in your projects:
