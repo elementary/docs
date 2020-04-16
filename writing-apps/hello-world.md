@@ -88,7 +88,7 @@ After we do anything significant, we must remember to push our code. This is esp
 
 First we need to create a new repository on GitHub. Visit [the new repository page](https://github.com/new) and create a new repository for your code.
 
-Open Terminal and make sure you're in your project's root directory "~Projects/gtk-hello", then issue the following commands
+Open Terminal and make sure you're in your project's root directory "~/Projects/gtk-hello", then issue the following commands
 
 ```bash
 git init
