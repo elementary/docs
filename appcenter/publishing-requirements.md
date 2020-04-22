@@ -1,6 +1,6 @@
 # Publishing Requirements
 
-We have a few requirements and suggestions for publishing your app to AppCenter. For a quick intro on writing apps for elementary OS, check out our [Getting Started](../) guide. For more developer-oriented tips, see the [Tips series on Medium](https://medium.com/elementaryos/tagged/tips).
+We have a few requirements and suggestions for publishing your app to AppCenter. For a quick intro on writing apps for elementary OS, check out our [Getting Started](../) guide. For more developer-oriented tips, see the [Tips series on our blog](https://blog.elementary.io/tags/#developer-tips).
 
 ## Hard Requirements
 
@@ -8,7 +8,7 @@ The following are **hard requirements for all apps submitted to AppCenter**. Bot
 
 ### Technical Requirements
 
-Your app must be hosted in a [GitHub repository](https://elementary.io/docs/code/getting-started#pushing-to-github). AppCenter Dashboard works by importing source code from a GitHub repository and building it in a clean environment. To ensure reproducible builds, transparency, and auditability, binaries cannot be uploaded or included alongside the source code to be installed on users' devices.
+Your app must be hosted in a [GitHub repository](https://docs.elementary.io/develop/writing-apps/hello-world#pushing-to-github). AppCenter Dashboard works by importing source code from a GitHub repository and building it in a clean environment. To ensure reproducible builds, transparency, and auditability, binaries cannot be uploaded or included alongside the source code to be installed on users' devices.
 
 Your app may be written in any language, but the front-end must be a native Gtk3 app. Web, Electron, Qt, Java, and other non-native app front-ends will be rejected during the review process. A game may be excepted from this requirement so long as it uses native window decorations and is generally usable on both loDPI and HiDPI displays.
 
@@ -18,7 +18,7 @@ Your app must not attempt to modify other apps or system programs.
 
 #### Packaging
 
-Your app must come with [Debian packaging](https://elementary.io/docs/code/getting-started#packaging). elementary OS uses Debian packages to manage software installation and updates. Your app cannot be downloaded without it. Your Debian packaging must not manually modify filesystem permissions.
+Your app must come with [Debian packaging](https://docs.elementary.io/develop/writing-apps/untitled/packaging). elementary OS uses Debian packages to manage software installation and updates. Your app cannot be downloaded without it. Your Debian packaging must not manually modify filesystem permissions.
 
 AppCenter Dashboard and [Houston CI](https://github.com/elementary/houston/wiki/Continuous-Integration) use git branches to determine which version\(s\) of elementary OS to build for. When the packaging is included in the `master` or there is just a `deb-packaging` branch, a package is only built for the latest elementary OS version \(currently Juno\).
 
@@ -32,7 +32,7 @@ AppCenter supports publishing apps that meet these requirements; extensions or p
 
 #### AppData and OARS
 
-Your app must install an [appdata.xml file](https://elementary.io/docs/code/getting-started#appdata) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
+Your app must install an [appdata.xml file](https://docs.elementary.io/develop/writing-apps/untitled#appdata-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
 
 Your appdata.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc.
 
@@ -44,7 +44,7 @@ For more information about the appdata.xml format see, see the [appstream specif
 
 #### Desktop File
 
-Your app must install a [.desktop file](https://elementary.io/docs/code/getting-started#the-desktop-file) to `/usr/share/applications`. elementary OS uses a .desktop file to display your app in the applications launcher and the dock. Without this file, your app will not be visible to users.
+Your app must install a [.desktop file](https://docs.elementary.io/develop/writing-apps/untitled#the-desktop-file) to `/usr/share/applications`. elementary OS uses a .desktop file to display your app in the applications launcher and the dock. Without this file, your app will not be visible to users.
 
 Your .desktop file must not contain `NoDisplay=true` or anything else that prevents it from showing up in the applications launcher.
 
