@@ -44,5 +44,5 @@ If your app fails either human or automated testing, new issues reports will be 
 This status is denoted by a check mark icon in a green bubble.
 {% endhint %}
 
-When your app passes automated testing and human review, it will become available in AppCenter in elementary OS Loki 0.4.1. If you wish to [publish an update](https://github.com/elementary/houston/wiki/Publishing-Updates), you can restart the submission process by creating a new release on GitHub.
+When your app passes automated testing and human review, it will become available in AppCenter in elementary OS. If you wish to [publish an update](https://github.com/elementary/houston/wiki/Publishing-Updates), you can restart the submission process by creating a new release on GitHub.
 
