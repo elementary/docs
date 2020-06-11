@@ -65,7 +65,7 @@ Granite.Services.Application.set_progress.begin (0.2f);
 ```
 
 As you can see the type of `set_progress` property is `double` and is a range between `0` and `1`: from 0% to 100%.
-Since trey are async functiosn, you need to suffix them with `.begin`.
+Since they are async functions, you need to suffix them with `.begin`.
 
 ## Static Quicklists
 
