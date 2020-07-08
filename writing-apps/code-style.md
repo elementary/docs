@@ -222,7 +222,7 @@ can_focus = false;
 ### Initialize Objects with Properites
 This is especially clearer when initializing an object with many properties. Avoid the following
 
-```csharp
+```vala
 var label = new Gtk.Label ("Test Label");
 label.set_ellipsize (Pango.EllipsizeMode.END);
 label.set_valign (Gtk.Align.END);
@@ -232,7 +232,7 @@ label.set_xalign (0);
 
 and instead do this
 
-```csharp
+```vala
 var label = new Gtk.Label ("Test Label") {
     ellipsize = Pango.EllipsizeMode.END,
     valign = Gtk.Align.END,
