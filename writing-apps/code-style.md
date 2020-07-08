@@ -220,7 +220,7 @@ can_focus = false;
 ```
 
 ### Initialize Objects with Properites
-This is especially more clear when initializing an object with many properties. Avoid the following
+This is especially clearer when initializing an object with many properties. Avoid the following
 
 ```csharp
 var label = new Gtk.Label ("Test Label");
@@ -328,4 +328,3 @@ tab_width = 4
 [{*.html,*.xml,*.xml.in,*.yml}]
 tab_width = 2
 ```
-
