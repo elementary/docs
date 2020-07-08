@@ -219,6 +219,29 @@ you should use
 can_focus = false;
 ```
 
+### Initialize Objects with Properites
+This is especially clearer when initializing an object with many properties. Avoid the following
+
+```vala
+var label = new Gtk.Label ("Test Label");
+label.set_ellipsize (Pango.EllipsizeMode.END);
+label.set_valign (Gtk.Align.END);
+label.set_width_chars (33);
+label.set_xalign (0);
+```
+
+and instead do this
+
+```vala
+var label = new Gtk.Label ("Test Label") {
+    ellipsize = Pango.EllipsizeMode.END,
+    valign = Gtk.Align.END,
+    width_chars = 33,
+    xalign = 0
+};
+```
+
+### Create Classes with Properties
 This goes for creating methods inside of classes as well. Instead of
 
 ```csharp
@@ -246,7 +269,7 @@ public int number {
 }
 ```
 
-Prefering properties enables the use of [`GLib.Object.bind_property ()`](https://valadoc.org/gobject-2.0/GLib.Object.bind_property.html) between classes instead of needing to create signals and handle changing properties manually.
+Prefering properties in classes enables the use of [`GLib.Object.bind_property ()`](https://valadoc.org/gobject-2.0/GLib.Object.bind_property.html) between classes instead of needing to create signals and handle changing properties manually.
 
 ## Vala Namespaces
 
@@ -305,4 +328,3 @@ tab_width = 4
 [{*.html,*.xml,*.xml.in,*.yml}]
 tab_width = 2
 ```
-
