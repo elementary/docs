@@ -19,7 +19,7 @@ Create a new file in Code and save it as "Application.vala" inside your "src" fo
 
 In this file, we're going to create a special class called a `Gtk.Application`. `Gtk.Application` is a class that handles many important aspects of a Gtk app like uniqueness and the ID you need to identify your app to the notifications server. If you want some more details about `Gtk.Application`, [check out Valadoc](https://valadoc.org/gtk+-3.0/Gtk.Application). For now, type the following in "Application.vala".
 
-```csharp
+```vala
 public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
@@ -29,16 +29,16 @@ public class MyApp : Gtk.Application {
     }
 
     protected override void activate () {
-        var main_window = new Gtk.ApplicationWindow (this);
-        main_window.default_height = 300;
-        main_window.default_width = 300;
-        main_window.title = "Hello World";
+        var main_window = new Gtk.ApplicationWindow (this) {
+            default_height = 300,
+            default_width = 300,
+            title = "Hello World"
+        };
         main_window.show_all ();
     }
 
     public static int main (string[] args) {
-        var app = new MyApp ();
-        return app.run (args);
+        return new MyApp ().run (args);
     }
 }
 ```
@@ -56,9 +56,10 @@ Do you see a new, empty window called "Hello World"? If so, congratulations! If 
 
 Now that we've defined a nice window, let's put a button inside of it. Add the following to your application at the beginning of the `activate ()` function:
 
-```csharp
-var button_hello = new Gtk.Button.with_label ("Click me!");
-button_hello.margin = 12;
+```vala
+var button_hello = new Gtk.Button.with_label ("Click me!") {
+    margin = 12
+}
 
 button_hello.clicked.connect (() => {
     button_hello.label = "Hello World!";
