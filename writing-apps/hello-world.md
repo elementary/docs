@@ -59,7 +59,7 @@ Now that we've defined a nice window, let's put a button inside of it. Add the f
 ```vala
 var button_hello = new Gtk.Button.with_label ("Click me!") {
     margin = 12
-}
+};
 
 button_hello.clicked.connect (() => {
     button_hello.label = "Hello World!";
