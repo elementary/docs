@@ -83,6 +83,10 @@ Any ideas about what happened here?
 
 Compile and run your application one more time and test it out. Nice job! You've just written your first Gtk+ app!
 
+{% hint style="info" %}
+If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/blob/hello-world/Application.vala)
+{% endhint %}
+
 ## Pushing to GitHub
 
 After we do anything significant, we must remember to push our code. This is especially important in collaborative development where not pushing your code soon enough can lead to unintentional forks and pushing too much code at once can make it hard to track down any bugs introduced by your code.
