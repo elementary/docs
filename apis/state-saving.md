@@ -62,8 +62,30 @@ Be sure to add the following line to the end of the meson.build file in your sou
 ```text
 subdir('data')
 ```
+For the system to pick up the newly installed gschema.xml file, it must be compiled along with all the other installed schema files. To do this we need a post installation script to run the GSettings schema compiler.
 
-Compile and install your app to see it in action!
+Create a directory named "meson" in the root folder of your project. In your `meson/` folder create a file called `post_install.py`. Type in the following python script:
+
+```python
+#!/usr/bin/env python3
+
+import os
+import subprocess
+
+schemadir = os.path.join(os.environ['MESON_INSTALL_PREFIX'], 'share', 'glib-2.0', 'schemas')
+
+if not os.environ.get('DESTDIR'):
+    print('Compiling gsettings schemas...')
+    subprocess.call(['glib-compile-schemas', schemadir])
+```
+
+Finally we need to include this script in our main `meson.build` file in the root folder of the project. Simply add the following line at the end:
+
+```text
+meson.add_install_script(join_paths('meson', 'post_install.py'))
+```
+
+Now compile and install your app to see it in action!
 
 {% hint style="warning" %}
  GSettings are installed at install time, not compile time. So you'll need to run `ninja install` to avoid crashes from not-yet-installed settings
