@@ -4,11 +4,11 @@ description: Creating tool items, GLib.Actions, and keyboard shortcuts
 
 # Actions
 
-GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, and tie them to `Actionable` widgets in your app like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip. Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in previous examples.
+GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, and tie them to [`Actionable`](https://valadoc.org/gtk+-3.0/Gtk.Actionable.html) widgets in your app like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip. Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in previous examples.
 
 ## Gtk.HeaderBar
 
-Let's begin by creating a new `Gtk.HeaderBar`. Typically your app will have a HeaderBar at the top of the window that will contain tool items that users will interact with to trigger your app's actions.
+Let's begin by creating a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar at the top of the window that will contain tool items that users will interact with to trigger your app's actions.
 
 ```vala
 protected override void activate () {
@@ -28,7 +28,7 @@ protected override void activate () {
 
 Since we're using this HeaderBar as our app's main titlebar, we need to set `show_close_button` to `true` so that GTK knows to include window controls. We can then override our Window's built-in titlebar with the `set_titlebar ()` method.
 
-Now let's create a new `Gtk.Button` with a big colorful icon and add it to our headerbar:
+Now let's create a new [`Gtk.Button`](https://valadoc.org/gtk+-3.0/Gtk.Button.html) with a big colorful icon and add it to our headerbar:
 
 ```vala
 var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_TOOLBAR);
@@ -65,9 +65,9 @@ quit_action.activate.connect (() => {
 ```
 
 You'll notice that we do a few things here:
-  * Instantiate a new `GLib.SimpleAction` with the name "quit"
-  * Add the action to our `Gtk.Application`'s `ActionMap`
-  * Set the "accelerators" (keyboard shortcuts) for "app.quit" to `<Control>q` and `<Control>w"`. Notice that the action name is prefixed with `app`, since we added it to the `ActionMap` built in to `Gtk.Application`
+  * Instantiate a new [`GLib.SimpleAction`](https://valadoc.org/gio-2.0/GLib.SimpleAction.html) with the name "quit"
+  * Add the action to our `Gtk.Application`'s [`ActionMap`](https://valadoc.org/gio-2.0/GLib.ActionMap.html)
+  * Set the "accelerators" (keyboard shortcuts) for "app.quit" to `<Control>q` and `<Control>w"`. Notice that the action name is prefixed with `app`; this refers to the `ActionMap` built in to `Gtk.Application`
   * Connect to the `activate` signal of our `SimpleAction` and call `destroy ()` on `main_window`. This must be at the end of `activate ()` because of that reference to `main_window`
 
 and now we can tie the action to the HeaderBar Button by assigning the `action_name` property of our Button:
@@ -80,9 +80,13 @@ var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_T
 
 Compile your app again and see that you can now quit the app either through the defined keyboard shortcuts or by clicking the Button in the HeaderBar.
 
+{% hint style="info" %}
+Accelerator strings follow a format defined by [`Gtk.accelerator_parse`](https://valadoc.org/gtk+-3.0/Gtk.accelerator_parse.html). You can find a list of key values [on Valadoc](https://valadoc.org/gdk-3.0/Gdk.Key.html)
+{% endhint %}
+
 ## Granite.markup_accel_tooltip
 
-There's one more thing we can do here to help improve your app's usability. You may have noticed that in elementary apps you can hover your pointer over tool items to see a description of the button and any available keyboard shortcuts associated with it. We can add the same thing to our Button with `Granite.markup_accel_tooltip ()`.
+There's one more thing we can do here to help improve your app's usability. You may have noticed that in elementary apps you can hover your pointer over tool items to see a description of the button and any available keyboard shortcuts associated with it. We can add the same thing to our Button with [`Granite.markup_accel_tooltip ()`](https://valadoc.org/granite/Granite.markup_accel_tooltip.html).
 
 First, make sure you've included Granite in the build dependencies declared in your meson.build file:
 
