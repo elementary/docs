@@ -116,7 +116,7 @@ var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_T
 };
 ```
 
-It may now be clear why we needed to declare our action at the beginning of `activate ()`: before we can get a list of the accelerators association with the action, we have to define those accelerations and add them to the Application.
+It may now be clear why we needed to declare our action at the beginning of `activate ()`: before we can get a list of the accelerators associated with the action, we have to define those accelerations and add them to the Application.
 
 Compile your app one last time and hover over the HeaderBar Button to see its description and associated keyboard shortcuts.
 
