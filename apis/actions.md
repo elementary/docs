@@ -41,7 +41,7 @@ headerbar.add (button);
 [...]
 ```
 
-elementary OS ships will a large set of system icons that you can use in your app for actions, status, and more. You can easily browse the full set using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
+elementary OS ships with a large set of system icons that you can use in your app for actions, status, and more. You can easily browse the full set using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
 
 If you compile your app, you can see that it now has a custom HeaderBar with a big red icon in it. But when you click on it, nothing happens.
 
