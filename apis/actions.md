@@ -8,7 +8,7 @@ GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-
 
 ## Gtk.HeaderBar
 
-Let's begin by creating a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar at the top of the window that will contain tool items that users will interact with to trigger your app's actions.
+Let's begin by creating a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar at the top of the window that will contain tool items, which users will interact with to trigger your app's actions.
 
 ```vala
 protected override void activate () {
