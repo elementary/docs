@@ -28,17 +28,19 @@ protected override void activate () {
 
 Since we're using this HeaderBar as our app's main titlebar, we need to set `show_close_button` to `true` so that GTK knows to include window controls. We can then override our Window's built-in titlebar with the `set_titlebar ()` method.
 
-Now let's create a new [`Gtk.Button`](https://valadoc.org/gtk+-3.0/Gtk.Button.html) with a big colorful icon and add it to our headerbar:
+Now, still in the activate function, let's create a new [`Gtk.Button`](https://valadoc.org/gtk+-3.0/Gtk.Button.html) with a big colorful icon and add it to our headerbar:
 
 ```vala
-var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_TOOLBAR);
+protected override void activate () {
+    var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_TOOLBAR);
 
-var headerbar = new Gtk.HeaderBar () {
-    show_close_button = true
-};
-headerbar.add (button);
+    var headerbar = new Gtk.HeaderBar () {
+        show_close_button = true
+    };
+    headerbar.add (button);
 
-[...]
+    [...]
+}
 ```
 
 elementary OS ships with a large set of system icons that you can use in your app for actions, status, and more. You can easily browse the full set using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
