@@ -24,16 +24,20 @@ executable(
 
 # Install our .desktop file so the Applications Menu will see it
 install_data(
-    join_paths('data', meson.project_name() + '.desktop'),
-    install_dir: join_paths(get_option('datadir'), 'applications')
+    join_paths('data', 'hello-again.desktop'),
+    install_dir: join_paths(get_option('datadir'), 'applications'),
+    rename: meson.project_name() + '.desktop'
 )
 
 # Install our .appdata.xml file so AppCenter will see it
 install_data(
-    join_paths('data', meson.project_name() + '.appdata.xml'),
-    install_dir: join_paths(get_option('datadir'), 'metainfo')
+    join_paths('data', 'hello-again.appdata.xml'),
+    install_dir: join_paths(get_option('datadir'), 'metainfo'),
+    rename: meson.project_name() + '.appdata.xml'
 )
 ```
+
+Notice that in each of our `install_data` methods, we rename our files using our project name. By using our project name—and its RDNN scheme—we will ensure that our files are installed under a unique name that won't cause conflicts with other apps.
 
 And you're done! Your app now has a real build system. This is a major milestone in your app's development!
 
@@ -77,3 +81,6 @@ Let's review all we've learned to do:
 
 That's a lot! You're well on your way to becoming a bonified app developer for elementary OS. Give yourself a pat on the back, then take some time to play around with this example. Change the names of files and see if you can still build and install them properly. Ask another developer to clone your repo from GitHub and see if it builds and installs cleanly on their computer. If so, you've just distributed your first app! When you're ready, we'll move onto the next section: Translations.
 
+{% hint style="info" %}
+If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/meson-build-system)
+{% endhint %}

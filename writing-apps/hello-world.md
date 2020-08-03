@@ -43,7 +43,7 @@ public class MyApp : Gtk.Application {
 }
 ```
 
-You'll notice that most of these property names are pretty straightforward. Inside `MyApp ()` we set a couple of properties for our `Gtk.Application` object, namely our app's ID and [flags](https://valadoc.org/gio-2.0/GLib.ApplicationFlags.html). The first line inside the `activate` method creates a new `Gtk.ApplicationWindow` called `main_window`. The fourth line sets the window title that you see at the top of the window. We also must give our window a default size so that it does not appear too small for the user to interact with it. Then in our `main ()` method we create a new instance of our `Gtk.Application`and run it.
+You'll notice that most of these property names are pretty straightforward. Inside `MyApp ()` we set a couple of properties for our `Gtk.Application` object, namely our app's ID and [flags](https://valadoc.org/gio-2.0/GLib.ApplicationFlags.html). The naming scheme we used for our app's ID is called [Reverse Domain Name Notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation) and will ensure that your app has a unique identifier. The first line inside the `activate` method creates a new `Gtk.ApplicationWindow` called `main_window`. The fourth line sets the window title that you see at the top of the window. We also must give our window a default size so that it does not appear too small for the user to interact with it. Then in our `main ()` method we create a new instance of our `Gtk.Application`and run it.
 
 Ready to test it out? Fire up your terminal and make sure you're in "~/Projects/gtk-hello/src". Then execute the following commands to compile and run your first Gtk+ app:
 
@@ -82,6 +82,10 @@ Any ideas about what happened here?
 * Finally, we add the button to our `Gtk.ApplicationWindow` and declare that we want to show all of the window's contents.
 
 Compile and run your application one more time and test it out. Nice job! You've just written your first Gtk+ app!
+
+{% hint style="info" %}
+If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/blob/hello-world/Application.vala)
+{% endhint %}
 
 ## Pushing to GitHub
 

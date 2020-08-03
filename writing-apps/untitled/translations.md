@@ -31,7 +31,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
    ```text
    #Translate and install our .desktop file
    i18n.merge_file(
-       input: join_paths('data', meson.project_name() + '.desktop.in'),
+       input: join_paths('data', 'hello-again.desktop.in'),
        output: meson.project_name() + '.desktop',
        po_dir: join_paths(meson.source_root(), 'po'),
        type: 'desktop',
@@ -41,7 +41,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
 
    #Translate and install our .appdata file
    i18n.merge_file(
-       input: join_paths('data', meson.project_name() + '.appdata.xml.in'),
+       input: join_paths('data', 'hello-again.appdata.xml.in'),
        output: meson.project_name() + '.appdata.xml',
        po_dir: join_paths(meson.source_root(), 'po'),
        install: true,
@@ -49,7 +49,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
    )
    ```
 
-   The `merge_file` method combines translating and installing files, similarly to how the `executable` method combines building and installing your app.
+   The `merge_file` method combines translating and installing files, similarly to how the `executable` method combines building and installing your app. You might have noticed that this method has both an `input` argument and an `output` argument. We can use this instead of the `rename` argument from the `install_data` method.
 
 3. Still in this file, add the following as the last line:
 
@@ -60,8 +60,8 @@ Now we have to make some changes to our Meson build system and add a couple new 
 4. You might have noticed in step 2 that the `merge_file` method has an `input` and `output`. We're going to append the additional extension `.in` to our .desktop and .appdata.xml files so that this method can take the untranslated files and produce translated files with the correct names.
 
    ```bash
-   git mv data/com.github.yourusername.yourrepositoryname.desktop data/com.github.yourusername.yourrepositoryname.desktop.in
-   git mv data/com.github.yourusername.yourrepositoryname.appdata.xml data/com.github.yourusername.yourrepositoryname.appdata.xml.in
+   git mv data/hello-again.desktop data/hello-again.desktop.in
+   git mv data/hello-again.appdata.xml data/hello-again.appdata.xml.in
    ```
 
    We use the `git mv` command here instead of renaming in the file manager or with `mv` so that `git` can keep track of the file rename as part of our revision history.
@@ -69,20 +69,18 @@ Now we have to make some changes to our Meson build system and add a couple new 
 5. Now, Create a directory named "po" in the root folder of your project. Inside of your po directory you will need to create another "meson.build" file. This time, its contents will be:
 
    ```text
-   i18n.gettext(meson.project_name(),
-     args: [
-       '--directory=' + meson.source_root(),
-       '--from-code=UTF-8'
-     ]
-   )
+    i18n.gettext(meson.project_name(),
+        args: '--directory=' + meson.source_root(),
+        preset: 'glib'
+    )
    ```
 
 6. Inside of "po" create another file called "POTFILES" that will contain paths to all of the files you want to translate. For us, this looks like:
 
    ```text
    src/Application.vala
-   data/com.github.yourusername.yourrepositoryname.desktop.in
-   data/com.github.yourusername.yourrepositoryname.appdata.xml.in
+   data/hello-again.desktop.in
+   data/hello-again.appdata.xml.in
    ```
 
 7. We have one more file to create in the "po" directory. This file will be named "LINGUAS" and it should contain the two-letter language codes for all languages you want to provide translations for. As an example, let's add German and Spanish
@@ -117,6 +115,10 @@ Now we have to make some changes to our Meson build system and add a couple new 
     ```
 
 That's it! Your app is now fully ready to be translated. Remember that each time you add new translatable strings or change old ones, you should regenerate your .pot and po files using the `-pot` and `-update-po` build targets from the previous two steps. If you want to support more languages, just list them in the LINGUAS file and generate the new po file with the `-update-po`target. Don't forget to add any new po files to git!
+
+{% hint style="info" %}
+If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/localization)
+{% endhint %}
 
 ## Translators Comments
 

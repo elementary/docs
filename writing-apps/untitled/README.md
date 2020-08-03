@@ -37,7 +37,7 @@ Everything working as expected? Good. Now, let's get our app ready for other peo
 Every app comes with a .desktop file. This file contains all the information needed to display your app in the Applications Menu and in the Dock. Let's go ahead and make one:
 
 1. In your project's root, create a new folder called "data".
-2. Create a new file in Code and save it in the "data" folder as "com.github.yourusername.yourrepositoryname.desktop". This naming scheme is called [Reverse Domain Name Notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation) and will ensure that your .desktop file has a unique file name.
+2. Create a new file in Code and save it in the "data" folder as "hello-again.desktop".
 3. Type the following into your .desktop file. Like before, try to guess what each line does.
 
    ```text
@@ -67,7 +67,7 @@ Every app comes with a .desktop file. This file contains all the information nee
 
 Every app also comes with an .appdata.xml file. This file contains all the information needed to list your app in AppCenter.
 
-1. In your data folder, create a new file called "com.github.yourusername.yourrepositoryname.appdata.xml". Just like with the .desktop file, we use RDNN to avoid file naming collisions.
+1. In your data folder, create a new file called "hello-again.appdata.xml"
 2. Type the following into your .appdata.xml file
 
    ```markup
