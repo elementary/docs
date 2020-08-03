@@ -247,7 +247,7 @@ This goes for creating methods inside of classes as well. Instead of
 ```csharp
 private int _number;
 
-public int get_number {
+public int get_number () {
     return _number;
 }
 
@@ -259,11 +259,23 @@ public void set_number (int value) {
 you should use
 
 ```csharp
+public int number { get; set; }
+```
+
+or, where you need some extra logic in the getters and setters:
+
+```csharp
+private int _number;
 public int number {
     get {
-        return _number;
+        // We can run extra code here before returning the property. For example,
+        // we can multiply it by 2
+        return _number * 2;
     }
     set {
+        // We can run extra code here before/after updating the value. For example,
+        // we could check the validity of the new value or trigger some other state
+        // changes
         _number = value;
     }
 }
