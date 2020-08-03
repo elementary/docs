@@ -109,7 +109,7 @@ Markup languages like HTML, XML, and YML should use two-space indentation since 
   <releases>
     <release version="5.0" date="2019-02-28" urgency="medium">
       <description>
-          <p>Add a search entry for calendars</p>
+        <p>Add a search entry for calendars</p>
       </description>
     </release>
   </releases>
