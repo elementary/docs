@@ -4,11 +4,11 @@ description: Creating tool items, GLib.Actions, and keyboard shortcuts
 
 # Actions
 
-GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, and tie them to [`Actionable`](https://valadoc.org/gtk+-3.0/Gtk.Actionable.html) widgets in your app like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip. Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in previous examples.
+GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, and tie them to [`Actionable`](https://valadoc.org/gtk+-3.0/Gtk.Actionable.html) widgets in your app like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip.
 
 ## Gtk.HeaderBar
 
-Let's begin by creating a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar at the top of the window that will contain tool items, which users will interact with to trigger your app's actions.
+Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in previous examples. Once you have that set up, let's create a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar, at the top of the window, which will contain tool items that users will interact with to trigger your app's actions.
 
 ```vala
 protected override void activate () {
@@ -67,6 +67,7 @@ quit_action.activate.connect (() => {
 ```
 
 You'll notice that we do a few things here:
+
   * Instantiate a new [`GLib.SimpleAction`](https://valadoc.org/gio-2.0/GLib.SimpleAction.html) with the name "quit"
   * Add the action to our `Gtk.Application`'s [`ActionMap`](https://valadoc.org/gio-2.0/GLib.ActionMap.html)
   * Set the "accelerators" (keyboard shortcuts) for "app.quit" to `<Control>q` and `<Control>w"`. Notice that the action name is prefixed with `app`; this refers to the `ActionMap` built in to `Gtk.Application`
