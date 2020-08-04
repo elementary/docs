@@ -15,6 +15,7 @@
 
 ## APIs
 
+* [Actions](apis/actions.md)
 * [Notifications](apis/notifications.md)
 * [Launchers](apis/launchers.md)
 * [State Saving](apis/state-saving.md)
