@@ -30,7 +30,7 @@ AppCenter supports publishing apps that meet these requirements; extensions or p
 
 ### Metadata Requirements
 
-In general, your app's metadata should not refer to "elementary" or "elementary OS"—it is assumed that all apps submitted to AppCenter are designed for elementary OS, and users don't need to be reminded of this. If there is a rare, legitimate reason for mentioning elementary, it must abide by the [elementary Brand Guidelines](https://elementary.io/brand).
+In general, your app's metadata should not refer to "elementary" or "elementary OS" in user-facing strings—it is assumed that all apps submitted to AppCenter are designed for elementary OS, and users don't need to be reminded of this. If there is a rare, legitimate reason for mentioning elementary, it must abide by the [elementary Brand Guidelines](https://elementary.io/brand).
 
 #### AppData and OARS
 
