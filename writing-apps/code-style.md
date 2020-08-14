@@ -4,7 +4,7 @@ description: Recommendations for clean code bases
 
 # Code Style
 
-Internally, elementary uses the following code style guide to ensure that code is consistly formatted both internally and across projects. Consistent and easily-legible code makes it easier for newcomers to learn and contribute. We'd like to recommend that in the spirit of Open Source collaboration, all Vala apps written in the wider ecosystem also follow these guidelines.
+Internally, elementary uses the following code style guide to ensure that code is consistently formatted both internally and across projects. Consistent and easily-legible code makes it easier for newcomers to learn and contribute. We'd like to recommend that in the spirit of Open Source collaboration, all Vala apps written in the wider ecosystem also follow these guidelines.
 
 ## Whitespace
 
@@ -21,7 +21,7 @@ my_function_name ();
 var my_instance = new Object ();
 ```
 
-Whitespace goes  between numbers and operators in all math-related code.
+Whitespace goes between numbers and operators in all math-related code.
 
 ```csharp
 c = (n * 2) + 4;
