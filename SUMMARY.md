@@ -6,10 +6,10 @@
 
 * [The Basic Setup](writing-apps/the-basic-setup.md)
 * [Hello World](writing-apps/hello-world.md)
-* [Our First App](writing-apps/untitled/README.md)
-  * [The Build System](writing-apps/untitled/the-build-system.md)
-  * [Translations](writing-apps/untitled/translations.md)
-  * [Packaging](writing-apps/untitled/packaging.md)
+* [Our First App](writing-apps/our-first-app/README.md)
+  * [The Build System](writing-apps/our-first-app/the-build-system.md)
+  * [Translations](writing-apps/our-first-app/translations.md)
+  * [Packaging](writing-apps/our-first-app/packaging.md)
 * [Creating Layouts](writing-apps/creating-layouts.md)
 * [Code Style](writing-apps/code-style.md)
 

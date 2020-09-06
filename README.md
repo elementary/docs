@@ -16,7 +16,7 @@ In this book, we're going to talk about building apps using GTK, Granite, and ot
 
 Some of you may feel confident enough to jump straight into coding. If that's the case, you might want to skip ahead and start writing your first app. 
 
-{% page-ref page="writing-apps/untitled/" %}
+{% page-ref page="writing-apps/our-first-app/" %}
 
 However, we strongly recommend to at least skim through the preparation step. Having the right setup is going to help you reach your goals faster, and having a solid foundation is going to help you throughout the rest of this book.
 
