@@ -10,8 +10,8 @@ By now you've probably already seen the white notification bubbles that appear o
 
 1. Create a new folder inside of "~/Projects" called "notifications-app"
 2. Create a new folder inside of that folder called "src" and add a file inside of it called `Application.vala`
-3. Create a `meson.build` file. If you don't remember how to set up Meson, go back to the [previous section](../writing-apps/untitled/the-build-system.md) and review.
-4. Remember how to [make a .desktop file](../writing-apps/untitled/#the-desktop-file)? Excellent! Make one for this project, but this time, since your app will be displaying notifications, add `X-GNOME-UsesNotifications=true` to the end of the file. This is needed so that users will be able to set notification preferences for your app in the system's notification settings.
+3. Create a `meson.build` file. If you don't remember how to set up Meson, go back to the [previous section](../writing-apps/our-first-app/the-build-system.md) and review.
+4. Remember how to [make a .desktop file](../writing-apps/our-first-app/#the-desktop-file)? Excellent! Make one for this project, but this time, since your app will be displaying notifications, add `X-GNOME-UsesNotifications=true` to the end of the file. This is needed so that users will be able to set notification preferences for your app in the system's notification settings.
 
 When using notifications, it's important that your desktop file has the same name as your application's ID. This is because elementary OS uses desktop files to find extra information about the app who sends the notification such as a default icon, or the name of the app. To keep things simple, we'll be using the same RDNN everywhere.
 

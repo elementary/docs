@@ -18,7 +18,7 @@ Your app must not attempt to modify other apps or system programs.
 
 #### Packaging
 
-Your app must come with [Debian packaging](https://docs.elementary.io/develop/writing-apps/untitled/packaging). elementary OS uses Debian packages to manage software installation and updates. Your app cannot be downloaded without it. Your Debian packaging must not manually modify filesystem permissions.
+Your app must come with [Debian packaging](https://docs.elementary.io/develop/writing-apps/our-first-app/packaging). elementary OS uses Debian packages to manage software installation and updates. Your app cannot be downloaded without it. Your Debian packaging must not manually modify filesystem permissions.
 
 AppCenter Dashboard and [Houston CI](https://github.com/elementary/houston/wiki/Continuous-Integration) use git branches to determine which version\(s\) of elementary OS to build for. When the packaging is included in the `master` or there is just a `deb-packaging` branch, a package is only built for the latest elementary OS version \(currently Hera\).
 
@@ -34,7 +34,7 @@ In general, your app's metadata should not refer to "elementary" or "elementary 
 
 #### AppData and OARS
 
-Your app must install an [appdata.xml file](https://docs.elementary.io/develop/writing-apps/untitled#appdata-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
+Your app must install an [appdata.xml file](https://docs.elementary.io/develop/writing-apps/our-first-app#appdata-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
 
 Your appdata.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc.
 
@@ -46,7 +46,7 @@ For more information about the appdata.xml format see, see the [appstream specif
 
 #### Desktop File
 
-Your app must install a [.desktop file](https://docs.elementary.io/develop/writing-apps/untitled#the-desktop-file) to `/usr/share/applications`. elementary OS uses a .desktop file to display your app in the applications launcher and the dock. Without this file, your app will not be visible to users.
+Your app must install a [.desktop file](https://docs.elementary.io/develop/writing-apps/our-first-app#the-desktop-file) to `/usr/share/applications`. elementary OS uses a .desktop file to display your app in the applications launcher and the dock. Without this file, your app will not be visible to users.
 
 Your .desktop file must not contain `NoDisplay=true` or anything else that prevents it from showing up in the applications launcher.
 
