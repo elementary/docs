@@ -18,7 +18,7 @@ In order to build your app using Houston CI, Travis requires a configuration fil
 language: node_js
 
 node_js:
-  - lts/*
+  - 10.17.0
 
 sudo: required
 
