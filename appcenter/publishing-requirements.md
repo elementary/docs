@@ -72,6 +72,10 @@ Your app should not be named generically like "Web Browser" or "File Manager".
 
 Your app should not use "elementary", "Pantheon", or other elementary brand names in its naming scheme. It should also not be formatted with a leading lowercase "e", such as "eApp".
 
+#### Launching
+
+Your app should display its own graphical user interface on launch; it should not open another app or system component. For example, if your app operates on a given file, it should display its own UI before throwing an Open File dialog. If your app can request elevated permissions for certain actions, those permissions should be requested after your app's UI is shown and preferably only on-demand when actions requiring those permissions are performed.
+
 #### App Stores
 
 Your app cannot be an "app store," as ultimately determined by app reviewers. This includes but is not limited to apps that look and function confusingly similarly to AppCenter, provide software from other sources, link to an online app store, and/or facilitate payments for apps in the system repositories.
