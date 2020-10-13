@@ -16,15 +16,14 @@ In this book, we're going to talk about building apps using GTK, Granite, and ot
 
 Some of you may feel confident enough to jump straight into coding. If that's the case, you might want to skip ahead and start writing your first app. 
 
-{% page-ref page="writing-apps/our-first-app/" %}
+[Our first app](https://github.com/elementary/docs/tree/master/writing-apps/our-first-app)
 
 However, we strongly recommend to at least skim through the preparation step. Having the right setup is going to help you reach your goals faster, and having a solid foundation is going to help you throughout the rest of this book.
 
-{% page-ref page="writing-apps/the-basic-setup.md" %}
+[The Basic Setup](https://github.com/elementary/docs/blob/master/writing-apps/the-basic-setup.md)
 
 ## AppCenter Publishing Requirements
 
 There are also a number of technical, metadata, legal, and other requirements for publishing your app to users via AppCenter. 
 
-{% page-ref page="appcenter/publishing-requirements.md" %}
-
+[Publishing Requirements](https://github.com/elementary/docs/blob/master/appcenter/publishing-requirements.md)
