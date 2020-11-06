@@ -33,3 +33,7 @@ Release descriptions should be accurate, concise, and written for a typical user
 >- Updated VAPIs
 
 Previous release descriptions can remain in your AppData in perpetuity; AppCenter may use these to display cumulative descriptions between an older installed version and the latest version.
+
+## GitHub User/Org Name Changes
+
+AppCenter **does not support changing your GitHub username or organization name**, as we rely on the unique RDNN of your app to avoid conflicts—and there is not an automated way to change the RDNN throughout the whole stack from AppCenter Dashboard down to the .deb files built and hosted in the AppCenter repository. **If you change your GitHub username or organization name associated with your app, you will no longer be able to publish updates to your app.** If you have ended up in this situation, you will receive an issue filed against your app with more details.
