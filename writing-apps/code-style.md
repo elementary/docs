@@ -297,6 +297,26 @@ You can use
 print ("Hello World");
 ```
 
+## String Formatting
+
+Avoid using literals when formatting strings:
+
+```csharp
+var string = @"Error parsing config: $(config_path)"
+```
+
+Instead, prefer printf style placeholders:
+
+```csharp
+var string = "Error parsing config: %s".printf (config_path);
+```
+
+Warnings in Vala use printf syntax by default:
+
+```csharp
+critical ("Error parsing config: %s", config_path);
+```
+
 ## GTK events
 
 Gtk widgets are intended to respond to click events that can be described as "press + release" instead of "press". Usually it is better to respond to `toggle` and `release` events instead of `press`.
