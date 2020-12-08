@@ -302,7 +302,7 @@ print ("Hello World");
 Avoid using literals when formatting strings:
 
 ```csharp
-var string = @"Error parsing config: $(config_path)"
+var string = @"Error parsing config: $(config_path)";
 ```
 
 Instead, prefer printf style placeholders:
