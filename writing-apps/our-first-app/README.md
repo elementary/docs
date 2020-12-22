@@ -58,7 +58,7 @@ Every app comes with a .desktop file. This file contains all the information nee
 4. Finally, let's add this file to `git` and commit a revision:
 
    ```bash
-   git add data/com.github.yourusername.yourrepositoryname.desktop
+   git add data/hello-again.desktop
    git commit -am "Add a .desktop file"
    git push
    ```
