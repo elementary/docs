@@ -7,7 +7,7 @@ In the previous chapter, we created a simple "Hello World!" app to show off our 
 To create our first real app, we're going to need all the old stuff that we used in the last example. But don't just copy and paste! Let's take this time to practice our skills and see if we can recreate the last example from memory. Additionally, now that you have the basics, we're going to get a little more complex and a little more organized:
 
 1. Create a new folder inside "~/Projects" called "hello-again".Then, go into "hello-again" and create our directory structure including the "src" folder.
-2. Create "Application.vala" in the "src" folder. This time we're going to prefix our file with a small legal header. More about legal stuff later. For now you can copy [the GPL header from our reference documentation](https://elementary.io/docs/code/reference#gpl-header). Be sure to assign the copyright to yourself at the top of the header and change the author to you at the bottom of the header.
+2. Create "Application.vala" in the "src" folder. This time we're going to prefix our file with a small legal header. More about legal stuff later. For now you can copy [the GPL header from our reference documentation](https://github.com/elementary/granite/blob/6655cf1f3d59a05e90468028b0f6a2624143fb5e/lib/Services/AsyncMutex.vala#L1-L19). Be sure to assign the copyright to yourself at the top of the header and update the year.
 3. Now, let's create a `Gtk.Application`, a `Gtk.ApplicationWindow`, and set the window's default properties. Refer back to the last chapter if you need a refresher.
 4. For the sake of time let's just put a `Gtk.Label` instead of a `Gtk.Button`. We don't need to try to make the label do anything when you click it.
 
