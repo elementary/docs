@@ -4,7 +4,7 @@ The submission process for AppCenter is broken down into a few simple steps. The
 
 ## **Install the AppCenter Dashboard GitHub Integration**
 
-Before AppCenter Dashboard can import and publish your repos, you'll need to install the [AppCenter Dashboard GitHub Integration](https://github.com/integration/appcenter).
+Before AppCenter Dashboard can import and publish your repos, you'll need to install the [AppCenter Dashboard GitHub Integration](https://github.com/apps/appcenter).
 
 ## **Create a New Release**
 
