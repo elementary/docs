@@ -42,7 +42,7 @@ Now it's time to create the rules that will allow your app to be built as a .deb
    ```text
    Source: com.github.yourusername.yourrepositoryname
    Section: x11
-   Priority: extra
+   Priority: optional
    Maintainer: Your Name <you@emailaddress.com>
    Build-Depends: debhelper (>= 10.5.1),
                   gettext,
