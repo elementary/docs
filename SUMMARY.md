@@ -17,6 +17,7 @@
 ## HIG
 
 * [Human Interface Guidelines](hig/intro.md)
+* [Design Philosophy](hig/design-philosophy.md)
 * [User Workflow](hig/user-workflow.md)
 * [Desktop Integration](hig/desktop-integration.md)
 * [Container Widgets](hig/container-widgets.md)

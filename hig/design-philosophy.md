@@ -12,7 +12,8 @@ Before we get into all the things that make up elementary OS apps, there is a cl
 
 2. **Design is not just, like, your opinion, man.** Design is testable. One design will meet a specific goal better than another design. Consider different types of bicycles. A folding bicycle has a different set of design goals than a mountain bicycle. Things like weight, size, and tire tread are important factors in helping the intended user reach their goals. Because we understand that design is about solving specific problems, we must also understand that we can objectively compare the effectiveness of two designs at solving those problems.
 
-------------------------------------------
+---
+
 1. [Design Is Not Veneer, Aral Balkan](https://ar.al/notes/design-is-not-veneer/)
 2. [Design is Not Subjective, Jeff Law](https://web.archive.org/web/20181208131017/http://www.jefflaw.ca/design-is-not-subjective/)
 
@@ -62,7 +63,8 @@ Keep things contextual. Instead of tucking away preferences in a configuration d
 
 If your app needs to be configured before it can be used (like a mail client), present this configuration inside the main window much like a [Welcome Screen](#welcome-screen). Once again, make sure this is really necessary set-up. Adding unnecessary configuration screens stops users from doing what they wanted to do when they opened your app in the first place.
 
----------------------------
+---
+
 See Also:
 
 1. [Checkboxes That Kill Your Product](https://limi.net/checkboxes) by Alex Limi
@@ -81,6 +83,6 @@ Avoid technical jargon and assume little-to-no technical knowledge. This lets yo
 
 Provide non-technical explanations instead of cryptic error messages. If something goes wrong, a simplified explanation of what happened and how to fix it should be presented.
 
-------------------------------------------
+---
 
 For more information, see [Writing Style](#writing-style).
