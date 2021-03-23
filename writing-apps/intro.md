@@ -6,7 +6,7 @@ We're going to assume that you have absolutely no experience in writing apps for
 
 We’re also not covering design too much in this guide; that’s what the Human Interface Guidelines \(HIG\) are for, and you’re highly encouraged to take a look there before beginning your app. We're going to assume you have a basic knowledge of \(or at least a quick link to\) the HIG and focus on coding. However, elementary OS is all about great design and stellar consistency. It’s important you grasp these concepts before moving on.
 
-{% page-ref page="hig/intro.md" %}
+{% page-ref page="/hig/intro.md" %}
 
 ## Writing Apps
 
@@ -24,4 +24,4 @@ However, we strongly recommend to at least skim through the preparation step. Ha
 
 There are also a number of technical, metadata, legal, and other requirements for publishing your app to users via AppCenter.
 
-{% page-ref page="appcenter/publishing-requirements.md" %}
+{% page-ref page="/appcenter/publishing-requirements.md" %}
