@@ -1,10 +1,10 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Getting Started](README.md)
+* [Human Interface Guidelines](/hig/)
 
 ## Writing Apps
 
-* [Getting Started](writing-apps/intro.md)
 * [The Basic Setup](writing-apps/the-basic-setup.md)
 * [Hello World](writing-apps/hello-world.md)
 * [Our First App](writing-apps/our-first-app/README.md)
