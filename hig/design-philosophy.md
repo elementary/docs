@@ -1,6 +1,8 @@
 # Design Philosophy {#design-philosophy}
 
-The elementary OS HIG isn't just about a set of concrete rules; it's meant to be flexible and extensible. As such, this very first portion of the guideline is all about the guiding philosophy we employ. For a quick crash course, we like ["The User is Drunk" on YouTube](https://www.youtube.com/watch?v=r2CbbBLVaPk)
+The elementary OS HIG isn't just about a set of concrete rules; it's meant to be flexible and extensible. As such, this very first portion of the guideline is all about the guiding philosophy we employ. For a quick crash course, we like ["The User is Drunk" on YouTube](https://www.youtube.com/watch?v=r2CbbBLVaPk).
+
+<!-- TODO: Fix this embed? -->
 
 https://www.youtube.com/watch?v=r2CbbBLVaPk
 
@@ -13,6 +15,8 @@ Before we get into all the things that make up elementary OS apps, there is a cl
 2. **Design is not just, like, your opinion, man.** Design is testable. One design will meet a specific goal better than another design. Consider different types of bicycles. A folding bicycle has a different set of design goals than a mountain bicycle. Things like weight, size, and tire tread are important factors in helping the intended user reach their goals. Because we understand that design is about solving specific problems, we must also understand that we can objectively compare the effectiveness of two designs at solving those problems.
 
 ---
+
+See also:
 
 1. [Design Is Not Veneer, Aral Balkan](https://ar.al/notes/design-is-not-veneer/)
 2. [Design is Not Subjective, Jeff Law](https://web.archive.org/web/20181208131017/http://www.jefflaw.ca/design-is-not-subjective/)
