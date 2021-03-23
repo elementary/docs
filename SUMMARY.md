@@ -1,9 +1,10 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Welcome](README.md)
 
 ## Writing Apps
 
+* [Introduction](writing-apps/intro.md)
 * [The Basic Setup](writing-apps/the-basic-setup.md)
 * [Hello World](writing-apps/hello-world.md)
 * [Our First App](writing-apps/our-first-app/README.md)
@@ -12,6 +13,10 @@
   * [Packaging](writing-apps/our-first-app/packaging.md)
 * [Creating Layouts](writing-apps/creating-layouts.md)
 * [Code Style](writing-apps/code-style.md)
+
+## Human Interface Guidelines
+
+* [Introduction](hig/intro.md)
 
 ## APIs
 
@@ -29,4 +34,4 @@
 * [Publishing Updates](appcenter/publishing-updates.md)
 * [Continuous Integration](appcenter/continuous-integration.md)
 * [Markdown Badges](appcenter/markdown-badges.md)
-
+* [Dashboard](https://developer.elementary.io/)
