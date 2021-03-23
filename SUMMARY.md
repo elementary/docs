@@ -14,6 +14,14 @@
 * [Creating Layouts](writing-apps/creating-layouts.md)
 * [Code Style](writing-apps/code-style.md)
 
+## APIs
+
+* [Actions](apis/actions.md)
+* [Notifications](apis/notifications.md)
+* [Launchers](apis/launchers.md)
+* [State Saving](apis/state-saving.md)
+* [Valadoc](https://valadoc.org/)
+
 ## HIG
 
 * [Human Interface Guidelines](hig/intro.md)
@@ -24,14 +32,6 @@
 * [UI Toolkit Elements](hig/ui-toolkit-elements.md)
 * [Iconography](hig/iconography.md)
 * [Text](hig/text.md)
-
-## APIs
-
-* [Actions](apis/actions.md)
-* [Notifications](apis/notifications.md)
-* [Launchers](apis/launchers.md)
-* [State Saving](apis/state-saving.md)
-* [Valadoc](https://valadoc.org/)
 
 ## AppCenter
 
