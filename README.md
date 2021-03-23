@@ -26,7 +26,7 @@ Requirements and resources for publishing your app to users via AppCenter.
 
 ### Human Interface Guidelines
 
-Guidelines designed to help developers and designers create a beautifully consistent experience on the elementary OS desktop.
+Guidelines designed to help developers and designers create a beautifully consistent experience on the elementary OS desktop at [docs.elementary.io/hig](https://docs.elementary.io/hig).
 
 ### AppCenter Dashboard
 
