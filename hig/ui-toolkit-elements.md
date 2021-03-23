@@ -43,7 +43,7 @@ See also: [Form Label Proximity: Right Aligned is Easier to Scan](http://uxmovem
 
 Infobars provide contextual information and actions to the user with varying levels of severity.
 
-![Infobars](/images/docs/human-interface-guidelines/infobars/infobars.png)
+![Infobars](https://elementary.io/images/docs/human-interface-guidelines/infobars/infobars.png)
 
 It is important to determine the severity or type of infobar to use. There are four types of infobars available:
 
@@ -54,7 +54,7 @@ It is important to determine the severity or type of infobar to use. There are f
 
 ## Welcome Screen {#welcome-screen}
 
-![Welcome Screen](/images/docs/human-interface-guidelines/welcome-screen/welcome-screen.png)
+![Welcome Screen](https://elementary.io/images/docs/human-interface-guidelines/welcome-screen/welcome-screen.png)
 
 The Welcome Screen is a friendly way to help users get started with your app.
 
@@ -79,7 +79,7 @@ Grouped with each action is an icon that helps to quickly visualize it. Most of 
 
 A source list may be used as a high-level form of navigation. Source lists are useful for showing different locations, bookmarks, or categories within your app.
 
-![Source List in Files](/images/docs/human-interface-guidelines/source-list/files.png)
+![Source List in Files](https://elementary.io/images/docs/human-interface-guidelines/source-list/files.png)
 
 ### Sections {#sections}
 
@@ -101,7 +101,7 @@ Buttons are an incredibly important widget to understand since your app will und
 
 ### Tool Buttons {#tool-buttons}
 
-![Open button](/images/docs/human-interface-guidelines/buttons/open.png)
+![Open button](https://elementary.io/images/docs/human-interface-guidelines/buttons/open.png)
 
 #### Labeling {#tool-buttons-labeling}
 
@@ -119,7 +119,7 @@ If a button has a related keyboard shortcut that will perform the same action, i
 
 ### Text Buttons {#text-buttons}
 
-![Cancel button](/images/docs/human-interface-guidelines/buttons/cancel.png)
+![Cancel button](https://elementary.io/images/docs/human-interface-guidelines/buttons/cancel.png)
 
 #### Labeling {#text-buttons-labeling}
 
@@ -142,7 +142,7 @@ Since Text buttons have a clear and explicit label, it's usually unnecessary to 
 
 ### Back Buttons {#back-buttons}
 
-<img src="/images/docs/human-interface-guidelines/buttons/back-button.png" srcset="/images/docs/human-interface-guidelines/buttons/back-button@2x.png 2x" alt= "Back Button" />
+<img src="https://elementary.io/images/docs/human-interface-guidelines/buttons/back-button.png" srcset="https://elementary.io/images/docs/human-interface-guidelines/buttons/back-button@2x.png 2x" alt= "Back Button" />
 
 A back button is simply a text button with a special style class. It should be used to navigate back to a previous view, typically from a child view to the main view.
 
@@ -156,7 +156,7 @@ Back buttons are typically seen in headerbars, but can be used in other contexts
 
 Apps that support the searching or filtering of content should include a search field on the right side of the app's toolbar. This gives users a predictable place to see whether or not an app supports searching, and a consistent location from which to search. Gtk+ provides a convenient complex widget for this purpose called [Gtk.SearchEntry](https://valadoc.org/gtk+-3.0/Gtk.SearchEntry.html).
 
-![Search Field](/images/docs/human-interface-guidelines/search-fields/search-field.png)
+![Search Field](https://elementary.io/images/docs/human-interface-guidelines/search-fields/search-field.png)
 
 ### Distinguish Between Search and Find {#distinguish-search-find}
 
@@ -194,7 +194,7 @@ Selection controls present a way for users to select or enable options. There ar
 
 ### Checkboxes {#checkboxes}
 
-<img src="/images/docs/human-interface-guidelines/selection-controls/checkboxes.png" alt="Checkboxes" style="max-width: 100px"/>
+<img src="https://elementary.io/images/docs/human-interface-guidelines/selection-controls/checkboxes.png" alt="Checkboxes" style="max-width: 100px"/>
 
 Use checkboxes when users are making a selection of items. If you have a single option, avoid using a checkbox and use a switch instead.
 
@@ -204,7 +204,7 @@ Labels associated with checkboxes should usually be nouns or nounal phrases.
 
 ### Comboboxes {#comboboxes}
 
-<img src="/images/docs/human-interface-guidelines/selection-controls/comboboxes.png" alt="Comboboxes" style="max-width: 158px"/>
+<img src="https://elementary.io/images/docs/human-interface-guidelines/selection-controls/comboboxes.png" alt="Comboboxes" style="max-width: 158px"/>
 
 Use a combobox (also called a dropdown) when:
 
@@ -215,7 +215,7 @@ Use a combobox (also called a dropdown) when:
 
 ### Linked Buttons {#linked-buttons}
 
-<img src="/images/docs/human-interface-guidelines/selection-controls/linked_buttons.png" alt="Linked Buttons" style="max-width: 119px"/>
+<img src="https://elementary.io/images/docs/human-interface-guidelines/selection-controls/linked_buttons.png" alt="Linked Buttons" style="max-width: 119px"/>
 
 Use linked buttons when:
 * All options can be described by an icon or with only one or two words and
@@ -227,7 +227,7 @@ Linked buttons should never contain colored icons. Only 16px symbolic icons OR t
 
 ### Radio Buttons {#radio-buttons}
 
-<img src="/images/docs/human-interface-guidelines/selection-controls/radio_buttons.png" alt="Radio Buttons" style="max-width: 102px"/>
+<img src="https://elementary.io/images/docs/human-interface-guidelines/selection-controls/radio_buttons.png" alt="Radio Buttons" style="max-width: 102px"/>
 
 Use radio buttons when:
 
@@ -238,7 +238,7 @@ Use radio buttons when:
 
 ### Switches {#switches}
 
-<img src="/images/docs/human-interface-guidelines/selection-controls/switches.png" alt="Switches" style="max-width: 69px"/>
+<img src="https://elementary.io/images/docs/human-interface-guidelines/selection-controls/switches.png" alt="Switches" style="max-width: 69px"/>
 
 Use a switch when users are toggling certain features or behaviors "on" or "off".
 
@@ -248,7 +248,7 @@ When possible, directly call out the service you are acting on. Do not use words
 
 #### Mode Switches {#mode-switches}
 
-<img src="/images/docs/human-interface-guidelines/selection-controls/mode-switches.png" srcset="/images/docs/human-interface-guidelines/selection-controls/mode-switches@2x.png 2x" alt="Mode Switches" />
+<img src="https://elementary.io/images/docs/human-interface-guidelines/selection-controls/mode-switches.png" srcset="https://elementary.io/images/docs/human-interface-guidelines/selection-controls/mode-switches@2x.png 2x" alt="Mode Switches" />
 
 As of elementary OS 5 Juno, mode switches are a new switch-based widget that communicate switching between two distinct states. For example, switching between a photo or video mode in a camera. The switch is drawn smaller and inline with the provided symbolic icons. Tooltip hints can also be provided when hovering the icons.
 
@@ -264,13 +264,13 @@ Notebooks are a type of widget that lets apps show one of multiple pages (also c
 
 ### Static Notebook {#static-notebook}
 
-![Static Notebook](/images/docs/human-interface-guidelines/notebooks/static-notebook.png)
+![Static Notebook](https://elementary.io/images/docs/human-interface-guidelines/notebooks/static-notebook.png)
 
 A Static Notebook is a small set of unchanging tabs, commonly seen in preferences or settings screens. The tabs appear as linked buttons centered at the top of the content area. A Static Notebook should typically contain two to five tabs.
 
 ### Dynamic Notebook {#dynamic-notebook}
 
-![Dynamic Notebook](/images/docs/human-interface-guidelines/notebooks/dynamic-notebook.png)
+![Dynamic Notebook](https://elementary.io/images/docs/human-interface-guidelines/notebooks/dynamic-notebook.png)
 
 A Dynamic Notebook is a way for an app to provide user-manageable tabbing functionality, commonly seen in web browsers. The tabs appear attached to the toolbar on their own tab bar above the relevant content. Tabs are able to be rearranged and closed, and a "new tab" button is at the start of the notebook widget.
 
