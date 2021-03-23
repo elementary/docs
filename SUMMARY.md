@@ -4,7 +4,7 @@
 
 ## Writing Apps
 
-* [Writing Apps](writing-apps/intro.md)
+* [Getting Started](writing-apps/intro.md)
 * [The Basic Setup](writing-apps/the-basic-setup.md)
 * [Hello World](writing-apps/hello-world.md)
 * [Our First App](writing-apps/our-first-app/README.md)
@@ -17,6 +17,7 @@
 ## HIG
 
 * [Human Interface Guidelines](hig/intro.md)
+* [Text](hig/text.md)
 
 ## APIs
 
