@@ -1,10 +1,10 @@
 # Table of contents
 
-* [Introduction](intro.md)
+* [Introduction](README.md)
 
 ## Writing Apps
 
-* [Introduction](writing-apps/intro.md)
+* [Writing Apps](writing-apps/intro.md)
 * [The Basic Setup](writing-apps/the-basic-setup.md)
 * [Hello World](writing-apps/hello-world.md)
 * [Our First App](writing-apps/our-first-app/README.md)
@@ -16,7 +16,7 @@
 
 ## Human Interface Guidelines
 
-* [Introduction](hig/intro.md)
+* [HIG](hig/intro.md)
 
 ## APIs
 
