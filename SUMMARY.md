@@ -14,9 +14,9 @@
 * [Creating Layouts](writing-apps/creating-layouts.md)
 * [Code Style](writing-apps/code-style.md)
 
-## Human Interface Guidelines
+## HIG
 
-* [HIG](hig/intro.md)
+* [Human Interface Guidelines](hig/intro.md)
 
 ## APIs
 
