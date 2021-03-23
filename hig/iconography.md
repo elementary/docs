@@ -102,9 +102,7 @@ Color—don't be afraid to use it! Many of the elementary OS icons use vibrant c
 	<img title="Calendar icon" class="hig-icon" src="https://elementary.io/images/docs/human-interface-guidelines/icons/64/office-calendar.svg" alt="Calendar icon">
 </div>
 
-Colors do have their connotations, so be cognizant of this when picking them. For instance: red is usually associated with error or "danger", and orange with warnings. But you can use these color connotations to help convey your icon's meaning, such as green for "go". We use the following palette:
-
-![Palette](images/hig/palette.png)
+Colors do have their connotations, so be cognizant of this when picking them. For instance: red is usually associated with error or "danger", and orange with warnings. But you can use these color connotations to help convey your icon's meaning, such as green for "go". We use the [elementary Brand Palette](https://elementary.io/brand#color).
 
 ## Symbolic Icons {#symbolic-icons}
 
