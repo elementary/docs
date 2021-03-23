@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Getting Started](README.md)
-* [Human Interface Guidelines](/hig/)
 
 ## Writing Apps
 
