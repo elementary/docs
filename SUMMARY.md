@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome](intro.md)
+* [Introduction](intro.md)
 
 ## Writing Apps
 
