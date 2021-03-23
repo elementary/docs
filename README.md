@@ -2,7 +2,7 @@
 description: All about creating and distributing apps for elementary OS
 ---
 
-# elementary Developer Docs
+# Introduction
 
 ## Writing Apps
 
@@ -27,3 +27,4 @@ Guidelines designed to help developers and designers create a beautifully consis
 Requirements and resources for publishing your app to users via AppCenter.
 
 {% page-ref page="appcenter/publishing-requirements.md" %}
+

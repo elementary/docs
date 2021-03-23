@@ -1,7 +1,5 @@
 # Translations
 
-
-
 Now that you've learned about Meson, the next step is to make your app able to be translated to different languages. The first thing you need to know is how to convert strings in your code into translatable strings. Here's an example:
 
 ```csharp

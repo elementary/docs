@@ -73,8 +73,8 @@ import subprocess
 schemadir = os.path.join(os.environ['MESON_INSTALL_PREFIX'], 'share', 'glib-2.0', 'schemas')
 
 if not os.environ.get('DESTDIR'):
-	print('Compiling gsettings schemas...')
-	subprocess.call(['glib-compile-schemas', schemadir])
+    print('Compiling gsettings schemas...')
+    subprocess.call(['glib-compile-schemas', schemadir])
 ```
 
 Be sure to add the following lines to the end of the meson.build file in your source root so that Meson knows where to find the additional instructions we've added:
@@ -88,7 +88,7 @@ subdir('data')
 Compile and install your app to see it in action!
 
 {% hint style="warning" %}
- GSettings are installed at install time, not compile time. So you'll need to run `ninja install` to avoid crashes from not-yet-installed settings.
+GSettings are installed at install time, not compile time. So you'll need to run `ninja install` to avoid crashes from not-yet-installed settings.
 {% endhint %}
 
 To see the state saving functionality in action, you can open your app, toggle the switch, close it, then re-open it. The switch should retain its previous state. To see it under the hood, open dconf Editor, navigate to your app's settings at com.github.yourusername.yourrepositoryname, and watch the `useless-setting` update in real time when you toggle your switch.
@@ -96,3 +96,4 @@ To see the state saving functionality in action, you can open your app, toggle t
 {% hint style="info" %}
 If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/gsettings)
 {% endhint %}
+

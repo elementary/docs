@@ -19,7 +19,7 @@ Create a new file in Code and save it as "Application.vala" inside your "src" fo
 
 In this file, we're going to create a special class called a `Gtk.Application`. `Gtk.Application` is a class that handles many important aspects of a Gtk app like uniqueness and the ID you need to identify your app to the notifications server. If you want some more details about `Gtk.Application`, [check out Valadoc](https://valadoc.org/gtk+-3.0/Gtk.Application). For now, type the following in "Application.vala".
 
-```vala
+```text
 public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
@@ -56,7 +56,7 @@ Do you see a new, empty window called "Hello World"? If so, congratulations! If 
 
 Now that we've defined a nice window, let's put a button inside of it. Add the following to your application at the beginning of the `activate ()` function:
 
-```vala
+```text
 var button_hello = new Gtk.Button.with_label ("Click me!") {
     margin = 12
 };
@@ -73,7 +73,7 @@ Then add this line right before `main_window.show_all ()`:
 main_window.add (button_hello);
 ```
 
-Any ideas about what happened here? 
+Any ideas about what happened here?
 
 * We've created a new `Gtk.Button` with the label "Click me!"
 * Then we add a margin to the button so that it doesn't bump up against the sides of the window.

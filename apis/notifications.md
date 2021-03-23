@@ -16,7 +16,7 @@ By now you've probably already seen the white notification bubbles that appear o
 When using notifications, it's important that your desktop file has the same name as your application's ID. This is because elementary OS uses desktop files to find extra information about the app who sends the notification such as a default icon, or the name of the app. To keep things simple, we'll be using the same RDNN everywhere.
 
 {% hint style="warning" %}
-If you don't have a desktop file whose name matches the application id, your notification might not be displayed. 
+If you don't have a desktop file whose name matches the application id, your notification might not be displayed.
 {% endhint %}
 
 ## Yet Another Application
@@ -51,7 +51,7 @@ Now that we have a Gtk.Application we can send notifications. Let's connect a fu
 show_button.clicked.connect (() => {
     var notification = new Notification (_("Hello World"));
     notification.set_body (_("This is my first notification!"));
-    
+
     send_notification ("com.github.yourusername.yourrepositoryname", notification);
 });
 ```

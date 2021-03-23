@@ -8,7 +8,7 @@ Applications can show additional information in the dock as well as the applicat
 
 For this integration you can use the [Granite.Services.Application API](https://valadoc.org/granite/Granite.Services.Application.html). Since it uses the same D-Bus path as the [Unity Launcher API](https://valadoc.org/unity/Unity.LauncherEntry.html), the API can work accross many different distributions as it is widely supported by third party applications.
 
-#### Current API support:
+### Current API support:
 
 | Service | Badge Counter | Progress Bar | Static Quicklist |
 | :--- | :--- | :--- | :--- |
@@ -33,8 +33,6 @@ executable(
 
 Your app must also be a `Gtk.Application` with a correctly set `application_id` as we previously set up in Hello World.
 
-{% page-ref page="writing-apps/hello-world/" %}
-
 Though we haven't made any changes to our source code yet, change into your build directory and run `ninja` to build your project. It should still build without any errors. If you do encounter errors, double check your changes and resolve them before continuing.
 
 Once you've set up `granite` in your build system and created a new `Gtk.Application` with an `application_id`, it's time to write some code.
@@ -43,7 +41,7 @@ Once you've set up `granite` in your build system and created a new `Gtk.Applica
 
 Showing a badge in the dock and Applications Menu with the number `12` is as easy as:
 
-```vala
+```text
 Granite.Services.Application.set_badge_visible.begin (true);
 Granite.Services.Application.set_badge.begin (12);
 ```
@@ -54,7 +52,7 @@ Keep in mind you have to set the `set_badge_visible` property to true, and use a
 
 The same goes for showing a progress bar, here we show a progress bar showing 20% progress:
 
-```vala
+```text
 Granite.Services.Application.set_progress_visible.begin (true);
 Granite.Services.Application.set_progress.begin (0.2f);
 ```

@@ -220,9 +220,10 @@ can_focus = false;
 ```
 
 ### Initialize Objects with Properites
+
 This is especially clearer when initializing an object with many properties. Avoid the following
 
-```vala
+```text
 var label = new Gtk.Label ("Test Label");
 label.set_ellipsize (Pango.EllipsizeMode.END);
 label.set_valign (Gtk.Align.END);
@@ -232,7 +233,7 @@ label.set_xalign (0);
 
 and instead do this
 
-```vala
+```text
 var label = new Gtk.Label ("Test Label") {
     ellipsize = Pango.EllipsizeMode.END,
     valign = Gtk.Align.END,
@@ -242,6 +243,7 @@ var label = new Gtk.Label ("Test Label") {
 ```
 
 ### Create Classes with Properties
+
 This goes for creating methods inside of classes as well. Instead of
 
 ```csharp
@@ -360,3 +362,4 @@ tab_width = 4
 [{*.html,*.xml,*.xml.in,*.yml}]
 tab_width = 2
 ```
+

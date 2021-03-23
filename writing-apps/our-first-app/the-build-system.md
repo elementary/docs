@@ -42,7 +42,7 @@ Notice that in each of our `install_data` methods, we rename our files using our
 And you're done! Your app now has a real build system. This is a major milestone in your app's development!
 
 {% hint style="info" %}
-Don't forget to add these files to `git` and push to GitHub. 
+Don't forget to add these files to `git` and push to GitHub.
 {% endhint %}
 
 ## Building and Installing with Meson
@@ -84,3 +84,4 @@ That's a lot! You're well on your way to becoming a bona fide app developer for 
 {% hint style="info" %}
 If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/meson-build-system)
 {% endhint %}
+
