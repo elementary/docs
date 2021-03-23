@@ -6,8 +6,6 @@ We're going to assume that you have absolutely no experience in writing apps for
 
 We’re also not covering design too much in this guide; that’s what the Human Interface Guidelines \(HIG\) are for, and you’re highly encouraged to take a look there before beginning your app. We're going to assume you have a basic knowledge of \(or at least a quick link to\) the HIG and focus on coding. However, elementary OS is all about great design and stellar consistency. It’s important you grasp these concepts before moving on.
 
-{% page-ref page="../hig/intro.md" %}
-
 ## Writing Apps
 
 In this book, we're going to talk about building apps using GTK, Granite, and other tech available in elementary OS, setting up a build system, hosting your code for collaborative development, working with translations, a few other bits and pieces, and finally packaging and distributing your new app.

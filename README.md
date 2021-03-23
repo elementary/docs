@@ -16,15 +16,19 @@ Common APIs you'll want to know how to use in your app.
 
 {% page-ref page="apis/actions.md" %}
 
-## Human Interface Guidelines
-
-Guidelines designed to help developers and designers create a beautifully consistent experience on the elementary OS desktop.
-
-{% page-ref page="hig/intro.md" %}
-
 ## AppCenter
 
 Requirements and resources for publishing your app to users via AppCenter.
 
 {% page-ref page="appcenter/publishing-requirements.md" %}
+
+## See Also
+
+### Human Interface Guidelines
+
+Guidelines designed to help developers and designers create a beautifully consistent experience on the elementary OS desktop.
+
+### AppCenter Dashboard
+
+Submit and manage your AppCenter apps at [developer.elementary.io](https://developer.elementary.io/).
 
