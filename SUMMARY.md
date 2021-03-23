@@ -17,6 +17,7 @@
 ## HIG
 
 * [Human Interface Guidelines](hig/intro.md)
+* [Desktop Integration](hig/desktop-integration.md)
 * [Container Widgets](hig/container-widgets.md)
 * [UI Toolkit Elements](hig/ui-toolkit-elements.md)
 * [Iconography](hig/iconography.md)
