@@ -17,6 +17,7 @@
 ## HIG
 
 * [Human Interface Guidelines](hig/intro.md)
+* [Iconography](hig/iconography.md)
 * [Text](hig/text.md)
 
 ## APIs
