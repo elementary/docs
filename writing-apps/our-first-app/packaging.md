@@ -16,7 +16,7 @@ Did you commit and push to GitHub for each step? Keep up these good habits and l
 
 ## Flatpak Manifest
 
-The Flatpak manifest file describes your app's build dependencies and required permissions. A basic flatpak manifest looks like this:
+The Flatpak manifest file describes your app's build dependencies and required permissions. Create a flatpak manifest in your project root with the following contents:
 
 ```yml
 # This is the same ID that you've used in meson.build and other files
@@ -41,7 +41,7 @@ finish-args:
   - '--socket=wayland'
 
 # This section is where you list all the source code required to build your app.
-# If we had external dependencies that aren't included in our SDK, we would list
+# If we had external dependencies that weren't included in our SDK, we would list
 # them here.
 modules:
   - name: yourrepositoryname
