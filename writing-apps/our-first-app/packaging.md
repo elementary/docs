@@ -16,20 +16,33 @@ Did you commit and push to GitHub for each step? Keep up these good habits and l
 
 ## Flatpak Manifest
 
-The Flatpak manifest file describes your app's build dependencies and required permissions.
+The Flatpak manifest file describes your app's build dependencies and required permissions. A basic flatpak manifest looks like this:
 
 ```yml
+# This is the same ID that you've used in meson.build and other files
 app-id: com.github.yourusername.yourrepositoryname
+
+# Instead of manually specifying a long list of build and runtime dependencies,
+# we can use a convenient pre-made runtime and SDK. For this example, we'll be
+# using the runtime and SDK provided by GNOME.
 runtime: org.gnome.Platform
 runtime-version: '3.38'
-base: io.elementary.BaseApp
-base-version: juno-20.08
 sdk: org.gnome.Sdk
+
+# This should match the exec line in your .desktop file and usually is the same
+# as your app ID
 command: com.github.yourusername.yourrepositoryname
+
+# Here we can specify the kinds of permissions our app needs to run. Since we're
+# not using hardware like webcams, making sound, or reading external files, we
+# only need permission to draw our app on screen using either X11 or Wayland.
 finish-args:
-  - '--share=ipc'
   - '--socket=fallback-x11'
   - '--socket=wayland'
+
+# This section is where you list all the source code required to build your app.
+# If we had external dependencies that aren't included in our SDK, we would list
+# them here.
 modules:
   - name: yourrepositoryname
     buildsystem: meson
@@ -38,4 +51,12 @@ modules:
         path: .
 ```
 
-That wasn't too bad, right? We'll set up more complicated packaging in the future, but this is all that is required to submit your app to AppCenter Dashboard for it to be built, packaged, and distributed—you don't need to actually create a flatpak bundle yourself. If you'd like you can always read [more about Flatpak](https://docs.flatpak.org/en/latest/introduction.html).
+To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
+
+```bash
+flatpak-builder build  com.github.yourusername.yourrepositoryname.yml --user --install --force-clean
+```
+
+This tells Flatpak Builder to build the manifest we just wrote into a clean `build` folder the same as we did for Meson. Plus, we install the built Flatpak package locally for our user. If all goes well, congrats! You've just built and installed your app as a Flatpak.
+
+That wasn't too bad, right? We'll set up more complicated packaging in the future, but this is all that is required to submit your app to AppCenter Dashboard for it to be built, packaged, and distributed. If you'd like you can always read [more about Flatpak](https://docs.flatpak.org/en/latest/introduction.html).
