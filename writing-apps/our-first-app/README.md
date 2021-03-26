@@ -47,7 +47,7 @@ Every app comes with a .desktop file. This file contains all the information nee
    Comment=Proves that we can use Vala and Gtk
    Categories=Utility;Education;
    Exec=com.github.yourusername.yourrepositoryname
-   Icon=application-default-icon
+   Icon=com.github.yourusername.yourrepositoryname
    Terminal=false
    Type=Application
    Keywords=Hello;World;Example;
