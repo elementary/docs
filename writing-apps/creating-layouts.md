@@ -1,6 +1,6 @@
 # Creating Layouts
 
-Now that you know how to code, build, and package an app using Vala, Gtk, Meson, and Debian packaging, it’s time to learn a little bit more about how to build out your app into something really useful. The first thing we need to learn is how to lay out widgets in our window. But we have a fundamental problem: We can only add one widget \(one “child”\) to `Gtk.Window`. So how do we get around that to create complex layouts in a Window? We have to add a widget that can contain multiple children. One of those widgets is `Gtk.Grid`.
+Now that you know how to code, build, and package an app using Vala, Gtk, Meson, and Flatpak, it’s time to learn a little bit more about how to build out your app into something really useful. The first thing we need to learn is how to lay out widgets in our window. But we have a fundamental problem: We can only add one widget \(one “child”\) to `Gtk.Window`. So how do we get around that to create complex layouts in a Window? We have to add a widget that can contain multiple children. One of those widgets is `Gtk.Grid`.
 
 ## Widgets Subclass Other Widgets
 
@@ -10,13 +10,14 @@ If you want to understand more about these widgets and the parts of Gtk that the
 
 ## Gtk.Grid
 
-Now that we’ve gotten that out of the way, let’s get back to our Window and `Gtk.Grid`. Since you’re a master developer now, you can probably set up a new project complete with Meson, push it to GitHub, and set up Debian Packaging in your sleep. If you want the practice, go ahead and do all of that again. Otherwise, it’s probably convenient for our testing purposes to just play around locally and build from Terminal. So code up a nice `Gtk.Window` without anything in it and make sure that builds. Ready? Let’s add a Grid.
+Now that we’ve gotten that out of the way, let’s get back to our Window and `Gtk.Grid`. Since you’re a master developer now, you can probably set up a new project complete with Meson, push it to GitHub, and create a Flatpak manifest in your sleep. If you want the practice, go ahead and do all of that again. Otherwise, it’s probably convenient for our testing purposes to just play around locally and build from Terminal. So code up a nice `Gtk.Window` without anything in it and make sure that builds. Ready? Let’s add a Grid.
 
 Just like when we add a Button or Label, we need to create our `Gtk.Grid`. As always, don’t copy and paste! Practice makes perfect. We create a new Gtk.Grid like this:
 
 ```csharp
-var grid = new Gtk.Grid ();
-grid.orientation = Gtk.Orientation.VERTICAL;
+var grid = new Gtk.Grid () {
+    orientation = Gtk.Orientation.VERTICAL
+};
 ```
 
 Remember that Button and Label accepted an argument \(a String\) in the creation method \(that’s the stuff in parentheses and quotes\). As shown above, `Gtk.Grid` doesn’t accept any arguments in the creation method. However, you can still change the grid’s properties \(like [orientation](https://valadoc.org/gtk+-3.0/Gtk.Orientation)\) as we did on the second line. Here, we’ve declared that when we add widgets to our grid, they should stack vertically.
@@ -43,13 +44,14 @@ Okay, so you know all about using a `Gtk.Grid` to pack multiple children into a 
 Let’s create a Window with a vertical Grid that contains a Button and a Label:
 
 ```csharp
-var grid = new Gtk.Grid ();
-grid.orientation = Gtk.Orientation.VERTICAL;
-grid.row_spacing = 6;
-
 var button = new Gtk.Button.with_label (_("Click me!"));
+
 var label = new Gtk.Label (null);
 
+var grid = new Gtk.Grid () {
+    orientation = Gtk.Orientation.VERTICAL,
+    row_spacing = 6
+};
 grid.add (button);
 grid.add (label);
 
@@ -80,9 +82,10 @@ var hello_label = new Gtk.Label (null);
 var rotate_button = new Gtk.Button.with_label (_("Rotate"));
 var rotate_label = new Gtk.Label (_("Horizontal"));
 
-var grid = new Gtk.Grid ();
-grid.column_spacing = 6;
-grid.row_spacing = 6;
+var grid = new Gtk.Grid () {
+    column_spacing = 6,
+    row_spacing = 6
+};
 ```
 
 Make sure to give the Grid, Buttons, and Labels unique names that you’ll remember. It’s best practice to use descriptive names so that people who are unfamiliar with your code can understand what a widget is for without having to know your app inside and out.
