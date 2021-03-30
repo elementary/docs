@@ -37,6 +37,7 @@ command: com.github.yourusername.yourrepositoryname
 # not using hardware like webcams, making sound, or reading external files, we
 # only need permission to draw our app on screen using either X11 or Wayland.
 finish-args:
+  - '--share=ipc'
   - '--socket=fallback-x11'
   - '--socket=wayland'
 
