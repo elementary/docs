@@ -18,11 +18,7 @@ Your app must not attempt to modify other apps or system programs.
 
 #### Packaging
 
-Your app must come with [Debian packaging](https://docs.elementary.io/develop/writing-apps/our-first-app/packaging). elementary OS uses Debian packages to manage software installation and updates. Your app cannot be downloaded without it. Your Debian packaging must not manually modify filesystem permissions.
-
-AppCenter Dashboard and [Houston CI](https://github.com/elementary/houston/wiki/Continuous-Integration) use git branches to determine which version\(s\) of elementary OS to build for. When the packaging is included in the `master` or there is just a `deb-packaging` branch, a package is only built for the latest elementary OS version \(currently Hera\).
-
-To target a specific elementary OS version, use a `deb-packaging-[version]` branch. I.e. to target elementary OS Loki, you'll need a branch named `deb-packaging-loki`. These branches are checked when a new version is submitted to the AppCenter or when Houston CI runs.
+Your app must come with [a Flatpak manifest](https://docs.elementary.io/develop/writing-apps/our-first-app/packaging). elementary OS uses Flatpak packages to manage software installation and updates. Your app cannot be downloaded without it.
 
 #### Extensions & Plugins
 

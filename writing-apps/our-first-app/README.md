@@ -47,13 +47,13 @@ Every app comes with a .desktop file. This file contains all the information nee
    Comment=Proves that we can use Vala and Gtk
    Categories=Utility;Education;
    Exec=com.github.yourusername.yourrepositoryname
-   Icon=application-default-icon
+   Icon=com.github.yourusername.yourrepositoryname
    Terminal=false
    Type=Application
    Keywords=Hello;World;Example;
    ```
 
-   The first line declares that this file is a "Desktop Entry" file. The next three lines are descriptions of our app: The branded name of our app, a generic name for our app, and a comment that describes our app's function. Next, we categorize our app. Then, we say what command will execute it. Finally, we give our app an icon \(a generic one included in elementary OS\) and let the OS know that this isn't a command line app. For more info about crafting .desktop files, check out [this HIG entry](https://elementary.io/docs/human-interface-guidelines#app-launchers).
+   The first line declares that this file is a "Desktop Entry" file. The next three lines are descriptions of our app: The branded name of our app, a generic name for our app, and a comment that describes our app's function. Next, we categorize our app. Then, we say what command will execute it. Finally, we give our app an icon and let the OS know that this isn't a command line app. For more info about crafting .desktop files, check out [this HIG entry](https://elementary.io/docs/human-interface-guidelines#app-launchers).
 
 4. Finally, let's add this file to `git` and commit a revision:
 
