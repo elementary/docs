@@ -31,27 +31,6 @@ executable(
 )
 ```
 
-You'll also need to update your Flatpak manifest with a new entry in the modules section:
-
-```yml
-modules:
-  # This is the new Granite dependency we've added. In this example we're cloning
-  # the latest released version
-  - name: Granite
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/elementary/granite.git
-        tag: '6.0.0'
-  # This is the existing module you already have in your manifest for building
-  # your project
-  - name: yourrepositoryname
-    buildsystem: meson
-    sources:
-      - type: dir
-        path: .
-```
-
 Your app must also be a `Gtk.Application` with a correctly set `application_id` as we previously set up in Hello World.
 
 Though we haven't made any changes to our source code yet, change into your build directory and run `ninja` to build your project. It should still build without any errors. If you do encounter errors, double check your changes and resolve them before continuing.

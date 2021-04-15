@@ -24,10 +24,10 @@ app-id: com.github.yourusername.yourrepositoryname
 
 # Instead of manually specifying a long list of build and runtime dependencies,
 # we can use a convenient pre-made runtime and SDK. For this example, we'll be
-# using the runtime and SDK provided by GNOME.
-runtime: org.gnome.Platform
-runtime-version: '3.38'
-sdk: org.gnome.Sdk
+# using the runtime and SDK provided by elementary.
+runtime: io.elementary.Platform
+runtime-version: '0.1.0'
+sdk: io.elementary.Sdk
 
 # This should match the exec line in your .desktop file and usually is the same
 # as your app ID
