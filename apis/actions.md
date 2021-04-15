@@ -105,27 +105,6 @@ executable(
 )
 ```
 
-You'll also need to update your Flatpak manifest with a new entry in the modules section:
-
-```yml
-modules:
-  # This is the new Granite dependency we've added. In this example we're cloning
-  # the latest released version
-  - name: Granite
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/elementary/granite.git
-        tag: '6.0.0'
-  # This is the existing module you already have in your manifest for building
-  # your project
-  - name: yourrepositoryname
-    buildsystem: meson
-    sources:
-      - type: dir
-        path: .
-```
-
 Then, set the `tooltip_markup` property of your HeaderBar Button:
 
 ```text
