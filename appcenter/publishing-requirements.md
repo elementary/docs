@@ -32,7 +32,7 @@ In general, your app's metadata should not refer to "elementary" or "elementary 
 
 Your app must install an [appdata.xml file](https://docs.elementary.io/develop/writing-apps/our-first-app#appdata-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
 
-Your appdata.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc. Screenshots references in your AppData should not contain marketing copy, illustrations, or other elements aside from a full-window screenshot of your app in use.
+Your appdata.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc. Screenshots referenced in your AppData should not contain marketing copy, illustrations, or other elements aside from a full-window screenshot of your app in use.
 
 Your appdata.xml file must contain a `developer_name` tag that references your name or the name of your organization.
 
