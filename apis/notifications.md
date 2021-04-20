@@ -25,7 +25,7 @@ In order to display notifications, you're going to need another `Gtk.Application
 
 Now that we have a simple window, let's use what we learned in [creating layouts](../writing-apps/creating-layouts.md) and make a grid containing one button that will show a notification.
 
-In between `var main_window...` and `main_window.show ();`, write the folowing lines of code:
+In between `var main_window...` and `main_window.show ();`, write the following lines of code:
 
 ```csharp
 var title_label = new Gtk.Label (_("Notifications"));

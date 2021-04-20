@@ -283,7 +283,7 @@ public int number {
 }
 ```
 
-Prefering properties in classes enables the use of [`GLib.Object.bind_property ()`](https://valadoc.org/gobject-2.0/GLib.Object.bind_property.html) between classes instead of needing to create signals and handle changing properties manually.
+Preferring properties in classes enables the use of [`GLib.Object.bind_property ()`](https://valadoc.org/gobject-2.0/GLib.Object.bind_property.html) between classes instead of needing to create signals and handle changing properties manually.
 
 ## Vala Namespaces
 

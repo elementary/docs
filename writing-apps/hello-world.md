@@ -121,7 +121,7 @@ Let's recap what we've learned to do in this first section:
 * We created a new project containing a "src" folder
 * We created our main vala file and inside it we created a new `Gtk.Window` and `Gtk.Button`
 * We built and ran our app to make sure that everything worked properly
-* Finally, we commited our first revision and pushed code to GitHub
+* Finally, we committed our first revision and pushed code to GitHub
 
 Feel free to play around with this example. Make the window a different size, set different margins, make the button say other things. When you're comfortable with what you've learned, go on to the next section.
 
