@@ -96,7 +96,7 @@ There are also some special custom fields for AppCenter to further brand your li
 </custom>
 ```
 
-You can specificy colors here in either Hexidecimal or RGB. The background color will automatically be given a slight gradient in your app's banner.
+You can specify colors here in either Hexadecimal or RGB. The background color will automatically be given a slight gradient in your app's banner.
 
 You can also specify a suggested price in whole USD.
 

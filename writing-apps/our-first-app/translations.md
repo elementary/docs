@@ -102,7 +102,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
    ninja com.github.yourusername.yourrepositoryname-update-po
    ```
 
-   You should notice two new files in your po directory called `de.po` and `es.po`. These files are now ready for translaters to localize your app!
+   You should notice two new files in your po directory called `de.po` and `es.po`. These files are now ready for translators to localize your app!
 
 10. Last step. Don't forget to add all of the new files we created in the po directory to git:
 
