@@ -58,13 +58,13 @@ At the time of this writing, elementary OS doesn't have a full SDK like Android 
 
 ### Code
 
-![](https://elementary.io/images/thirdparty-icons/apps/128/io.elementary.code.svg)
+![Code icon](https://elementary.io/images/thirdparty-icons/apps/128/io.elementary.code.svg)
 
 The first piece of our simple "SDK" is Code. This comes by default with elementary OS. It comes with some helpful features like syntax highlighting, auto-save, and a Folder Manager. There are other extensions for Code as well, like the Outline, Terminal, Word Completion, or Devhelp extensions. Play around with what works best for you.
 
 ### Terminal
 
-![](https://elementary.io/images/icons/apps/128/utilities-terminal.svg)
+![Terminal icon](https://elementary.io/images/icons/apps/128/utilities-terminal.svg)
 
 We’re going to use Terminal in order to compile our code, push revisions to GitHub \(using `git`\), and other good stuff. Throughout this guide, we’ll be issuing Terminal commands. You should assume that any command is executed from the directory “Projects” in your home folder unless otherwise stated. Since elementary OS doesn’t come with that folder by default, you’ll need to create it.
 
@@ -76,12 +76,22 @@ mkdir Projects
 
 ### Development Libraries
 
-![](https://elementary.io/images/icons/apps/128/application-default-icon.svg)
+![Generic application icon](https://elementary.io/images/icons/apps/128/application-default-icon.svg)
 
 In order to build apps you're going to need their development libraries. We can fetch a basic set of libraries and other development tools with the following terminal command:
 
 ```bash
 sudo apt install elementary-sdk
+```
+
+### Flatpak
+
+On elementary OS 6 beta and newer, you should already have the required Flatpak remote and platform pre-installed. On earlier versions or other OSes, you can add the remote and install the Flatpak platform and SDK:
+
+```bash
+flatpak remote-add --if-not-exists --system appcenter https://flatpak.elementary.io/repo.flatpakrepo
+
+flatpak install -y appcenter io.elementary.Platform io.elementary.Sdk
 ```
 
 And with that, we're ready to dive into development! Let's move on!
