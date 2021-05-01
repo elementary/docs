@@ -26,7 +26,7 @@ app-id: com.github.yourusername.yourrepositoryname
 # we can use a convenient pre-made runtime and SDK. For this example, we'll be
 # using the runtime and SDK provided by elementary.
 runtime: io.elementary.Platform
-runtime-version: '0.1.0'
+runtime-version: 'daily'
 sdk: io.elementary.Sdk
 
 # This should match the exec line in your .desktop file and usually is the same
@@ -52,7 +52,7 @@ modules:
         path: .
 ```
 
-To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
+Note that we're using the `daily` version of the SDK for now, as there has not yet been a stable release. To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
 
 ```bash
 flatpak-builder build  com.github.yourusername.yourrepositoryname.yml --user --install --force-clean
