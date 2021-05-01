@@ -6,7 +6,7 @@ Before we even think about writing code, you'll need a certain basic setup. This
 * Setting up the Git revision control system
 * Getting and using the elementary developer "SDK"
 
-We’re going to assume that you’re working from a clean installation of elementary OS Juno Beta or later. This is important as the instructions you’re given may reference apps that are not present \(or even available\) in other GNU/Linux based operating systems like Ubuntu. It is possible to apply the principles of this guide to Ubuntu development, but it may be more difficult to follow along.
+We’re going to assume that you’re working from a clean installation of elementary OS 5.1 Hera or later. This is important as the instructions you’re given may reference apps that are not present \(or even available\) in other GNU/Linux based operating systems like Ubuntu. It is possible to apply the principles of this guide to Ubuntu development, but it may be more difficult to follow along.
 
 ## GitHub
 
@@ -90,7 +90,6 @@ On elementary OS 6 beta and newer, you should already have the required Flatpak 
 
 ```bash
 flatpak remote-add --if-not-exists --system appcenter https://flatpak.elementary.io/repo.flatpakrepo
-
 flatpak install -y appcenter io.elementary.Platform io.elementary.Sdk
 ```
 
