@@ -37,7 +37,7 @@ install_data(
 )
 
 # Install our icons in all the required sizes
-icon_sizes = ['16', 32', '48', '64', '128']
+icon_sizes = ['16', '32', '48', '64', '128']
 
 foreach i : icon_sizes
     install_data(
