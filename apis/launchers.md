@@ -4,7 +4,7 @@ description: 'Adding Badges, Progress Bars, and Quick Lists'
 
 # Launchers
 
-Applications can show additional information in the dock as well as the application menu. This makes the application feel more integrated into the system and give user it's status at a glance. See [HIG for Dock integration](https://elementary.io/docs/human-interface-guidelines#dock-integration) for what you should do and what you shouldn't.
+Applications can show additional information in the dock as well as the application menu. This makes the application feel more integrated into the system and give user it's status at a glance. See [HIG for Dock integration](https://docs.elementary.io/hig/desktop-integration/app-launcher) for what you should do and what you shouldn't.
 
 For this integration you can use the [Granite.Services.Application API](https://valadoc.org/granite/Granite.Services.Application.html). Since it uses the same D-Bus path as the [Unity Launcher API](https://valadoc.org/unity/Unity.LauncherEntry.html), the API can work across many different distributions as it is widely supported by third party applications.
 
