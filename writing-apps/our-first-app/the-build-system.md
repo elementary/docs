@@ -55,7 +55,7 @@ endforeach
 
 Notice that in each of our `install_data` methods, we rename our files using our project name. By using our project name—and its RDNN scheme—we will ensure that our files are installed under a unique name that won't cause conflicts with other apps.
 
-You'll notice the section for installing our app icons is a little more complicated. In this example, we're providing SVG icons in all of the required sizes for AppCenter and, since we're using SVG, we're installing them for both LoDPI and HiDPI. Notice that these icons are named `32.svg`, `64.svg`, etc and are stored in our data directory. If you're providing PNG icons instead, you'll need to tweak this part a bit to handle assets exported for use on HiDPI displays. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://elementary.io/docs/human-interface-guidelines#size).
+You'll notice the section for installing our app icons is a little more complicated. In this example, we're providing SVG icons in all of the required sizes for AppCenter and, since we're using SVG, we're installing them for both LoDPI and HiDPI. Notice that these icons are named `32.svg`, `64.svg`, etc and are stored in our data directory. If you're providing PNG icons instead, you'll need to tweak this part a bit to handle assets exported for use on HiDPI displays. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size).
 
 And you're done! Your app now has a real build system. This is a major milestone in your app's development!
 
