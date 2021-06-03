@@ -4,7 +4,9 @@ description: Sending Notification Bubbles with GLib.Notification
 
 # Notifications
 
-By now you've probably already seen the white notification bubbles that appear on the top right of the screen. Notifications are a simple way to notify a user about the state of your app. For example, they can inform the user that a long process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
+![](../.gitbook/assets/notification%20%281%29.png)
+
+By now you've probably already seen the notification bubbles that appear on the top right of the screen. Notifications are a simple way to notify a user about the state of your app. For example, they can inform the user that a long running background process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
 
 ## Making Preparations
 

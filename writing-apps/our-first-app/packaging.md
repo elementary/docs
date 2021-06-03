@@ -18,7 +18,7 @@ Did you commit and push to GitHub for each step? Keep up these good habits and l
 
 The Flatpak manifest file describes your app's build dependencies and required permissions. Create a `com.github.yourusername.yourrepositoryname.yml` file in your project root with the following contents:
 
-```yml
+```text
 # This is the same ID that you've used in meson.build and other files
 app-id: com.github.yourusername.yourrepositoryname
 
@@ -61,3 +61,4 @@ flatpak-builder build  com.github.yourusername.yourrepositoryname.yml --user --i
 This tells Flatpak Builder to build the manifest we just wrote into a clean `build` folder the same as we did for Meson. Plus, we install the built Flatpak package locally for our user. If all goes well, congrats! You've just built and installed your app as a Flatpak.
 
 That wasn't too bad, right? We'll set up more complicated packaging in the future, but this is all that is required to submit your app to AppCenter Dashboard for it to be built, packaged, and distributed. If you'd like you can always read [more about Flatpak](https://docs.flatpak.org/en/latest/introduction.html).
+
