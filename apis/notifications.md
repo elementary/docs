@@ -4,7 +4,7 @@ description: Sending Notification Bubbles with GLib.Notification
 
 # Notifications
 
-![](../.gitbook/assets/notification%20%281%29.png)
+![](../.gitbook/assets/notification.png)
 
 By now you've probably already seen the notification bubbles that appear on the top right of the screen. Notifications are a simple way to notify a user about the state of your app. For example, they can inform the user that a long running background process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
 
@@ -64,16 +64,21 @@ Okay, now compile your new app. if everything works, you should see your new app
 
 Now that you know how to send basic notifications, let's talk about a couple of ways to make your notifications better. Notifications are most useful when users can identify where they came from and they contain relevant information. In order to make sure your notifications are useful, there are three important features you should know about: setting an icon, replacing a notification, and setting priority.
 
-### Icons
+### Badge Icons
 
-In order to make sure users can easily recognize a notification, we should set a relevant icon. Right after the `var notification = New Notification` line, add:
+![](../.gitbook/assets/notification-badge.png)
+
+Notifications will automatically contain your app's icon, but you can add additional context by setting a badge icon. Right after the line containing `var notification = New Notification`, add:
 
 ```csharp
-var icon = new GLib.ThemedIcon ("dialog-warning");
-notification.set_icon (icon);
+notification.set_icon (new ThemedIcon ("process-completed"));
 ```
 
-That's it. Compile your app again, and press the "Send" button. As you can see, the notification now has an icon. Using this method, you can set the icon to anything you'd like. You can use `gtk3-icon-browser` to see what system icons are available.
+Compile your app again, and press the "Send" button. As you can see, the notification now has a smaller badged icon placed over your app's icon. Using this method, you can set the icon to any of the named icons shipped with elementary OS.
+
+{% hint style="info" %}
+You can easily browse the full set of named icons using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
+{% endhint %}
 
 ### Replace
 
