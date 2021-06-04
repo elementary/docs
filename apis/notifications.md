@@ -117,7 +117,7 @@ notification.set_priority (NotificationPriority.URGENT);
 
 ## Replace
 
-We now know how to send a notification, but what if you need to update it with new information? Thanks to the notification ID, we can easily replace a notification. This ID can be anything, but for the purposes of this demo, we're using our app ID.
+We now know how to send a notification, but what if you need to update it with new information? Thanks to the notification ID, we can replace a notification with a matching ID. This ID can be anything, but for the purposes of this demo, we're using our app ID.
 
 Let's make the replace button. This button will replace the current notification with one with different information. Let's create a new button for it, and add it to the grid:
 
@@ -127,11 +127,8 @@ var replace_button = new Gtk.Button.with_label (_("Replace"));
 grid.add (replace_button);
 
 replace_button.clicked.connect (() => {
-    var icon = new GLib.ThemedIcon ("dialog-warning");
-
     var notification = new Notification (_("Hello Again"));
     notification.set_body (_("This is my second Notification!"));
-    notification.set_icon (icon);
 
     send_notification ("com.github.yourusername.yourrepositoryname", notification);
 });
