@@ -145,7 +145,10 @@ You can replace the contents of specific types of notifications your app sends b
 Let's review what all we've learned:
 
 * We built an app that sends and updates notifications.
-* We also learned about other notification features like setting a badge icon and a notification's priority.
+* Notifications automatically get our app's icon, but we can also add a badge icon
+* We can add buttons that trigger actions in the `app` namespace
+* Notification can have a priority which affects their behavior
+* We can replace outdated notifications by setting a replaces ID
 
-As you could see, sending notifications is very easy thanks to `Gtk.Application`. If you need some further reading on notifications, Check out the page about `Glib.Notification` in [Valadoc](https://valadoc.org/gio-2.0/GLib.Notification).
+As you can see, notifications have a number of advanced features and can automatically inherit some information from `Gtk.Application`. If you need some further reading on notifications, Check out the page about `Glib.Notification` on [Valadoc](https://valadoc.org/gio-2.0/GLib.Notification).
 
