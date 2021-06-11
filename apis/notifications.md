@@ -6,7 +6,7 @@ description: Sending Notification Bubbles with GLib.Notification
 
 ![](../.gitbook/assets/notification.png)
 
-By now you've probably already seen the notification bubbles that appear on the top right of the screen. Notifications are a simple way to notify a user about the state of your app. For example, they can inform the user that a long running background process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
+By now you've probably already seen the notification bubbles that appear on the top right of the screen. Notifications are a way to update someone about the state of your app. For example, they can inform the user that a long running background process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
 
 ### Making Preparations
 
@@ -25,7 +25,7 @@ If you don't have a desktop file whose name matches the application id, your not
 
 In order to display notifications, you're going to need another `Gtk.Application` with a `Gtk.ApplicationWindow`. Remember what we learned in the last few sections and set up a new `Gtk.Application`!
 
-Now that we have a simple window, let's use what we learned in [creating layouts](../writing-apps/creating-layouts.md) and make a grid containing one button that will show a notification.
+Now that we have an empty window, let's use what we learned in [creating layouts](../writing-apps/creating-layouts.md) and make a grid containing one button that will show a notification.
 
 In between `var main_window...` and `main_window.show ();`, write the following lines of code:
 
@@ -73,7 +73,7 @@ notification.set_icon (new ThemedIcon ("process-completed"));
 Compile your app again, and press the "Send" button. As you can see, the notification now has a smaller badged icon placed over your app's icon. Using this method, you can set the icon to any of the named icons shipped with elementary OS.
 
 {% hint style="info" %}
-You can easily browse the full set of named icons using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
+You can browse the full set of named icons using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
 {% endhint %}
 
 ## Buttons

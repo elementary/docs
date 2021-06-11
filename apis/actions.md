@@ -43,7 +43,9 @@ protected override void activate () {
 }
 ```
 
-elementary OS ships with a large set of system icons that you can use in your app for actions, status, and more. You can easily browse the full set using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
+{% hint style="info" %}
+elementary OS ships with a large set of system icons that you can use in your app for actions, status, and more. You can browse the full set of named icons using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
+{% endhint %}
 
 If you compile your app, you can see that it now has a custom HeaderBar with a big red icon in it. But when you click on it, nothing happens.
 

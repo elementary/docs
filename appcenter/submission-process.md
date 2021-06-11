@@ -1,6 +1,6 @@
 # Submission Process
 
-The submission process for AppCenter is broken down into a few simple steps. The step that you're currently on is indicated by an icon inside of a colored bubble. Hovering over that bubble with your cursor will display a tooltip with more information.
+The submission process for AppCenter is broken down into a few short steps. The step that you're currently on is indicated by an icon inside of a colored bubble. Hovering over that bubble with your cursor will display a tooltip with more information.
 
 ## **Install the AppCenter Dashboard GitHub Integration**
 

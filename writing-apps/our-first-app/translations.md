@@ -1,6 +1,6 @@
 # Translations
 
-Now that you've learned about Meson, the next step is to make your app able to be translated to different languages. The first thing you need to know is how to convert strings in your code into translatable strings. Here's an example:
+Now that you've learned about Meson, the next step is to make your app able to be translated to different languages. The first thing you need to know is how to mark strings in your code as translatable. Here's an example:
 
 ```csharp
 stdout.printf ("Not Translatable string");
@@ -10,7 +10,7 @@ string normal = "Another non-translatable string";
 string translated = _("Another translatable string");
 ```
 
-See the difference? We just added `_()` around the string! Well, that was easy! Go back to your project and make all your strings translatable by adding `_()`.
+See the difference? We marked the string as translatable by adding `_()` around it. Go back to your project and make all your strings translatable by adding `_()`.
 
 Now we have to make some changes to our Meson build system and add a couple new files to describe which files we want to translate and which languages we want to translate into.
 
