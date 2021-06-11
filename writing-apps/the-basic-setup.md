@@ -54,13 +54,13 @@ For a more in-depth intro to Git, we recommend [Codecademy's course on Git](http
 
 ## Developer "SDK"
 
-At the time of this writing, elementary OS doesn't have a full SDK like Android or iOS. But luckily, we only need a couple simple apps to get started writing code.
+At the time of this writing, elementary OS doesn't have a full SDK like Android or iOS. But luckily, we only need a couple apps to get started writing code.
 
 ### Code
 
 ![Code icon](https://elementary.io/images/thirdparty-icons/apps/128/io.elementary.code.svg)
 
-The first piece of our simple "SDK" is Code. This comes by default with elementary OS. It comes with some helpful features like syntax highlighting, auto-save, and a Folder Manager. There are other extensions for Code as well, like the Outline, Terminal, Word Completion, or Devhelp extensions. Play around with what works best for you.
+The first piece of our "SDK" is Code. This comes by default with elementary OS. It comes with some helpful features like syntax highlighting, auto-save, and a Folder Manager. There are other extensions for Code as well, like the Outline, Terminal, Word Completion, or Devhelp extensions. Play around with what works best for you.
 
 ### Terminal
 
