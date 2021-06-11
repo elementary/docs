@@ -29,7 +29,7 @@ grid.add (new Gtk.Label (_("Label 1")));
 grid.add (new Gtk.Label (_("Label 2")));
 ```
 
-Super easy stuff, right? We can add the grid to our window using the same method that we just used to add widgets to our grid:
+We can add the grid to our window using the same method that we just used to add widgets to our grid:
 
 ```csharp
 main_window.add (grid);
@@ -73,7 +73,7 @@ Remember, we set the button as insensitive here because clicking it again has no
 
 ## The Attach Method
 
-While we can use `Gtk.Grid` simply to create single row or single column layouts with the add method, we can also use it to create row-and-column-based layouts with the `attach` method. First we’re going to create all the widgets we want to attach to our grid, then we’ll create a new `Gtk.Grid` and set both column and row spacing, and finally we’ll attach our widgets to the grid.
+While we can use `Gtk.Grid` to create single row or single column layouts with the add method, we can also use it to create row-and-column-based layouts with the `attach` method. First we’re going to create all the widgets we want to attach to our grid, then we’ll create a new `Gtk.Grid` and set both column and row spacing, and finally we’ll attach our widgets to the grid.
 
 ```csharp
 var hello_button = new Gtk.Button.with_label (_("Say Hello"));

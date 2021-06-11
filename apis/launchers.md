@@ -39,7 +39,7 @@ Once you've set up `granite` in your build system and created a new `Gtk.Applica
 
 ## Badges
 
-Showing a badge in the dock and Applications Menu with the number `12` is as easy as:
+Showing a badge in the dock and Applications Menu with the number `12` can be done with the following lines:
 
 ```text
 Granite.Services.Application.set_badge_visible.begin (true);
