@@ -58,7 +58,7 @@ As we saw in the section on [`GLib.Action`](actions.md), GTK has a baked-in set 
 </gresources>
 ```
 
-If you want to use the same icon name in multiple sizes in your app, you can alias the icon to paths in hicolor and GTK will automatically load the correct version when its size is referenced:
+If you want to use the same icon name in multiple sizes in your app, you can `alias` the icon to paths in [hicolor](https://specifications.freedesktop.org/icon-theme-spec/latest/ar01s03.html) and GTK will automatically load the correct version when its size is referenced:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
