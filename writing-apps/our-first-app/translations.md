@@ -16,7 +16,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
 
 1. Open up your "meson.build" file and add these lines below your project declaration:
 
-   ```text
+   ```coffeescript
    # Include the translations module
    i18n = import('i18n')
 
@@ -26,24 +26,24 @@ Now we have to make some changes to our Meson build system and add a couple new 
 
 2. Remove the lines that install your .desktop and appdata files and replace them with the following:
 
-   ```text
+   ```coffeescript
    #Translate and install our .desktop file
    i18n.merge_file(
-       input: join_paths('data', 'hello-again.desktop.in'),
+       input: 'data' / 'hello-again.desktop.in',
        output: meson.project_name() + '.desktop',
-       po_dir: join_paths(meson.source_root(), 'po'),
+       po_dir: meson.source_root() / 'po',
        type: 'desktop',
        install: true,
-       install_dir: join_paths(get_option('datadir'), 'applications')
+       install_dir: get_option('datadir') / 'applications'
    )
 
    #Translate and install our .appdata file
    i18n.merge_file(
-       input: join_paths('data', 'hello-again.appdata.xml.in'),
+       input: 'data' / 'hello-again.appdata.xml.in',
        output: meson.project_name() + '.appdata.xml',
-       po_dir: join_paths(meson.source_root(), 'po'),
+       po_dir: meson.source_root() / 'po',
        install: true,
-       install_dir: join_paths(get_option('datadir'), 'metainfo')
+       install_dir: get_option('datadir') / 'metainfo'
    )
    ```
 
@@ -51,7 +51,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
 
 3. Still in this file, add the following as the last line:
 
-   ```text
+   ```coffeescript
    subdir('po')
    ```
 
@@ -66,7 +66,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
 
 5. Now, Create a directory named "po" in the root folder of your project. Inside of your po directory you will need to create another "meson.build" file. This time, its contents will be:
 
-   ```text
+   ```coffeescript
     i18n.gettext(meson.project_name(),
         args: '--directory=' + meson.source_root(),
         preset: 'glib'
