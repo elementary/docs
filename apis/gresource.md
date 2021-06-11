@@ -1,6 +1,6 @@
 # Custom Resources
 
-You can include additional resources with your app like icons or css files using GResource. When using GResource, these files will be compiled into your app's binary, ensuring they're available and loaded when your app launches. Regardless of which type of resource you'd like to include, you'll need to create a `gresource.xml` file and include it in your build system. Make sure to start with a `Gtk.Application` as described in the [previous section](../writing-apps/our-first-app/the-build-system.md)
+You can include additional resources with your app like icons or CSS files using GResource. When using GResource, these files will be compiled into your app's binary, ensuring they're available and loaded when your app launches. Regardless of which type of resource you'd like to include, you'll need to create a `gresource.xml` file and include it in your build system. Make sure to start with a `Gtk.Application` as described in the [previous section](../writing-apps/our-first-app/the-build-system.md)
 
 In the `data` directory, create a new file called `gresource.xml` with the following contents:
 
@@ -72,7 +72,7 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
 </gresources>
 ```
 
-Now, in the `Application` class, in the `activate ()` function, we can add the gresource path to the system's built-in icon theme. This will let us reference the icon name without using long paths, and automatically handle icon sizing as previously mentioned Again, don't forget to use the same RDNN'd path that was defined in `gresource.xml`:
+Now we can add the GResource path to the system's built-in icon theme in the `Application` class' `activate ()` function. This will let us reference the icon name without using long paths, and automatically handle icon sizing as previously mentioned Again, don't forget to use the same RDNN'd path that was defined in `gresource.xml`:
 
 ```csharp
 protected override void activate () {
