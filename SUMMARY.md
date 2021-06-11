@@ -20,6 +20,7 @@
 * [Notifications](apis/notifications.md)
 * [Launchers](apis/launchers.md)
 * [State Saving](apis/state-saving.md)
+* [Custom Resources](apis/gresource.md)
 * [Valadoc](https://valadoc.org/)
 
 ## AppCenter
