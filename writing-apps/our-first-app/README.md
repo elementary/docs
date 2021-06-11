@@ -92,7 +92,7 @@ Every app also comes with an .appdata.xml file. This file contains all the infor
    </component>
    ```
 
-These are all the mandatory fields for displaying your app in AppCenter. There are plenty of other optional fields that you can read about [here](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html).
+These are all the mandatory fields for displaying your app in AppCenter. There are plenty of other [optional fields]((https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html) that you can read about.
 
 There are also some special custom fields for AppCenter to further brand your listing. Specifically, you can set a background color and a text color for your app's header and banner. You can do so by adding the following keys inside the `component` tag:
 
@@ -114,7 +114,7 @@ Remember that AppCenter is a pay-what-you-want store. A suggested price is not a
 
 ## Legal Stuff
 
-Since we're going to be putting our app out into the wild, we should include some information about who wrote it and the legal usage of its source code. For this we need a new file in our project's root folder: the `LICENSE` file. This file contains a copy of the license that your code is released under. For elementary OS apps this is typically the [GNU General Public License](https://www.gnu.org/licenses/quick-guide-gplv3.html) \(GPL\). Remember the header we added to our source code? That header reminds people that your app is licensed and it belongs to you. GitHub has a built-in way to add several popular licenses to your repository. Read their documentation for adding software licenses [here](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) and add a `LICENSE` file to your repository.
+Since we're going to be putting our app out into the wild, we should include some information about who wrote it and the legal usage of its source code. For this we need a new file in our project's root folder: the `LICENSE` file. This file contains a copy of the license that your code is released under. For elementary OS apps this is typically the [GNU General Public License](https://www.gnu.org/licenses/quick-guide-gplv3.html) \(GPL\). Remember the header we added to our source code? That header reminds people that your app is licensed and it belongs to you. GitHub has a built-in way to add several popular licenses to your repository. Read their [documentation for adding software licenses](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) and add a `LICENSE` file to your repository.
 
 {% hint style="info" %}
 If you'd like to better understand software licensing, the Linux Foundation offers a [free online course on open source licensing](https://training.linuxfoundation.org/training/open-source-licensing-basics-for-software-developers/)
