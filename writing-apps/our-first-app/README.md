@@ -92,7 +92,7 @@ Every app also comes with an .appdata.xml file. This file contains all the infor
    </component>
    ```
 
-These are all the mandatory fields for displaying your app in AppCenter. There are plenty of other [optional fields]((https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html) that you can read about.
+These are all the mandatory fields for displaying your app in AppCenter. There are plenty of other [optional fields](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html) that you can read about.
 
 There are also some special custom fields for AppCenter to further brand your listing. Specifically, you can set a background color and a text color for your app's header and banner. You can do so by adding the following keys inside the `component` tag:
 
