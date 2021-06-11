@@ -7,7 +7,15 @@ In the previous chapter, we created a simple "Hello World!" app to show off our 
 To create our first real app, we're going to need all the old stuff that we used in the last example. But don't just copy and paste! Let's take this time to practice our skills and see if we can recreate the last example from memory. Additionally, now that you have the basics, we're going to get a little more complex and a little more organized:
 
 1. Create a new folder inside "~/Projects" called "hello-again".Then, go into "hello-again" and create our directory structure including the "src" folder.
-2. Create "Application.vala" in the "src" folder. This time we're going to prefix our file with a small legal header. More about legal stuff later. For now you can copy [the GPL header from our reference documentation](https://elementary.io/docs/code/reference#gpl-header). Be sure to assign the copyright to yourself at the top of the header and change the author to you at the bottom of the header.
+2. Create "Application.vala" in the "src" folder. This time we're going to prefix our file with a small legal header. Make sure this header matches the license of your code and assigns copyright to you. More info about this later.
+
+   ```csharp
+   /*
+    * SPDX-License-Identifier: GPL-3.0-or-later
+    * SPDX-FileCopyrightText: 2021 Your Name <you@email.com>
+    */
+   ```
+
 3. Now, let's create a `Gtk.Application`, a `Gtk.ApplicationWindow`, and set the window's default properties. Refer back to the last chapter if you need a refresher.
 4. For the sake of time let's just put a `Gtk.Label` instead of a `Gtk.Button`. We don't need to try to make the label do anything when you click it.
 
@@ -106,9 +114,11 @@ Remember that AppCenter is a pay-what-you-want store. A suggested price is not a
 
 ## Legal Stuff
 
-Since we're going to be putting our app out into the wild, we should include some information about who wrote it and the legal usage of its source code. For this we need a new file in our project's root folder: COPYING.
+Since we're going to be putting our app out into the wild, we should include some information about who wrote it and the legal usage of its source code. For this we need a new file in our project's root folder: the `LICENSE` file. This file contains a copy of the license that your code is released under. For elementary OS apps this is typically the [GNU General Public License](https://www.gnu.org/licenses/quick-guide-gplv3.html) \(GPL\). Remember the header we added to our source code? That header reminds people that your app is licensed and it belongs to you. GitHub has a built-in way to add several popular licenses to your repository. See their documentation for adding software licenses [here](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
 
-The COPYING file contains a copy of the license that your code is released under. For elementary OS apps this is typically the [GNU General Public License](https://www.gnu.org/licenses/quick-guide-gplv3.html) \(GPL\). Remember the header we added to our source code? That header reminds people that your app is licensed and it belongs to you. You can choose other licenses like the MIT license as well, but for this example let's stick to the [GPL](https://www.gnu.org/licenses/gpl-3.0.txt).
+{% hint style="info" %}
+If you'd like to better understand software licensing, the Linux Foundation offers a free online course on open source licensing [here](https://training.linuxfoundation.org/training/open-source-licensing-basics-for-software-developers/)
+{% endhint %}
 
 ## Mark Your Progress
 
