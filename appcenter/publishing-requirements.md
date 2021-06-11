@@ -36,7 +36,7 @@ Your appdata.xml file must contain a `screenshot` tag that references a screensh
 
 Your appdata.xml file must contain a `developer_name` tag that references your name or the name of your organization.
 
-Your appdata.xml must include accurate [Open Age Rating Service \(OARS\)](https://hughsie.github.io/oars/) data. OARS uses a simple, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
+Your appdata.xml must include accurate [Open Age Rating Service \(OARS\)](https://hughsie.github.io/oars/) data. OARS uses a short, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
 
 For more information about the appdata.xml format see, see the [appstream specification](https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps).
 
@@ -96,5 +96,5 @@ Apps should generally abide by the [elementary Human Interface Guidelines](https
 
 ### Tips for Games
 
-If your game UI properly scales when the window is resized, one easy way to support both HiDPI and loDPI \(even if the engine doesn't out of the box\) is simply to launch your game maximized. That way the UI will scale up no matter the resolution or scaling factor of the display.
+If your game UI properly scales when the window is resized, one way to support both HiDPI and loDPI \(even if the engine doesn't out of the box\) is to launch your game maximized. That way the UI will scale up no matter the resolution or scaling factor of the display.
 

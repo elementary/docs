@@ -193,7 +193,7 @@ public const string ACTION_GO_BACK = "action-go-back";
 
 ## Casting
 
-Avoid using `as` keyword when casting as it might give `null` as result, which could be easily forgotten to check.
+Avoid using `as` keyword when casting as it might give `null` as result, which could be forgotten to check.
 
 ```csharp
 /* OK */
