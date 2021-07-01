@@ -11,6 +11,7 @@
   * [Translations](writing-apps/our-first-app/translations.md)
   * [Icons](writing-apps/our-first-app/icons.md)
   * [Packaging](writing-apps/our-first-app/packaging.md)
+  * [Continuous Integration](writing-apps/our-first-app/continuous-integration.md)
 * [Creating Layouts](writing-apps/creating-layouts.md)
 * [Code Style](writing-apps/code-style.md)
 
