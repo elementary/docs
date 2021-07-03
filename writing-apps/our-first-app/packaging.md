@@ -18,7 +18,7 @@ Did you commit and push to GitHub for each step? Keep up these good habits and l
 
 The Flatpak manifest file describes your app's build dependencies and required permissions. Create a `com.github.yourusername.yourrepositoryname.yml` file in your project root with the following contents:
 
-```text
+```yaml
 # This is the same ID that you've used in meson.build and other files
 app-id: com.github.yourusername.yourrepositoryname
 
