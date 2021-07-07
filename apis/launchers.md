@@ -79,9 +79,11 @@ Then below, add the action itself using the same unique ID:
 ```ini
 [Desktop Action ActionID]
 Name=The name of the action
-Icon=An icon for the action (optional)
-Exec=application executable and any command line arguments
+Icon=com.github.myteam.myapp.action-id
+Exec=com.github.myteam.myapp --action-id
 ```
+
+The `Icon` line is optional and should be an icon which represents the action that will be performed. The `Exec` line is required and should be your app's executable name and any command line argument required to trigger the action.
 
 {% hint style="info" %}
 The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
