@@ -48,7 +48,7 @@ Every app comes with a .desktop file. This file contains all the information nee
 2. Create a new file in Code and save it in the "data" folder as "hello-again.desktop".
 3. Type the following into your .desktop file. Like before, try to guess what each line does.
 
-   ```text
+   ```ini
    [Desktop Entry]
    Name=Hello Again
    GenericName=Hello World App
