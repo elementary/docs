@@ -10,10 +10,10 @@ For this integration you can use the [Granite.Services.Application API](https://
 
 ### Current API support:
 
-| Service | Badge Counter | Progress Bar | Static Quicklist |
-| :--- | :--- | :--- | :--- |
-| Application menu | Yes | No | Yes |
-| Dock | Yes | Yes | Yes |
+| Service           | Badge Counter | Progress Bar | Actions |
+| :---------------- | :------------ | :----------- | :------ |
+| Applications Menu | ✔️ Yes        | ✖️ No        | ✔️ Yes  |
+| Dock              | ✔️ Yes        | ✔️ Yes       | ✔️ Yes  |
 
 ## Setting Up
 
@@ -59,35 +59,50 @@ Granite.Services.Application.set_progress.begin (0.2f);
 
 As you can see, the method `set_progress` takes a `double` value type and is a range between `0` and `1`: from 0% to 100%. As with badges, Don't forget that `set_progress_visible` must be `true` and `.begin` is required for asynchronous methods.
 
-## Static Quicklists
+## Actions
 
-Static quicklists do not involve writing any code or using any external dependencies.
+Actions are specific functions your app can perform without already being open; think of them as alternate and more specific entry points into your app. Actions appear in the context menu of your app icon in the Applications Menu and Dock, and are searchable by name from the Applications Menu.
 
-Static quicklists are stored within your `.desktop` file. These are so called "actions". You can define many actions in your desktop file that will always show as an action in the application menu as well as in the dock.
+Adding actions to a `.desktop` file does not involve writing any code or using any external dependencies, though your app needs a way to distinguish between actions, e.g. with command line flags.
 
-The format is as follows:
+Actions must first be declared in a new `Actions` line in your app's .desktop file. This line should contain a `;` separated list of unique action names:
 
-```text
-[Desktop Action ActionID]
-Name=The name of the action
-Icon=The icon of the action (optional)
-Exec=The path to application executable and it's command line arguments (optional)
+```ini
+[Desktop Entry]
+Name=Hello Again
+[...]
+Actions=ActionID;
 ```
 
-Let's take a look at an example of an action that will open a new window of your application:
+Then below, add the action itself using the same unique ID:
 
-```text
+```ini
+[Desktop Action ActionID]
+Name=The name of the action
+Icon=com.github.myteam.myapp.action-id
+Exec=com.github.myteam.myapp --action-id
+```
+
+The `Icon` line is optional and should be an icon which represents the action that will be performed. The `Exec` line is required and should be your app's executable name and any command line argument required to trigger the action.
+
+{% hint style="info" %}
+The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
+{% endhint %}
+
+Let's take a look at an example of an action that opens a new window of an app:
+
+```ini
 [Desktop Entry]
-Name=Application name
-Exec=application-executable
+Name=App Name
+Exec=com.github.yourusername.yourrepositoryname
 ...
+Actions=NewWindow;
 
 [Desktop Action NewWindow]
 Name=New Window
-Exec=application-executable -n
+Exec=com.github.yourusername.yourrepositoryname -n
 ```
 
-Note that adding `-n` or any other argument will not make your application magically open a new window. It is up to your application to handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command_line.html).
+Note that just adding `-n` or any other argument will not automatically make your app open a new window; your app must handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command_line.html).
 
-Please take a look at a [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s10.html) for a detailed description of what keys are supported and what they do.
-
+See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s10.html) for a detailed description of what keys are supported and what they do.
