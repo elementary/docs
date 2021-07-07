@@ -65,9 +65,12 @@ Actions are specific functions your app can perform without already being open; 
 
 Adding actions to a `.desktop` file does not involve writing any code or using any external dependencies, though your app needs a way to distinguish between actions, e.g. with command line flags.
 
-To add an action, add it by unique ID to a new `Actions` line in your app's .desktop file: 
+Actions must first be declared in a new `Actions` line in your app's .desktop file. This line should contain a `;` separated list of unique action names:
 
 ```ini
+[Desktop Entry]
+Name=Hello Again
+[...]
 Actions=ActionID;
 ```
 
@@ -80,7 +83,9 @@ Icon=An icon for the action (optional)
 Exec=application executable and any command line arguments
 ```
 
+{% hint style="info" %}
 The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
+{% endhint %}
 
 Let's take a look at an example of an action that opens a new window of an app:
 
