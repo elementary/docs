@@ -7,7 +7,7 @@ In the `data` directory, create a new file called `gresource.xml` with the follo
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="com/github/yourusername/yourrepositoryname">
+  <gresource prefix="/com/github/yourusername/yourrepositoryname">
   </gresource>
 </gresources>
 ```
@@ -52,7 +52,7 @@ As we saw in the section on [`GLib.Action`](actions.md), GTK has a baked-in set 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="com/github/yourusername/yourrepositoryname">
+  <gresource prefix="/com/github/yourusername/yourrepositoryname">
     <file compressed="true" preprocess="xml-stripblanks">custom-icon.svg</file>
   </gresource>
 </gresources>
@@ -63,7 +63,7 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="com/github/yourusername/yourrepositoryname">
+  <gresource prefix="/com/github/yourusername/yourrepositoryname">
     <file alias="24x24/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-24.svg</file>
     <file alias="24x24@2/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-24.svg</file>
     <file alias="32x32/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-32.svg</file>
@@ -87,7 +87,7 @@ The last step is to create a `Gtk.Image` or `Gtk.Button` using your custom icon 
 
 ```csharp
 protected override void activate () {
-    Gtk.IconTheme.get_default ().add_resource_path ("com/github/yourusername/yourrepositoryname");
+    Gtk.IconTheme.get_default ().add_resource_path ("/com/github/yourusername/yourrepositoryname");
 
     // This will create an image with an icon size of 32px
     var image = new Gtk.Image.from_icon_name ("custom-icon", Gtk.IconSize.DND);
