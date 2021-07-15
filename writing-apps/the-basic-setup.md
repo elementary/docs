@@ -3,7 +3,7 @@
 Before we even think about writing code, you'll need a certain basic setup. This chapter will walk you through the process of getting set up. We will cover the following topics:
 
 * Creating an account on GitHub and importing an SSH key
-* Setting up the Git revision control system
+* Setting up the Git version control system
 * Getting and using the elementary developer "SDK"
 
 We’re going to assume that you’re working from a clean installation of elementary OS 5.1 Hera or later. This is important as the instructions you’re given may reference apps that are not present \(or even available\) in other GNU/Linux based operating systems like Ubuntu. It is possible to apply the principles of this guide to Ubuntu development, but it may be more difficult to follow along.
@@ -14,7 +14,7 @@ GitHub is an online platform for hosting code, reporting issues, tracking milest
 
 ## Git
 
-To download and upload to GitHub, you'll need the Terminal program `git`. Git is a type of [revision control system](https://en.wikipedia.org/wiki/Version_control) that allows multiple developers to collaboratively develop and maintain code while keeping track of each revision along the way.
+To download and upload to GitHub, you'll need the Terminal program `git`. Git is a type of [version control system](https://en.wikipedia.org/wiki/Version_control) that allows multiple developers to collaboratively develop and maintain code while keeping track of each version along the way.
 
 If you're ready, let's get you set up to use Git:
 
