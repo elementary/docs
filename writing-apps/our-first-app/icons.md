@@ -1,6 +1,16 @@
 # Icons
 
-The last thing we need for a minimum-viable-app is to provide app icons. Apps on elementary OS provide icons hinted in 5 sizes: 16px, 32px, 48px, 64px, and 128px. These icons will be shown in AppCenter, the applications menu, the dock, Notifications, System Settings, and many other places throughout the system.
+The last thing we need for a minimum-viable-app is to provide app icons. Apps on elementary OS provide icons hinted in 6 sizes: 16px, 24px, 32px, 48px, 64px, and 128px. These icons will be shown in many places throughout the system, such as those listed below:
+
+| Size  | AppCenter | Applications Menu | Dock    | Menus & Popovers  | Multitasking | Notifications |
+| :-----| :---------| :---------------- | :------ | :---------------- | :----------- | :------------ |
+| 16px  | ✖️ No     | ✖️ No             | ✔️ Yes  | ✔️ Yes            | ✔️ Yes       | ✖️ No         |
+| 24px  | ✖️ No     | ✖️ No             | ✖️ No   | ✖️ No             | ✔️ Yes       | ✔️ Yes        |
+| 32px  | ✖️ No     | ✔️ Yes            | ✔️ Yes  | ✔️ Yes            | ✔️ Yes       | ✖️ No         |
+| 48px  | ✔️ Yes    | ✖️ No             | ✔️ Yes  | ✖️ No             | ✔️ Yes       | ✔️ Yes        |
+| 64px  | ✔️ Yes    | ✔️ Yes            | ✔️ Yes  | ✖️ No             | ✔️ Yes       | ✖️ No         |
+| 128px | ✔️ Yes    | ✖️ No             | ✖️ No   | ✖️ No             | ✖️ No        | ✖️ No         |
+
 
 {% hint style="info" %}
 To help you provide the necessary sizes—and for this tutorial—Micah Ilbery maintains an icon template project [here on GitHub](https://github.com/micahilbery/elementary-icon-templates)
@@ -12,6 +22,7 @@ Place your icons in the data directory and name them after their pixel sizes, su
 hello-again
     data
         16.svg
+        24.svg
         32.svg
         48.svg
         64.svg
@@ -22,7 +33,7 @@ Now that you have icon files in the data directory, add the following lines to t
 
 ```coffeescript
 # Install our icons in all the required sizes
-icon_sizes = ['16', '32', '48', '64', '128']
+icon_sizes = ['16', '24,' '32', '48', '64', '128']
 
 foreach i : icon_sizes
     install_data(
