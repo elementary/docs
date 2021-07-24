@@ -101,6 +101,7 @@ There are also some special custom fields for AppCenter to further brand your li
   <value key="x-appcenter-color-primary">#603461</value>
   <value key="x-appcenter-color-primary-text">rgb(255, 255, 255)</value>
   <value key="x-appcenter-suggested-price">5</value>
+  <value key="x-appcenter-stripe">pk_live_P2psKDFAa394GmD9aYFd39Py4a7TjKzReSH</value>
 </custom>
 ```
 
@@ -111,6 +112,8 @@ You can also specify a suggested price in whole USD.
 {% hint style="info" %}
 Remember that AppCenter is a pay-what-you-want store. A suggested price is not a price floor. Users will still be able to choose any price they like, including 0.
 {% endhint %}
+
+The `x-appcenter-stripe` key is used to monetize your app. You can see the value when you trying to submit your app in [AppCenter Dashboard](https://developer.elementary.io/).
 
 ## Legal Stuff
 
