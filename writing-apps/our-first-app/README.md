@@ -101,7 +101,7 @@ There are also some special custom fields for AppCenter to further brand your li
   <value key="x-appcenter-color-primary">#603461</value>
   <value key="x-appcenter-color-primary-text">rgb(255, 255, 255)</value>
   <value key="x-appcenter-suggested-price">5</value>
-  <value key="x-appcenter-stripe">pk_live_P2psKDFAa394GmD9aYFd39Py4a7TjKzReSH</value>
+  <value key="x-appcenter-stripe">pk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</value>
 </custom>
 ```
 
@@ -113,7 +113,7 @@ You can also specify a suggested price in whole USD.
 Remember that AppCenter is a pay-what-you-want store. A suggested price is not a price floor. Users will still be able to choose any price they like, including 0.
 {% endhint %}
 
-The `x-appcenter-stripe` key is used to monetize your app. You can see the value when you trying to submit your app in [AppCenter Dashboard](https://developer.elementary.io/).
+To monetize your app, you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. While the new AppCenter Dashboard is under development, elementary OS 5.1 app developers can find your app's key in its [existing AppStream data](https://appstream.elementary.io/appcenter/html/bionic/main/metainfo/index.html). Developers of new apps will receive their key in the new AppCenter Dashboard once it is live.
 
 ## Legal Stuff
 
@@ -128,4 +128,3 @@ If you'd like to better understand software licensing, the Linux Foundation offe
 Did you remember to add these files to `git` and commit a revision? Each time we add a new file or make a significant change it's a good idea to commit a new revision and push to GitHub. Keep in mind that this acts as a backup system as well; when we push our work to GitHub, we know it's safe and we can always revert to a known good revision if we mess up later.
 
 Now that we've got all these swanky files laying around, we need a way to tell the computer what to do with them. Ready for the next chapter? Let's do this!
-
