@@ -4,7 +4,7 @@ description: Sending Notification Bubbles with GLib.Notification
 
 # Notifications
 
-![](../.gitbook/assets/notification.png)
+![A notification bubble](../.gitbook/assets/notification.png)
 
 By now you've probably already seen the notification bubbles that appear on the top right of the screen. Notifications are a way to update someone about the state of your app. For example, they can inform the user that a long running background process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
 
@@ -62,13 +62,17 @@ Okay, now compile your new app. if everything works, you should see your new app
 
 ## Badge Icons
 
-![](../.gitbook/assets/notification-badge.png)
+![Notification with a badged icon](../.gitbook/assets/notification-badge.png)
 
 Notifications will automatically contain your app's icon, but you can add additional context by setting a badge icon. Right after the line containing `var notification = New Notification`, add:
 
 ```csharp
 notification.set_icon (new ThemedIcon ("process-completed"));
 ```
+
+{% hint style="info" %}
+**Badge icons are new as of elementary OS 6.** In previous versions of elementary OS, your app's icon will be replaced with the set icon.
+{% endhint %}
 
 Compile your app again, and press the "Send" button. As you can see, the notification now has a smaller badged icon placed over your app's icon. Using this method, you can set the icon to any of the named icons shipped with elementary OS.
 
@@ -78,7 +82,7 @@ You can browse the full set of named icons using the app [LookBook](http://appce
 
 ## Buttons
 
-![](../.gitbook/assets/notification-button.png)
+![Notification with an action button](../.gitbook/assets/notification-button.png)
 
 You can also add buttons to notifications that will trigger actions defined in the `app` namespace. To add a button, first define an action in your Application class as we did in [the actions section](actions.md).
 

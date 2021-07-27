@@ -18,7 +18,7 @@ Did you commit and push to GitHub for each step? Keep up these good habits and l
 
 The Flatpak manifest file describes your app's build dependencies and required permissions. Create a `com.github.yourusername.yourrepositoryname.yml` file in your project root with the following contents:
 
-```text
+```yaml
 # This is the same ID that you've used in meson.build and other files
 app-id: com.github.yourusername.yourrepositoryname
 
@@ -26,7 +26,7 @@ app-id: com.github.yourusername.yourrepositoryname
 # we can use a convenient pre-made runtime and SDK. For this example, we'll be
 # using the runtime and SDK provided by elementary.
 runtime: io.elementary.Platform
-runtime-version: 'daily'
+runtime-version: '6'
 sdk: io.elementary.Sdk
 
 # This should match the exec line in your .desktop file and usually is the same

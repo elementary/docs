@@ -9,6 +9,7 @@
 * [Our First App](writing-apps/our-first-app/README.md)
   * [The Build System](writing-apps/our-first-app/the-build-system.md)
   * [Translations](writing-apps/our-first-app/translations.md)
+  * [Icons](writing-apps/our-first-app/icons.md)
   * [Packaging](writing-apps/our-first-app/packaging.md)
   * [Continuous Integration](writing-apps/our-first-app/continuous-integration.md)
 * [Creating Layouts](writing-apps/creating-layouts.md)

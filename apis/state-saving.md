@@ -52,11 +52,11 @@ You can read more about [`GLib.Settings.bind ()` on Valadoc](https://valadoc.org
 
 We need to add the new GSchema XML file to our build system so it is included at install time. Create a file `data/meson.build` and type the following:
 
-```text
+```coffeescript
 install_data (
     'gschema.xml',
-    install_dir: join_paths (get_option ('datadir'), 'glib-2.0', 'schemas'),
-    rename: meson.project_name () + '.gschema.xml'
+    install_dir: get_option('datadir') / 'glib-2.0' / 'schemas',
+    rename: meson.project_name() + '.gschema.xml'
 )
 ```
 
@@ -79,7 +79,7 @@ if not os.environ.get('DESTDIR'):
 
 Be sure to add the following lines to the end of the meson.build file in your source root so that Meson knows where to find the additional instructions we've added:
 
-```text
+```coffeescript
 meson.add_install_script('meson/post_install.py')
 
 subdir('data')
