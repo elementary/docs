@@ -4,9 +4,11 @@ description: Sending Notification Bubbles with GLib.Notification
 
 # Notifications
 
-By now you've probably already seen the white notification bubbles that appear on the top right of the screen. Notifications are a simple way to notify a user about the state of your app. For example, they can inform the user that a long process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
+![](../.gitbook/assets/notification.png)
 
-## Making Preparations
+By now you've probably already seen the notification bubbles that appear on the top right of the screen. Notifications are a way to update someone about the state of your app. For example, they can inform the user that a long running background process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
+
+### Making Preparations
 
 1. Create a new folder inside of "~/Projects" called "notifications-app"
 2. Create a new folder inside of that folder called "src" and add a file inside of it called `Application.vala`
@@ -19,13 +21,13 @@ When using notifications, it's important that your desktop file has the same nam
 If you don't have a desktop file whose name matches the application id, your notification might not be displayed.
 {% endhint %}
 
-## Yet Another Application
+### Yet Another Application
 
 In order to display notifications, you're going to need another `Gtk.Application` with a `Gtk.ApplicationWindow`. Remember what we learned in the last few sections and set up a new `Gtk.Application`!
 
-Now that we have a simple window, let's use what we learned in [creating layouts](../writing-apps/creating-layouts.md) and make a grid containing one button that will show a notification.
+Now that we have an empty window, let's use what we learned in [creating layouts](../writing-apps/creating-layouts.md) and make a grid containing one button that will show a notification.
 
-In between `var main_window...` and `main_window.show ();`, write the folowing lines of code:
+In between `var main_window...` and `main_window.show ();`, write the following lines of code:
 
 ```csharp
 var title_label = new Gtk.Label (_("Notifications"));
@@ -58,46 +60,52 @@ show_button.clicked.connect (() => {
 
 Okay, now compile your new app. if everything works, you should see your new app. Click the "Send" button. Did you see the notification? Great! Don't forget to commit and push your project in order to save your branch for later.
 
-## Additional Features
+## Badge Icons
 
-Now that you know how to send basic notifications, let's talk about a couple of ways to make your notifications better. Notifications are most useful when users can identify where they came from and they contain relevant information. In order to make sure your notifications are useful, there are three important features you should know about: setting an icon, replacing a notification, and setting priority.
+![](../.gitbook/assets/notification-badge.png)
 
-### Icons
-
-In order to make sure users can easily recognize a notification, we should set a relevant icon. Right after the `var notification = New Notification` line, add:
+Notifications will automatically contain your app's icon, but you can add additional context by setting a badge icon. Right after the line containing `var notification = New Notification`, add:
 
 ```csharp
-var icon = new GLib.ThemedIcon ("dialog-warning");
-notification.set_icon (icon);
+notification.set_icon (new ThemedIcon ("process-completed"));
 ```
 
-That's it. Compile your app again, and press the "Send" button. As you can see, the notification now has an icon. Using this method, you can set the icon to anything you'd like. You can use `gtk3-icon-browser` to see what system icons are available.
+Compile your app again, and press the "Send" button. As you can see, the notification now has a smaller badged icon placed over your app's icon. Using this method, you can set the icon to any of the named icons shipped with elementary OS.
 
-### Replace
+{% hint style="info" %}
+You can browse the full set of named icons using the app [LookBook](http://appcenter.elementary.io/com.github.danrabbit.lookbook/), available in AppCenter.
+{% endhint %}
 
-We now know how to send a notification, but what if you need to update it with new information? Thanks to the notification ID, we can easily replace a notification. The notification ID should be the same as the app ID that we set in `Gtk.Application`.
+## Buttons
 
-Let's make the replace button. This button will replace the current notification with one with different information. Let's create a new button for it, and add it to the grid:
+![](../.gitbook/assets/notification-button.png)
+
+You can also add buttons to notifications that will trigger actions defined in the `app` namespace. To add a button, first define an action in your Application class as we did in [the actions section](actions.md).
 
 ```csharp
-var replace_button = new Gtk.Button.with_label (_("Replace"));
+var quit_action = new SimpleAction ("quit", null);
 
-grid.add (replace_button);
+add_action (quit_action);
 
-replace_button.clicked.connect (() => {
-    var icon = new GLib.ThemedIcon ("dialog-warning");
-
-    var notification = new Notification (_("Hello Again"));
-    notification.set_body (_("This is my second Notification!"));
-    notification.set_icon (icon);
-
-    send_notification ("com.github.yourusername.yourrepositoryname", notification);
+quit_action.activate.connect (() => {
+    main_window.destroy ();
 });
+
 ```
 
-Very easy right? Let's compile and run your app again. Click on the buttons, first on "Show", then "Replace". See how the text on your notification changes without making a new one appear?
+Now, we can add a button to the notification with a translatable label and the action ID.
 
-### Priority
+```csharp
+notification.add_button (_("Quit"), "app.quit");
+```
+
+Compile your app again, and press the "Send" button. Notice that the notification now has a button with the label "Quit" and clicking it will close your app.
+
+{% hint style="info" %}
+Remember that `SimpleAction`s added in the `Application` class with `add_action ()` are automatically added in the `app` namespace. Notifications can't trigger actions defined in other namespaces like `win`.
+{% endhint %}
+
+## Priority
 
 Notifications also have priority. When a notification is set as `URGENT` it will stay on the screen until either the user interacts with it, or you withdraw it. To make an urgent notification, add the following line before the `send_notification ()` function
 
@@ -107,12 +115,40 @@ notification.set_priority (NotificationPriority.URGENT);
 
 `URGENT` notifications should really only be used on the most extreme cases. There are also [other notification priorities](https://valadoc.org/gio-2.0/GLib.NotificationPriority).
 
+## Replace
+
+We now know how to send a notification, but what if you need to update it with new information? Thanks to the notification ID, we can replace a notification with a matching ID. This ID can be anything, but for the purposes of this demo, we're using our app ID.
+
+Let's make the replace button. This button will replace the current notification with one with different information. Let's create a new button for it, and add it to the grid:
+
+```csharp
+var replace_button = new Gtk.Button.with_label (_("Replace"));
+
+grid.add (replace_button);
+
+replace_button.clicked.connect (() => {
+    var notification = new Notification (_("Hello Again"));
+    notification.set_body (_("This is my second Notification!"));
+
+    send_notification ("com.github.yourusername.yourrepositoryname", notification);
+});
+```
+
+Compile and run your app again. Click on the buttons, first on "Show", then "Replace". See how the text on your notification changes without making a new one appear?
+
+{% hint style="info" %}
+You can replace the contents of specific types of notifications your app sends by assigning them a unique ID per category. For example, you can replace the contents of an urgent notification with the ID `alert`, without replacing the contents of a regular notification with a different ID `update`
+{% endhint %}
+
 ## Review
 
 Let's review what all we've learned:
 
 * We built an app that sends and updates notifications.
-* We also learned about other notification features like setting an icon and a notification's priority.
+* Notifications automatically get our app's icon, but we can also add a badge icon
+* We can add buttons that trigger actions in the `app` namespace
+* Notification can have a priority which affects their behavior
+* We can replace outdated notifications by setting a replaces ID
 
-As you could see, sending notifications is very easy thanks to `Gtk.Application`. If you need some further reading on notifications, Check out the page about `Glib.Notification` in [Valadoc](https://valadoc.org/gio-2.0/GLib.Notification).
+As you can see, notifications have a number of advanced features and can automatically inherit some information from `Gtk.Application`. If you need some further reading on notifications, Check out the page about `Glib.Notification` on [Valadoc](https://valadoc.org/gio-2.0/GLib.Notification).
 

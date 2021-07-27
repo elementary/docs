@@ -32,11 +32,11 @@ In general, your app's metadata should not refer to "elementary" or "elementary 
 
 Your app must install an [appdata.xml file](https://docs.elementary.io/develop/writing-apps/our-first-app#appdata-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
 
-Your appdata.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc.
+Your appdata.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc. Screenshots referenced in your AppData should not contain marketing copy, illustrations, or other elements aside from a full-window screenshot of your app in use.
 
 Your appdata.xml file must contain a `developer_name` tag that references your name or the name of your organization.
 
-Your appdata.xml must include accurate [Open Age Rating Service \(OARS\)](https://hughsie.github.io/oars/) data. OARS uses a simple, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
+Your appdata.xml must include accurate [Open Age Rating Service \(OARS\)](https://hughsie.github.io/oars/) data. OARS uses a short, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
 
 For more information about the appdata.xml format see, see the [appstream specification](https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps).
 
@@ -92,9 +92,9 @@ While AppCenter Dashboard supports repositories with dashes and underscores, it 
 
 ### Human Interface Guidelines
 
-Apps should generally abide by the [elementary Human Interface Guidelines](https://elementary.io/docs/human-interface-guidelines), especially with regards to [Desktop Integration](https://elementary.io/docs/human-interface-guidelines#desktop-integration). Guidelines around [System Indicators](https://elementary.io/docs/human-interface-guidelines#system-indicators) and [Notifications](https://elementary.io/docs/human-interface-guidelines#notifications) may be strictly enforced, as it is important that apps behave as expected by users.
+Apps should generally abide by the [elementary Human Interface Guidelines](https://docs.elementary.io/hig/), especially with regards to [Desktop Integration](https://docs.elementary.io/hig/desktop-integration). Guidelines around [Notifications](https://docs.elementary.io/hig/widgets/providing-feedback#notifications) may be strictly enforced, as it is important that apps behave as expected by users.
 
 ### Tips for Games
 
-If your game UI properly scales when the window is resized, one easy way to support both HiDPI and loDPI \(even if the engine doesn't out of the box\) is simply to launch your game maximized. That way the UI will scale up no matter the resolution or scaling factor of the display.
+If your game UI properly scales when the window is resized, one way to support both HiDPI and loDPI \(even if the engine doesn't out of the box\) is to launch your game maximized. That way the UI will scale up no matter the resolution or scaling factor of the display.
 

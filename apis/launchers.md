@@ -4,9 +4,9 @@ description: 'Adding Badges, Progress Bars, and Quick Lists'
 
 # Launchers
 
-Applications can show additional information in the dock as well as the application menu. This makes the application feel more integrated into the system and give user it's status at a glance. See [HIG for Dock integration](https://elementary.io/docs/human-interface-guidelines#dock-integration) for what you should do and what you shouldn't.
+Applications can show additional information in the dock as well as the application menu. This makes the application feel more integrated into the system and give user it's status at a glance. See [HIG for Dock integration](https://docs.elementary.io/hig/widgets/providing-feedback#dock-integration) for what you should do and what you shouldn't.
 
-For this integration you can use the [Granite.Services.Application API](https://valadoc.org/granite/Granite.Services.Application.html). Since it uses the same D-Bus path as the [Unity Launcher API](https://valadoc.org/unity/Unity.LauncherEntry.html), the API can work accross many different distributions as it is widely supported by third party applications.
+For this integration you can use the [Granite.Services.Application API](https://valadoc.org/granite/Granite.Services.Application.html). Since it uses the same D-Bus path as the [Unity Launcher API](https://valadoc.org/unity/Unity.LauncherEntry.html), the API can work across many different distributions as it is widely supported by third party applications.
 
 ### Current API support:
 
@@ -31,27 +31,6 @@ executable(
 )
 ```
 
-You'll also need to update your Flatpak manifest with a new entry in the modules section:
-
-```yml
-modules:
-  # This is the new Granite dependency we've added. In this example we're cloning
-  # the latest released version
-  - name: Granite
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/elementary/granite.git
-        tag: '6.0.0'
-  # This is the existing module you already have in your manifest for building
-  # your project
-  - name: yourrepositoryname
-    buildsystem: meson
-    sources:
-      - type: dir
-        path: .
-```
-
 Your app must also be a `Gtk.Application` with a correctly set `application_id` as we previously set up in Hello World.
 
 Though we haven't made any changes to our source code yet, change into your build directory and run `ninja` to build your project. It should still build without any errors. If you do encounter errors, double check your changes and resolve them before continuing.
@@ -60,7 +39,7 @@ Once you've set up `granite` in your build system and created a new `Gtk.Applica
 
 ## Badges
 
-Showing a badge in the dock and Applications Menu with the number `12` is as easy as:
+Showing a badge in the dock and Applications Menu with the number `12` can be done with the following lines:
 
 ```text
 Granite.Services.Application.set_badge_visible.begin (true);

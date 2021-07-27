@@ -193,7 +193,7 @@ public const string ACTION_GO_BACK = "action-go-back";
 
 ## Casting
 
-Avoid using `as` keyword when casting as it might give `null` as result, which could be easily forgotten to check.
+Avoid using `as` keyword when casting as it might give `null` as result, which could be forgotten to check.
 
 ```csharp
 /* OK */
@@ -283,7 +283,7 @@ public int number {
 }
 ```
 
-Prefering properties in classes enables the use of [`GLib.Object.bind_property ()`](https://valadoc.org/gobject-2.0/GLib.Object.bind_property.html) between classes instead of needing to create signals and handle changing properties manually.
+Preferring properties in classes enables the use of [`GLib.Object.bind_property ()`](https://valadoc.org/gobject-2.0/GLib.Object.bind_property.html) between classes instead of needing to create signals and handle changing properties manually.
 
 ## Vala Namespaces
 

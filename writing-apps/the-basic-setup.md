@@ -6,7 +6,7 @@ Before we even think about writing code, you'll need a certain basic setup. This
 * Setting up the Git revision control system
 * Getting and using the elementary developer "SDK"
 
-We’re going to assume that you’re working from a clean installation of elementary OS Juno Beta or later. This is important as the instructions you’re given may reference apps that are not present \(or even available\) in other GNU/Linux based operating systems like Ubuntu. It is possible to apply the principles of this guide to Ubuntu development, but it may be more difficult to follow along.
+We’re going to assume that you’re working from a clean installation of elementary OS 5.1 Hera or later. This is important as the instructions you’re given may reference apps that are not present \(or even available\) in other GNU/Linux based operating systems like Ubuntu. It is possible to apply the principles of this guide to Ubuntu development, but it may be more difficult to follow along.
 
 ## GitHub
 
@@ -46,7 +46,7 @@ If you're ready, let's get you set up to use Git:
 
 6. Visit [your SSH keys page](https://github.com/settings/keys) and click the green button in the upper right-hand corner that says "New SSH key". Paste your key in the "Key" box and give it a title.
 
-We're all done! Now you can download source code hosted on GitHub and upload your own code. We'll revisit using `git` in a bit, but for now you're set up. 
+We're all done! Now you can download source code hosted on GitHub and upload your own code. We'll revisit using `git` in a bit, but for now you're set up.
 
 {% hint style="info" %}
 For a more in-depth intro to Git, we recommend [Codecademy's course on Git](https://www.codecademy.com/learn/learn-git).
@@ -54,17 +54,17 @@ For a more in-depth intro to Git, we recommend [Codecademy's course on Git](http
 
 ## Developer "SDK"
 
-At the time of this writing, elementary OS doesn't have a full SDK like Android or iOS. But luckily, we only need a couple simple apps to get started writing code.
+At the time of this writing, elementary OS doesn't have a full SDK like Android or iOS. But luckily, we only need a couple apps to get started writing code.
 
 ### Code
 
-![](https://elementary.io/images/thirdparty-icons/apps/128/io.elementary.code.svg)
+![Code icon](https://elementary.io/images/thirdparty-icons/apps/128/io.elementary.code.svg)
 
-The first piece of our simple "SDK" is Code. This comes by default with elementary OS. It comes with some helpful features like syntax highlighting, auto-save, and a Folder Manager. There are other extensions for Code as well, like the Outline, Terminal, Word Completion, or Devhelp extensions. Play around with what works best for you.
+The first piece of our "SDK" is Code. This comes by default with elementary OS. It comes with some helpful features like syntax highlighting, auto-save, and a Folder Manager. There are other extensions for Code as well, like the Outline, Terminal, Word Completion, or Devhelp extensions. Play around with what works best for you.
 
 ### Terminal
 
-![](https://elementary.io/images/icons/apps/128/utilities-terminal.svg)
+![Terminal icon](https://elementary.io/images/icons/apps/128/utilities-terminal.svg)
 
 We’re going to use Terminal in order to compile our code, push revisions to GitHub \(using `git`\), and other good stuff. Throughout this guide, we’ll be issuing Terminal commands. You should assume that any command is executed from the directory “Projects” in your home folder unless otherwise stated. Since elementary OS doesn’t come with that folder by default, you’ll need to create it.
 
@@ -76,12 +76,21 @@ mkdir Projects
 
 ### Development Libraries
 
-![](https://elementary.io/images/icons/apps/128/application-default-icon.svg)
+![Generic application icon](https://elementary.io/images/icons/apps/128/application-default-icon.svg)
 
 In order to build apps you're going to need their development libraries. We can fetch a basic set of libraries and other development tools with the following terminal command:
 
 ```bash
 sudo apt install elementary-sdk
+```
+
+### Flatpak
+
+On elementary OS 6 beta and newer, you should already have the required Flatpak remote and platform pre-installed. On earlier versions or other OSes, you can add the remote and install the Flatpak platform and SDK:
+
+```bash
+flatpak remote-add --if-not-exists --system appcenter https://flatpak.elementary.io/repo.flatpakrepo
+flatpak install -y appcenter io.elementary.Platform io.elementary.Sdk
 ```
 
 And with that, we're ready to dive into development! Let's move on!
