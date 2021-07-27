@@ -29,7 +29,6 @@
 * [Submission Process](appcenter/submission-process.md)
 * [Monetizing Your App](appcenter/monetizing-your-app.md)
 * [Publishing Updates](appcenter/publishing-updates.md)
-* [Continuous Integration](appcenter/continuous-integration.md)
 * [Markdown Badges](appcenter/markdown-badges.md)
 * [Dashboard](https://developer.elementary.io/)
 
