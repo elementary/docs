@@ -21,6 +21,7 @@
 * [Launchers](apis/launchers.md)
 * [State Saving](apis/state-saving.md)
 * [Custom Resources](apis/gresource.md)
+* [Color Scheme](apis/color-scheme.md)
 * [Valadoc](https://valadoc.org/)
 
 ## AppCenter
