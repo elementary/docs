@@ -8,6 +8,8 @@ elementary OS ships with two styles for app widgets: a dark style and a light st
 
 ## Setting a Dark Style
 
+![A dark styled app](../.gitbook/assets/application-dark.png)
+
 Some apps, like photo or video editors, benefit from reducing the contrast between their content and the app's UI by always choosing to be displayed using a dark style. You can set the dark style for your app by using `Gtk.Settings` and setting the property `gtk_application_prefer_dark_theme`. In your Application class, add the following lines to your `activate` function:
 
 ```csharp
