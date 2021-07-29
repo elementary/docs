@@ -33,7 +33,7 @@ Now that you have icon files in the data directory, add the following lines to t
 
 ```coffeescript
 # Install our icons in all the required sizes
-icon_sizes = ['16', '24,' '32', '48', '64', '128']
+icon_sizes = ['16', '24,', '32', '48', '64', '128']
 
 foreach i : icon_sizes
     install_data(
