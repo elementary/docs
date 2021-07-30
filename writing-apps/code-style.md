@@ -23,8 +23,10 @@ var my_instance = new Object ();
 
 An exception is admitted for Gettext-localized strings, where no space should go between the underscore and the opening parenthese:
 ```csharp
-download = new Gtk.Button ();
-download.tooltip_text = _("Download");
+// Space before parentheses since it's normal method:
+button.label = set_label_string ();
+// No space before parentheses since it's gettext-localized string:
+button.tooltip_text = _("Download");
 ```
 
 Whitespace goes between numbers and operators in all math-related code.
