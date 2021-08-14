@@ -52,7 +52,7 @@ modules:
         path: .
 ```
 
-Note that we're using the `daily` version of the SDK for now, as there has not yet been a stable release. To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
+To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
 
 ```bash
 flatpak-builder build  com.github.yourusername.yourrepositoryname.yml --user --install --force-clean
