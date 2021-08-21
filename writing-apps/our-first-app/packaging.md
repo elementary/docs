@@ -1,6 +1,6 @@
 # Packaging
 
-While having a build system is great, our app still isn't ready for regular users. We want to make sure our app can be built and installed without having to use Terminal. What we need to do is package our app. To do this, we use Flatpak on elementary OS. This section will teach you how to package your app as a Flatpak, which is required to publish apps in AppCenter. This will allow normal people to install your app and even get updates for it when you publish them.
+While having a build system is great, our app still isn't ready for regular users. We want to make sure our app can be built and installed without having to use Terminal. What we need to do is package our app. To do this, we use Flatpak on elementary OS. This section will teach you how to package your app as a Flatpak, which is required to publish apps in AppCenter. This will allow people to install your app and even get updates for it when you publish them.
 
 ## Practice Makes Perfect
 
