@@ -51,6 +51,12 @@ endforeach
 
 You'll notice the section for installing app icons is a little more complicated than installing other files. In this example, we're providing SVG icons in all of the required sizes for AppCenter and, since we're using SVG, we're installing them for both LoDPI and HiDPI. If you're providing PNG icons instead, you'll need to tweak this part a bit to handle assets exported for use on HiDPI displays.
 
+If you cannot see your new icon in the Applications Menu or the Dock once you've reinstalled your app, refresh your system's icon cache using the following command:
+
+```shell
+sudo update-icon-caches /usr/share/icons/*
+```
+
 {% hint style="info" %}
 For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size)
 {% endhint %}
