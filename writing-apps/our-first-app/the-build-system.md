@@ -67,6 +67,8 @@ If all went well, you should now be able to open your app from the Applications 
 
 {% hint style="warning" %}
 If you were about to add the "build" folder to your git repository and push it, stop! This binary was built for your computer and we don't want to redistribute it. In fact, we built your app in a separate folder like this so that we can easily delete or ignore the "build" folder and it won't mess up our app's source code.
+
+In fact, you should create a file called [.gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files), add the build folder to it (`echo 'build' >> .gitignore`), and add then add the .gitignore file your repository so you (or someone else on your team) doesn't end up accidentally adding the "build" folder to your repository in the future.
 {% endhint %}
 
 ## Review
