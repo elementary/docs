@@ -12,7 +12,7 @@ Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've d
 
 ```text
 protected override void activate () {
-    var headerbar = new Gtk.HeaderBar () {
+    var header_bar = new Gtk.HeaderBar () {
         show_close_button = true
     };
 
@@ -21,7 +21,7 @@ protected override void activate () {
         default_width = 300,
         title = "Actions"
     };
-    main_window.set_titlebar (headerbar);
+    main_window.set_titlebar (header_bar);
     main_window.show_all ();
 }
 ```
@@ -34,10 +34,10 @@ Now, still in the activate function, let's create a new [`Gtk.Button`](https://v
 protected override void activate () {
     var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_TOOLBAR);
 
-    var headerbar = new Gtk.HeaderBar () {
+    var header_bar = new Gtk.HeaderBar () {
         show_close_button = true
     };
-    headerbar.add (button);
+    header_bar.add (button);
 
     [...]
 }
