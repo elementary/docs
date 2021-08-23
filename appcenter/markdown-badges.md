@@ -1,6 +1,6 @@
 # Markdown Badges
 
-elementary provides badges for your GitHub README. Badges will automatically open AppCenter or redirect to elementary.io based on OS detection. They look like this:
+elementary provides badges, e.g. for your GitHub README. Badges will open to your app's page on the AppCenter website where users can learn more about your app, see screenshots, and decide to download it. They look like this:
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.USER.REPO)
 
