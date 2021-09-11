@@ -70,8 +70,9 @@ This tells Flatpak Builder to build the manifest we just wrote into a clean `bui
 Don't forget to add `.flatpak-builder` to your `.gitignore` file:
 
 ```bash
+echo '.flatpak-builder' >> .gitignore
 git add .gitignore
-git commit -am "Ran a test build with flatpak-builder"
+git commit -am "Added .flatpak-builder to .gitignore"
 git push
 ```
 
