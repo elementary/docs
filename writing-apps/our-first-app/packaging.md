@@ -52,6 +52,12 @@ modules:
         path: .
 ```
 
+Before we run a test build, we need to install the `io.elementary` Flatpak SDK as a user:
+
+```bash
+flatpak install --user io.elementary.Sdk//6
+```
+
 To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
 
 ```bash
