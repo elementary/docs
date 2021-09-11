@@ -77,6 +77,12 @@ To uninstall your application, we need to remove the several files we've created
 * Desktop file in `/usr/share/applications/com.github.yourusername.hello-again.desktop`
 * Application Data file in `/usr/share/metainfo/com.github.yourusername.hello-again.appdata.xml`
 
+```bash
+sudo rm /usr/bin/com.github.yourusername.hello-again
+sudo rm /usr/share/applications/com.github.yourusername.hello-again.desktop
+sudo rm /usr/share/metainfo/com.github.yourusername.hello-again.appdata.xml
+```
+
 ## Review
 
 Let's review all we've learned to do:
