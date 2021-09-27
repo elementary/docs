@@ -1,6 +1,6 @@
 # Logging
 
-There are various logging methods to use and here are some sample references for you.
+There are various logging methods to use and here are some sample references for you. To view logs from all your applications you can use [`journalctl`](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs).
 
 ## Debug
 
