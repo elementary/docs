@@ -8,13 +8,14 @@ Debug logs usually give detailed information on the flow through the system and 
 
 ```vala
 public static int main (string[] args) {
-    // Use "G_MESSAGES_DEBUG=all ./test" to print debug messages.
-
     // Output: `** (process:<PID>): DEBUG: <FILENAME>:<LINE>: my 10. debug message`
     debug ("my %d. %s", 10, "debug message");
     return 0;
 }
 ```
+
+{% hint style="info" %} Start your app with `G_MESSAGES_DEBUG=all` to print debug messages {% endhint %}
+
 
 ## Info
 
