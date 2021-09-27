@@ -14,6 +14,7 @@
   * [Continuous Integration](writing-apps/our-first-app/continuous-integration.md)
 * [Creating Layouts](writing-apps/creating-layouts.md)
 * [Code Style](writing-apps/code-style.md)
+* [Logging](writing-apps/logging.md)
 
 ## APIs
 
