@@ -2,15 +2,14 @@
 
 The last thing we need for a minimum-viable-app is to provide app icons. Apps on elementary OS provide icons hinted in 6 sizes: 16px, 24px, 32px, 48px, 64px, and 128px. These icons will be shown in many places throughout the system, such as those listed below:
 
-| Size  | AppCenter | Applications Menu | Dock    | Menus & Popovers  | Multitasking | Notifications |
-| :-----| :---------| :---------------- | :------ | :---------------- | :----------- | :------------ |
-| 16px  | ✖️ No     | ✖️ No             | ✔️ Yes  | ✔️ Yes            | ✔️ Yes       | ✖️ No         |
-| 24px  | ✖️ No     | ✖️ No             | ✖️ No   | ✖️ No             | ✔️ Yes       | ✔️ Yes        |
-| 32px  | ✖️ No     | ✔️ Yes            | ✔️ Yes  | ✔️ Yes            | ✔️ Yes       | ✖️ No         |
-| 48px  | ✔️ Yes    | ✖️ No             | ✔️ Yes  | ✖️ No             | ✔️ Yes       | ✔️ Yes        |
-| 64px  | ✔️ Yes    | ✔️ Yes            | ✔️ Yes  | ✖️ No             | ✔️ Yes       | ✖️ No         |
-| 128px | ✔️ Yes    | ✖️ No             | ✖️ No   | ✖️ No             | ✖️ No        | ✖️ No         |
-
+| Size | AppCenter | Applications Menu | Dock | Menus & Popovers | Multitasking | Notifications |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 16px | ✖️ No | ✖️ No | ✔️ Yes | ✔️ Yes | ✔️ Yes | ✖️ No |
+| 24px | ✖️ No | ✖️ No | ✖️ No | ✖️ No | ✔️ Yes | ✔️ Yes |
+| 32px | ✖️ No | ✔️ Yes | ✔️ Yes | ✔️ Yes | ✔️ Yes | ✖️ No |
+| 48px | ✔️ Yes | ✖️ No | ✔️ Yes | ✖️ No | ✔️ Yes | ✔️ Yes |
+| 64px | ✔️ Yes | ✔️ Yes | ✔️ Yes | ✖️ No | ✔️ Yes | ✖️ No |
+| 128px | ✔️ Yes | ✖️ No | ✖️ No | ✖️ No | ✖️ No | ✖️ No |
 
 {% hint style="info" %}
 To help you provide the necessary sizes—and for this tutorial—Micah Ilbery maintains an icon template project [here on GitHub](https://github.com/micahilbery/elementary-icon-templates)
@@ -18,7 +17,7 @@ To help you provide the necessary sizes—and for this tutorial—Micah Ilbery m
 
 Place your icons in the data directory and name them after their pixel sizes, such as`32.svg`, `64.svg`, etc. The file structure should look like this:
 
-```
+```text
 hello-again
     data
         16.svg
@@ -53,10 +52,11 @@ You'll notice the section for installing app icons is a little more complicated 
 
 If you cannot see your new icon in the Applications Menu or the Dock once you've reinstalled your app, refresh your system's icon cache using the following command:
 
-```shell
+```text
 sudo update-icon-caches /usr/share/icons/*
 ```
 
 {% hint style="info" %}
 For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size)
 {% endhint %}
+

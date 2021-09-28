@@ -94,7 +94,6 @@ add_action (quit_action);
 quit_action.activate.connect (() => {
     main_window.destroy ();
 });
-
 ```
 
 Now, we can add a button to the notification with a translatable label and the action ID.

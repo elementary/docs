@@ -48,7 +48,7 @@ Every app comes with a .desktop file. This file contains all the information nee
 2. Create a new file in Code and save it in the "data" folder as "hello-again.desktop".
 3. Type the following into your .desktop file. Like before, try to guess what each line does.
 
-   ```ini
+   ```text
    [Desktop Entry]
    Name=Hello Again
    GenericName=Hello World App
@@ -61,13 +61,13 @@ Every app comes with a .desktop file. This file contains all the information nee
    Keywords=Hello;World;Example;
    ```
 
-   The first line declares that this file is a "Desktop Entry" file. The next three lines are descriptions of our app: The branded name of our app, a generic name for our app, and a comment that describes our app's function. Next, we categorize our app. Then, we say what command will execute it. Finally, we give our app an icon and let the OS know that this isn't a command line app. 
+   The first line declares that this file is a "Desktop Entry" file. The next three lines are descriptions of our app: The branded name of our app, a generic name for our app, and a comment that describes our app's function. Next, we categorize our app. Then, we say what command will execute it. Finally, we give our app an icon and let the OS know that this isn't a command line app.
 
 {% hint style="info" %}
 For more info about crafting .desktop files, check out [this HIG entry](https://docs.elementary.io/hig/desktop-integration/app-launcher).
 {% endhint %}
 
-4. Finally, let's add this file to `git` and commit a revision:
+1. Finally, let's add this file to `git` and commit a revision:
 
    ```bash
    git add data/hello-again.desktop
@@ -132,3 +132,4 @@ If you'd like to better understand software licensing, the Linux Foundation offe
 Did you remember to add these files to `git` and commit a revision? Each time we add a new file or make a significant change it's a good idea to commit a new revision and push to GitHub. Keep in mind that this acts as a backup system as well; when we push our work to GitHub, we know it's safe and we can always revert to a known good revision if we mess up later.
 
 Now that we've got all these swanky files laying around, we need a way to tell the computer what to do with them. Ready for the next chapter? Let's do this!
+

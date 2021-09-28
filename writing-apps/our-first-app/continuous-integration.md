@@ -1,12 +1,11 @@
 # Continuous Integration
 
-Continuous integration testing (also called CI), is a way to automatically ensure that your app builds correctly and has the minimum necessary configuration to run when it's installed. Setting up CI for your app can save you time and give you reassurance that when you submit your app for publishing it will pass the automated testing phase in AppCenter Dashboard. Keep in mind however, that there is also a human review portion of the submission process, so an app that passes CI may still need fixing before being published in AppCenter. Now that you have an app with a build system, metadata files, and packaging, we can configure CI using GitHub Actions.
+Continuous integration testing \(also called CI\), is a way to automatically ensure that your app builds correctly and has the minimum necessary configuration to run when it's installed. Setting up CI for your app can save you time and give you reassurance that when you submit your app for publishing it will pass the automated testing phase in AppCenter Dashboard. Keep in mind however, that there is also a human review portion of the submission process, so an app that passes CI may still need fixing before being published in AppCenter. Now that you have an app with a build system, metadata files, and packaging, we can configure CI using GitHub Actions.
 
 1. Navigate to your project's page on GitHub and select the "Actions" tab.
-
 2. Select "set up a workflow yourself". You'll then be shown the `main.yml` file with GitHub's default CI configuration. Replace the default workflow with the following:
 
-```yml
+```text
 name: CI
 
 # This workflow will run for any pull request or pushed commit
@@ -46,10 +45,11 @@ jobs:
         cache-key: "flatpak-builder-${{ github.sha }}"
 ```
 
-3. Select "Start commit" in the top right corner of the page to commit this workflow to your repository.
+1. Select "Start commit" in the top right corner of the page to commit this workflow to your repository.
 
 That's it! The Flatpak CI workflow will now run on your repository for any new commits or pull requests. You'll be able to see if the build succeeded or failed, and any reasons it might have failed. Configuring this CI workflow will help guide you during the development process and ensure that everything is working as intended.
 
 This workflow will also produce a Flatpak Bundle file using GitHub Artifacts that you can download and install with Sideload. Using this bundle file, you can test feature or bug fix branches with your team, contributors, or community before merging the proposed fix into your main git branch.
 
 GitHub Actions can be used to configure many more types of CI or other automation. For more information, check out the [GitHub Actions website](https://github.com/features/actions).
+

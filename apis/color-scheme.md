@@ -1,5 +1,5 @@
 ---
-description: 'Setting a dark or light style for your app'
+description: Setting a dark or light style for your app
 ---
 
 # Color Scheme
@@ -68,3 +68,4 @@ protected override void activate () {
     });
 }
 ```
+

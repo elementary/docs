@@ -22,6 +22,7 @@ var my_instance = new Object ();
 ```
 
 An exception is admitted for Gettext-localized strings, where no space should go between the underscore and the opening parenthese:
+
 ```csharp
 // Space before parentheses since it's normal method:
 button.label = set_label_string ();

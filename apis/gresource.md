@@ -4,7 +4,7 @@ You can include additional resources with your app like icons or CSS files using
 
 In the `data` directory, create a new file called `gresource.xml` with the following contents:
 
-```xml
+```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/yourusername/yourrepositoryname">
@@ -40,7 +40,6 @@ executable(
     ],
     install: true
 )
-
 ```
 
 Now that we have a `gresource.xml` file and have included it in the build system, we can add files and reference them in our app.
@@ -49,7 +48,7 @@ Now that we have a `gresource.xml` file and have included it in the build system
 
 As we saw in the section on [`GLib.Action`](actions.md), GTK has a baked-in set of icon sizes defined under the namespace [`Gtk.IconSize`](https://valadoc.org/gtk+-3.0/Gtk.IconSize.html). When creating icons, it is important to know which of these sizes will be used and to design and hint the icon at that size. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size). Add your custom icon to the `data` directory, and then update your `gresource.xml` file to reference it:
 
-```xml
+```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/yourusername/yourrepositoryname">
@@ -60,7 +59,7 @@ As we saw in the section on [`GLib.Action`](actions.md), GTK has a baked-in set 
 
 If you want to use the same icon name in multiple sizes in your app, you can `alias` the icon to paths in [hicolor](https://specifications.freedesktop.org/icon-theme-spec/latest/ar01s03.html) and GTK will automatically load the correct version when its size is referenced:
 
-```xml
+```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/yourusername/yourrepositoryname">
@@ -105,3 +104,4 @@ protected override void activate () {
     main_window.show_all ();
 }
 ```
+
