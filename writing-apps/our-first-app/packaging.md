@@ -55,7 +55,7 @@ modules:
 To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
 
 ```bash
-flatpak-builder build  com.github.yourusername.yourrepositoryname.yml --user --install --force-clean
+flatpak-builder build com.github.yourusername.yourrepositoryname.yml --user --install --force-clean
 ```
 
 This tells Flatpak Builder to build the manifest we just wrote into a clean `build` folder the same as we did for Meson. Plus, we install the built Flatpak package locally for our user. If all goes well, congrats! You've just built and installed your app as a Flatpak.
