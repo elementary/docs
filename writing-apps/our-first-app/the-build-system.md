@@ -59,8 +59,8 @@ Change into the build directory and use `ninja` to build. Then, if the build is 
 
 ```bash
 cd build
-ninja
-ninja install
+sudo ninja
+sudo ninja install
 ```
 
 If all went well, you should now be able to open your app from the Applications Menu and pin it to the Dock. We'll revisit Meson again later to add some more complicated behavior, but for now this is all you need to know to give your app a proper build system. If you want to explore Meson a little more on your own, you can always check out [Meson's documentation](https://mesonbuild.com/Manual.html).
@@ -71,16 +71,21 @@ If you were about to add the "build" folder to your git repository and push it, 
 
 ## Uninstalling the application
 
-To uninstall your application, we need to remove the several files we've created outside of our project folder:
-
-* Binary file located at `/usr/bin/com.github.yourusername.hello-again`
-* Desktop file in `/usr/share/applications/com.github.yourusername.hello-again.desktop`
-* Application Data file in `/usr/share/metainfo/com.github.yourusername.hello-again.appdata.xml`
+To uninstall your application, change into the build directory and we will use `ninja` once again to uninstall:
 
 ```bash
+cd build
+sudo ninja uninstall
+```
+
+If all went well, you should see command output that shows files related to your application were removed.  Again, more details can be found in [Meson's documentation](https://mesonbuild.com/Manual.html).
+
+```bash
+...
 sudo rm /usr/bin/com.github.yourusername.hello-again
 sudo rm /usr/share/applications/com.github.yourusername.hello-again.desktop
 sudo rm /usr/share/metainfo/com.github.yourusername.hello-again.appdata.xml
+...
 ```
 
 ## Review
@@ -99,4 +104,3 @@ That's a lot! You're well on your way to becoming a bona fide app developer for 
 {% hint style="info" %}
 If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/meson-build-system)
 {% endhint %}
-
