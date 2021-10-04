@@ -86,3 +86,5 @@ Proceed with these changes to the user installation? [Y/n]:
 ```
 
 > Note: You can append `-y` to the command to bypass the dialog confirmation prompt
+
+If you'd like you can always read [more about Flatpak remove](https://docs.flatpak.org/en/latest/using-flatpak.html#remove-an-application).
