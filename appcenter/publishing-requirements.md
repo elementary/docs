@@ -62,7 +62,7 @@ Your app must comply with all applicable laws as well as the terms of any servic
 
 #### Naming
 
-To protect both users and developers, your app's name must not be the same as or confusingly similar to an existing app in AppCenter or other brand, as determined by app reviewers.
+To protect both users and developers, your app's name must not be the same as or confusingly similar to an existing app in AppCenter or another brand, as determined by app reviewers.
 
 Your app should not be named generically like "Web Browser" or "File Manager".
 
@@ -75,6 +75,10 @@ Your app should display its own graphical user interface on launch; it should no
 #### App Stores
 
 Your app cannot be an "app store," as ultimately determined by app reviewers. This includes but is not limited to apps that look and function confusingly similarly to AppCenter, provide software from other sources, link to an online app store, and/or facilitate payments for apps in the system repositories.
+
+#### Duplicate Apps
+
+Each app submission from a developer should be genuine and unique as determined by app reviewers. Submissions that are overly similar to existing apps from the same developer or are a a fork of an existing app with little to no changes may be rejected.
 
 ## Suggestions
 
