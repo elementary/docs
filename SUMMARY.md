@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Getting Started](README.md)
+* [Developer Docs](README.md)
 
 ## Writing Apps
 
@@ -24,7 +24,7 @@
 * [State Saving](apis/state-saving.md)
 * [Custom Resources](apis/gresource.md)
 * [Color Scheme](apis/color-scheme.md)
-* [Valadoc](https://valadoc.org/)
+* [Valadoc](https://valadoc.org)
 
 ## AppCenter
 
@@ -33,5 +33,4 @@
 * [Monetizing Your App](appcenter/monetizing-your-app.md)
 * [Publishing Updates](appcenter/publishing-updates.md)
 * [Markdown Badges](appcenter/markdown-badges.md)
-* [Dashboard](https://developer.elementary.io/)
-
+* [Dashboard](https://developer.elementary.io)
