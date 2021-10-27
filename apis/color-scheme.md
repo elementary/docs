@@ -39,18 +39,6 @@ executable(
 )
 ```
 
-Also, you need to update the `finish-args` section of your app's Flatpak manifest file with permission to read the user's style preference from AccountsService:
-
-```yaml
-finish-args:
-  - '--share=ipc'
-  - '--socket=fallback-x11'
-  - '--socket=wayland'
-
-  # Needed to read prefer-color-scheme with Granite.Settings
-  - '--system-talk-name=org.freedesktop.Accounts'
-```
-
 Now, you can read and respond to the user's style preference with `Granite.Settings` and then use `Gtk.Settings` to set it in your app's `activate` function.
 
 ```csharp
