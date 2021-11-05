@@ -310,7 +310,7 @@ print ("Hello World");
 
 ## String Formatting
 
-Avoid using literals when formatting strings:
+Avoid using literals when formatting strings, as they cannot be [localized](https://wiki.gnome.org/TranslationProject/DevGuidelines):
 
 ```csharp
 var string = @"Error parsing config: $(config_path)";
