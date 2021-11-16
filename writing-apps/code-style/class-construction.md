@@ -28,7 +28,7 @@ public class MyClass : Object {
 public int foo { get; construct; }
 ```
 
-`MyClass` has a `public` property `foo` whose type is `int`, but we've also declared it as `{ get; construct; }`. This shorthand declares the type of access for this property's `get` and `set` functions. Since we declared the property as `public`, `get` is also public, but we've declared the `set` function as `construct`, which means we can only assign its value as a constructor argument. 
+In the above example, `MyClass` has a `public` property `foo` whose type is `int`, but we've also declared it as `{ get; construct; }`. This shorthand declares the type of access for this property's `get` and `set` functions. Since we declared the property as `public`, `get` is also public, but we've declared the `set` function as `construct`, which means we can only assign its value as a constructor argument. 
 
 We want construction arguments to be public to ensure that we can later get information out of a class that was used to construct it, if need be. But it's important to declare limited `set` access on properties for future maintainability. Since there is no handling for changes in this property in the `construct` block, setting this property after the class is constructed would have no effect, even if we allowed it by declaring `{ get; construct set; }`.
 
