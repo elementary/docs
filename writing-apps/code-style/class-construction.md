@@ -108,7 +108,7 @@ public Row.from_device (Device device) {
 }
 ```
 
-Note that in both cases, we handle the arguments in the constructor, while the actual logic of creating UI lives in the common `construct` block.
+Note that in both cases, we handle the arguments in the constructor, while the actual logic of creating UI widgets lives in the common `construct` block.
 
 ```csharp
 construct {
