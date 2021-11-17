@@ -43,7 +43,7 @@ public MyClass (int foo) {
 `MyClass` also contains a constructor; It describes what arguments are required to construct the class. We've declared here that in order to construct `MyClass`, we need an `int` passed in when we initialize a new object such as with `var new_class = new MyClass (5);`
 
 
-Inside the constructor, we have a special `Object ()` call, in which we specify a property and its value, `Object (foo: foo)`. This sets the value of the integer property `foo` defined earlier to the value received as an argument. It is equivalent to saying `this.foo = foo`.
+Inside the constructor, we have a special `Object ()` call, in which we specify a property and its value, `Object (foo: foo);`. This sets the value of the integer property `foo` defined earlier to the value received as an argument. It is equivalent to saying `this.foo = foo;`.
 
 ## The Construct Block
 
