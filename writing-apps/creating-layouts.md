@@ -14,7 +14,7 @@ Now that we’ve gotten that out of the way, let’s get back to our Window and 
 
 Just like when we add a Button or Label, we need to create our `Gtk.Grid`. As always, don’t copy and paste! Practice makes perfect. We create a new Gtk.Grid like this:
 
-```csharp
+```vala
 var grid = new Gtk.Grid () {
     orientation = Gtk.Orientation.VERTICAL
 };
@@ -24,14 +24,14 @@ Remember that Button and Label accepted an argument \(a String\) in the creation
 
 Let’s add some stuff to the Grid:
 
-```csharp
+```vala
 grid.add (new Gtk.Label (_("Label 1")));
 grid.add (new Gtk.Label (_("Label 2")));
 ```
 
 We can add the grid to our window using the same method that we just used to add widgets to our grid:
 
-```csharp
+```vala
 main_window.add (grid);
 ```
 
@@ -43,7 +43,7 @@ Okay, so you know all about using a `Gtk.Grid` to pack multiple children into a 
 
 Let’s create a Window with a vertical Grid that contains a Button and a Label:
 
-```csharp
+```vala
 var button = new Gtk.Button.with_label (_("Click me!"));
 
 var label = new Gtk.Label (null);
@@ -62,7 +62,7 @@ This time when we created our grid, we gave it another property: `row_spacing`. 
 
 Now, let’s hook up the button to change that label. To keep our code logically separated, we’re going to add it below `main_window.add (grid);`. In this way, the first portion of our code defines the UI and the next portion defines the functions that we associated with the UI:
 
-```csharp
+```vala
 button.clicked.connect (() => {
     label.label = _("Hello World!");
     button.sensitive = false;
@@ -75,7 +75,7 @@ Remember, we set the button as insensitive here because clicking it again has no
 
 While we can use `Gtk.Grid` to create single row or single column layouts with the add method, we can also use it to create row-and-column-based layouts with the `attach` method. First we’re going to create all the widgets we want to attach to our grid, then we’ll create a new `Gtk.Grid` and set both column and row spacing, and finally we’ll attach our widgets to the grid.
 
-```csharp
+```vala
 var hello_button = new Gtk.Button.with_label (_("Say Hello"));
 var hello_label = new Gtk.Label (null);
 
@@ -90,7 +90,7 @@ var grid = new Gtk.Grid () {
 
 Make sure to give the Grid, Buttons, and Labels unique names that you’ll remember. It’s best practice to use descriptive names so that people who are unfamiliar with your code can understand what a widget is for without having to know your app inside and out.
 
-```csharp
+```vala
 // add first row of widgets
 grid.attach (hello_button, 0, 0, 1, 1);
 grid.attach_next_to (hello_label, hello_button, Gtk.PositionType.RIGHT, 1, 1);
@@ -114,7 +114,7 @@ You can also use `attach_next_to` to place a widget next to another one on [all 
 
 Don’t forget to add the functionality associated with our buttons:
 
-```csharp
+```vala
 hello_button.clicked.connect (() => {
     hello_label.label = _("Hello World!");
     hello_button.sensitive = false;
@@ -139,4 +139,3 @@ Let’s recap what we learned in this section:
 * We added multiple widgets into a single Gtk.Grid using the attach method to create complex layouts containing Buttons and Labels that did cool stuff.
 
 Now that you understand more about Gtk, Grids, and using Buttons to alter the properties of other widgets, try packing other kinds of widgets into a window like a Toolbar and changing other properties of [Labels](https://valadoc.org/gtk+-3.0/Gtk.Label) like `width_chars` and `ellipsize`. Don’t forget to play around with the attach method and widgets that span across multiple rows and columns. Remember that Valadoc is super helpful for learning more about the methods and properties associated with widgets.
-

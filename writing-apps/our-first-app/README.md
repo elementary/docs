@@ -9,7 +9,7 @@ To create our first real app, we're going to need all the old stuff that we used
 1. Create a new folder inside "~/Projects" called "hello-again".Then, go into "hello-again" and create our directory structure including the "src" folder.
 2. Create "Application.vala" in the "src" folder. This time we're going to prefix our file with a small legal header. Make sure this header matches the license of your code and assigns copyright to you. More info about this later.
 
-   ```csharp
+   ```vala
    /*
     * SPDX-License-Identifier: GPL-3.0-or-later
     * SPDX-FileCopyrightText: 2021 Your Name <you@email.com>
@@ -19,13 +19,13 @@ To create our first real app, we're going to need all the old stuff that we used
 3. Now, let's create a `Gtk.Application`, a `Gtk.ApplicationWindow`, and set the window's default properties. Refer back to the last chapter if you need a refresher.
 4. For the sake of time let's just put a `Gtk.Label` instead of a `Gtk.Button`. We don't need to try to make the label do anything when you click it.
 
-   ```csharp
+   ```vala
    var label = new Gtk.Label ("Hello Again World!");
    ```
 
    Don't forget to add it to your window and show the window's contents:
 
-   ```csharp
+   ```vala
    main_window.add (label);
    main_window.show_all ();
    ```
@@ -48,7 +48,7 @@ Every app comes with a .desktop file. This file contains all the information nee
 2. Create a new file in Code and save it in the "data" folder as "hello-again.desktop".
 3. Type the following into your .desktop file. Like before, try to guess what each line does.
 
-   ```text
+   ```ini
    [Desktop Entry]
    Name=Hello Again
    GenericName=Hello World App
@@ -82,7 +82,7 @@ Every app also comes with an .appdata.xml file. This file contains all the infor
 1. In your data folder, create a new file called "hello-again.appdata.xml"
 2. Type the following into your .appdata.xml file
 
-   ```markup
+   ```xml
    <?xml version="1.0" encoding="UTF-8"?>
    <!-- Copyright 2019 Your Name <you@email.com> -->
    <component type="desktop">
@@ -100,7 +100,7 @@ These are all the mandatory fields for displaying your app in AppCenter. There a
 
 There are also some special custom fields for AppCenter to further brand your listing. Specifically, you can set a background color and a text color for your app's header and banner. You can do so by adding the following keys inside the `component` tag:
 
-```markup
+```xml
 <custom>
   <value key="x-appcenter-color-primary">#603461</value>
   <value key="x-appcenter-color-primary-text">rgb(255, 255, 255)</value>
@@ -132,4 +132,3 @@ If you'd like to better understand software licensing, the Linux Foundation offe
 Did you remember to add these files to `git` and commit a revision? Each time we add a new file or make a significant change it's a good idea to commit a new revision and push to GitHub. Keep in mind that this acts as a backup system as well; when we push our work to GitHub, we know it's safe and we can always revert to a known good revision if we mess up later.
 
 Now that we've got all these swanky files laying around, we need a way to tell the computer what to do with them. Ready for the next chapter? Let's do this!
-

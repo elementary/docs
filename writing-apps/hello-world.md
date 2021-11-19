@@ -19,7 +19,7 @@ Create a new file in Code and save it as "Application.vala" inside your "src" fo
 
 In this file, we're going to create a special class called a `Gtk.Application`. `Gtk.Application` is a class that handles many important aspects of a Gtk app like uniqueness and the ID you need to identify your app to the notifications server. If you want some more details about `Gtk.Application`, [check out Valadoc](https://valadoc.org/gtk+-3.0/Gtk.Application). For now, type the following in "Application.vala".
 
-```text
+```vala
 public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
@@ -56,7 +56,7 @@ Do you see a new, empty window called "Hello World"? If so, congratulations! If 
 
 Now that we've defined a nice window, let's put a button inside of it. Add the following to your application at the beginning of the `activate ()` function:
 
-```text
+```vala
 var button_hello = new Gtk.Button.with_label ("Click me!") {
     margin = 12
 };
@@ -69,7 +69,7 @@ button_hello.clicked.connect (() => {
 
 Then add this line right before `main_window.show_all ()`:
 
-```csharp
+```vala
 main_window.add (button_hello);
 ```
 
@@ -130,4 +130,3 @@ Feel free to play around with this example. Make the window a different size, se
 Remember how when we compiled our code, we used the `valac` command and the argument `--pkg gtk+-3.0`? What we did there was make use of a "library". If you're not familiar with the idea of libraries, a library is a collection of methods that your program can use. So this argument tells `valac` to include the GTK+ library \(version 3.0\) when compiling our app.
 
 In our code, we've used the `Gtk` "Namespace" to declare that we want to use methods from GTK \(specifically, `Gtk.Window` and `Gtk.Button.with_label`\). Notice that there is a hierarchy at play. If you want to explore that hierarchy in more detail, you can [check out Valadoc](https://valadoc.org/gtk+-3.0/Gtk.Button).
-

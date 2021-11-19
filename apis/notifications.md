@@ -29,7 +29,7 @@ Now that we have an empty window, let's use what we learned in [creating layouts
 
 In between `var main_window...` and `main_window.show ();`, write the following lines of code:
 
-```csharp
+```vala
 var title_label = new Gtk.Label (_("Notifications"));
 var show_button = new Gtk.Button.with_label (_("Show"));
 
@@ -49,7 +49,7 @@ Since we're adding translatable strings, don't forget to update your translation
 
 Now that we have a Gtk.Application we can send notifications. Let's connect a function to the button we created and use it to send a notification:
 
-```csharp
+```vala
 show_button.clicked.connect (() => {
     var notification = new Notification (_("Hello World"));
     notification.set_body (_("This is my first notification!"));
@@ -66,7 +66,7 @@ Okay, now compile your new app. if everything works, you should see your new app
 
 Notifications will automatically contain your app's icon, but you can add additional context by setting a badge icon. Right after the line containing `var notification = New Notification`, add:
 
-```csharp
+```vala
 notification.set_icon (new ThemedIcon ("process-completed"));
 ```
 
@@ -86,7 +86,7 @@ You can browse the full set of named icons using the app [LookBook](http://appce
 
 You can also add buttons to notifications that will trigger actions defined in the `app` namespace. To add a button, first define an action in your Application class as we did in [the actions section](actions.md).
 
-```csharp
+```vala
 var quit_action = new SimpleAction ("quit", null);
 
 add_action (quit_action);
@@ -98,7 +98,7 @@ quit_action.activate.connect (() => {
 
 Now, we can add a button to the notification with a translatable label and the action ID.
 
-```csharp
+```vala
 notification.add_button (_("Quit"), "app.quit");
 ```
 
@@ -112,7 +112,7 @@ Remember that `SimpleAction`s added in the `Application` class with `add_action 
 
 Notifications also have priority. When a notification is set as `URGENT` it will stay on the screen until either the user interacts with it, or you withdraw it. To make an urgent notification, add the following line before the `send_notification ()` function
 
-```csharp
+```vala
 notification.set_priority (NotificationPriority.URGENT);
 ```
 
@@ -124,7 +124,7 @@ We now know how to send a notification, but what if you need to update it with n
 
 Let's make the replace button. This button will replace the current notification with one with different information. Let's create a new button for it, and add it to the grid:
 
-```csharp
+```vala
 var replace_button = new Gtk.Button.with_label (_("Replace"));
 
 grid.add (replace_button);
@@ -154,4 +154,3 @@ Let's review what all we've learned:
 * We can replace outdated notifications by setting a replaces ID
 
 As you can see, notifications have a number of advanced features and can automatically inherit some information from `Gtk.Application`. If you need some further reading on notifications, Check out the page about `Glib.Notification` on [Valadoc](https://valadoc.org/gio-2.0/GLib.Notification).
-

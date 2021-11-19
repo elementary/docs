@@ -12,7 +12,7 @@ Debug logs usually give detailed information on the flow through the system and 
 
 Log functions, like `debug` use [`printf`](http://www.cplusplus.com/reference/cstdio/printf/) style formatting and can be called like this:
 
-```text
+```vala
 string name = "Bob";
 int age = 30;
 debug ("Person: %s %i", name, age);
@@ -26,7 +26,7 @@ Start your app with `G_MESSAGES_DEBUG=all` to print debug messages
 
 Use info log level to log informational messages as well as interesting runtime events. These logs are also immediately visible on a status console, and should be kept to a minimum.
 
-```text
+```vala
 info ("An event occured");
 ```
 
@@ -34,7 +34,7 @@ info ("An event occured");
 
 Use the message log level to output a message.
 
-```text
+```vala
 message ("An event occured");
 ```
 
@@ -42,7 +42,7 @@ message ("An event occured");
 
 The warning log level outputs messages that warn of, for example, use of deprecated APIs, 'almost' errors, or runtime situations that are undesirable or unexpected, but not necessarily "wrong". These logs are immediately visible on a status console.
 
-```text
+```vala
 warning ("Something potentially problematic happened!");
 ```
 
@@ -54,7 +54,7 @@ Start your app with `G_DEBUG=fatal-warnings` to exit the program at the first ca
 
 Critical log level is used when there is a severe application failure that should be investigated immediately.
 
-```text
+```vala
 critical ("A major issue occured! Uh oh!");
 ```
 
@@ -66,7 +66,6 @@ Start your app with `G_DEBUG=fatal-criticals` to exit the program at the first c
 
 Error log level includes logs for runtime errors or unexpected conditions. These errors are immediately visible on a status console and cause your app to exit.
 
-```text
+```vala
 error ("Some catastrophic happened and the app had to exit!");
 ```
-

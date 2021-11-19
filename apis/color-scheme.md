@@ -12,7 +12,7 @@ elementary OS ships with two styles for app widgets: a dark style and a light st
 
 Some apps, like photo or video editors, benefit from reducing the contrast between their content and the app's UI by always choosing to be displayed using a dark style. You can set the dark style for your app by using `Gtk.Settings` and setting the property `gtk_application_prefer_dark_theme`. In your Application class, add the following lines to your `activate` function:
 
-```csharp
+```vala
 protected override void activate () {
     var gtk_settings = Gtk.Settings.get_default ();
     gtk_settings.gtk_application_prefer_dark_theme = true;
@@ -27,7 +27,7 @@ Many apps will be usable in either a light or dark style. In this case, apps sho
 
 First, make sure you've included Granite in the build dependencies declared in your meson.build file:
 
-```text
+```coffeescript
 executable(
     meson.project_name(),
     'src/Application.vala',
@@ -41,7 +41,7 @@ executable(
 
 Now, you can read and respond to the user's style preference with `Granite.Settings` and then use `Gtk.Settings` to set it in your app's `activate` function.
 
-```csharp
+```vala
 protected override void activate () {
     // First we get the default instances for Granite.Settings and Gtk.Settings
     var granite_settings = Granite.Settings.get_default ();
@@ -56,4 +56,3 @@ protected override void activate () {
     });
 }
 ```
-

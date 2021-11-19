@@ -2,7 +2,7 @@
 
 Now that you've learned about Meson, the next step is to make your app able to be translated to different languages. The first thing you need to know is how to mark strings in your code as translatable. Here's an example:
 
-```csharp
+```vala
 stdout.printf ("Not Translatable string");
 stdout.printf (_("Translatable string!"));
 
@@ -67,10 +67,10 @@ Now we have to make some changes to our Meson build system and add a couple new 
 5. Now, Create a directory named "po" in the root folder of your project. Inside of your po directory you will need to create another "meson.build" file. This time, its contents will be:
 
    ```coffeescript
-    i18n.gettext(meson.project_name(),
-        args: '--directory=' + meson.source_root(),
-        preset: 'glib'
-    )
+   i18n.gettext(meson.project_name(),
+       args: '--directory=' + meson.source_root(),
+       preset: 'glib'
+   )
    ```
 
 6. Inside of "po" create another file called "POTFILES" that will contain paths to all of the files you want to translate. For us, this looks like:
@@ -122,8 +122,7 @@ If you're having trouble, you can view the full example code [here on GitHub](ht
 
 Sometimes detailed descriptions in the context of translatable strings are necessary for disambiguation or to help in the creation of accurate translations. For these situations use `/// TRANSLATORS:` comments.
 
-```csharp
+```vala
 /// TRANSLATORS: The first %s is search term, the second is the name of default browser
 title = _("Search for %s in %s").printf (query, get_default_browser_name ());
 ```
-

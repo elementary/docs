@@ -52,7 +52,7 @@ You'll notice the section for installing app icons is a little more complicated 
 
 If you cannot see your new icon in the Applications Menu or the Dock once you've reinstalled your app, refresh your system's icon cache using the following command:
 
-```text
+```bash
 sudo update-icon-caches /usr/share/icons/*
 ```
 
