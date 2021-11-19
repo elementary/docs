@@ -10,16 +10,16 @@ For this integration you can use the [Granite.Services.Application API](https://
 
 ### Current API support:
 
-| Service | Badge Counter | Progress Bar | Actions |
-| :--- | :--- | :--- | :--- |
-| Applications Menu | ✔️ Yes | ✖️ No | ✔️ Yes |
-| Dock | ✔️ Yes | ✔️ Yes | ✔️ Yes |
+| Service           | Badge Counter | Progress Bar | Actions |
+| :---------------- | :------------ | :----------- | :------ |
+| Applications Menu | ✔️ Yes        | ✖️ No        | ✔️ Yes  |
+| Dock              | ✔️ Yes        | ✔️ Yes       | ✔️ Yes  |
 
 ## Setting Up
 
 Before writing any code, you must add the library Granite to your build system. We already installed this library during [The Basic Setup](../writing-apps/the-basic-setup.md) when we installed `elementary-sdk`. Open your meson.build file and add the new dependency to the `executable` method.
 
-```text
+```coffeescript
 executable(
     meson.project_name(),
     'src/Application.vala',
@@ -41,7 +41,7 @@ Once you've set up `granite` in your build system and created a new `Gtk.Applica
 
 Showing a badge in the dock and Applications Menu with the number `12` can be done with the following lines:
 
-```text
+```vala
 Granite.Services.Application.set_badge_visible.begin (true);
 Granite.Services.Application.set_badge.begin (12);
 ```
@@ -52,7 +52,7 @@ Keep in mind you have to set the `set_badge_visible` property to true, and use a
 
 The same goes for showing a progress bar, here we show a progress bar showing 20% progress:
 
-```text
+```vala
 Granite.Services.Application.set_progress_visible.begin (true);
 Granite.Services.Application.set_progress.begin (0.2f);
 ```
@@ -67,7 +67,7 @@ Adding actions to a `.desktop` file does not involve writing any code or using a
 
 Actions must first be declared in a new `Actions` line in your app's .desktop file. This line should contain a `;` separated list of unique action names:
 
-```text
+```ini
 [Desktop Entry]
 Name=Hello Again
 [...]
@@ -76,7 +76,7 @@ Actions=ActionID;
 
 Then below, add the action itself using the same unique ID:
 
-```text
+```ini
 [Desktop Action ActionID]
 Name=The name of the action
 Icon=com.github.myteam.myapp.action-id
@@ -91,7 +91,7 @@ The action name should not include your app's name, as it will always be display
 
 Let's take a look at an example of an action that opens a new window of an app:
 
-```text
+```ini
 [Desktop Entry]
 Name=App Name
 Exec=com.github.yourusername.yourrepositoryname
@@ -106,4 +106,3 @@ Exec=com.github.yourusername.yourrepositoryname -n
 Note that just adding `-n` or any other argument will not automatically make your app open a new window; your app must handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command_line.html).
 
 See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s10.html) for a detailed description of what keys are supported and what they do.
-

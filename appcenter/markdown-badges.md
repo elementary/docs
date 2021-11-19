@@ -6,13 +6,13 @@ elementary provides badges, e.g. for your GitHub README. Badges will open to you
 
 ## Markdown
 
-```text
+```markdown
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.USER.REPO)
 ```
 
 ## HTML
 
-```markup
+```html
 <a href="https://appcenter.elementary.io/com.github.USER.REPO"><img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter"></a>
 ```
 

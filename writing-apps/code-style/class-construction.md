@@ -4,7 +4,7 @@ When creating a new class, prefer GObject-style construction. This type of class
 
 A simple class written with GObject-style construction looks like this:
 
-```csharp
+```vala
 public class MyClass : Object {
     public int foo { get; construct; }
 
@@ -24,17 +24,17 @@ public class MyClass : Object {
 
 ## Construction Properties
 
-```csharp
+```vala
 public int foo { get; construct; }
 ```
 
-In the above example, `MyClass` has a `public` property `foo` whose type is `int`, but we've also declared it as `{ get; construct; }`. This shorthand declares the type of access for this property's `get` and `set` functions. Since we declared the property as `public`, `get` is also public, but we've declared the `set` function as `construct`, which means we can only assign its value as a constructor argument. 
+In the above example, `MyClass` has a `public` property `foo` whose type is `int`, but we've also declared it as `{ get; construct; }`. This shorthand declares the type of access for this property's `get` and `set` functions. Since we declared the property as `public`, `get` is also public, but we've declared the `set` function as `construct`, which means we can only assign its value as a constructor argument.
 
 We want construction arguments to be public to ensure that we can later get information out of a class that was used to construct it, if need be. But it's important to declare limited `set` access on properties for future maintainability. Since there is no handling for changes in this property in the `construct` block, setting this property after the class is constructed would have no effect, even if we allowed it by declaring `{ get; construct set; }`.
 
 ## Constructors
 
-```csharp
+```vala
 public MyClass (int foo) {
     Object (foo: foo);
 }
@@ -42,12 +42,11 @@ public MyClass (int foo) {
 
 `MyClass` also contains a constructor; it describes what arguments are required to construct the class. We've declared here that in order to construct `MyClass`, we need an `int` passed in when we initialize a new object such as with `var new_class = new MyClass (5);`
 
-
 Inside the constructor, we have a special `Object ()` call, in which we specify a property and its value, `Object (foo: foo);`. This sets the value of the integer property `foo` defined earlier to the value received as an argument. It is equivalent to saying `this.foo = foo;`.
 
 ## The Construct Block
 
-```csharp
+```vala
 construct {
     if (foo) {
         // Do stuff
@@ -61,7 +60,7 @@ When using GObject-style construction, a constructor should only contain code th
 
 ## Declaring Multiple Constructors
 
-```csharp
+```vala
 public class Row : Object {
     public string name { get; construct; }
     public Icon icon { get; construct; }
@@ -92,7 +91,7 @@ To see how this style of class construction scales and keeps code organized, let
 - a default constructor that takes two arguments: `string name` and `Icon icon`
 - a separate, named constructor which takes one argument: a `Device` object
 
-```csharp
+```vala
 public Row (string name, Icon icon) {
     Object (
         name: name,
@@ -110,7 +109,7 @@ public Row.from_device (Device device) {
 
 Note that in both cases, we handle the arguments in the constructor, while the actual logic of creating UI widgets lives in the common `construct` block.
 
-```csharp
+```vala
 construct {
     var icon = new Gtk.Image.from_gicon (icon, Gtk.IconSize.DND);
     var label = new Gtk.Label (name);

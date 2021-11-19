@@ -8,7 +8,7 @@ For the simplest example, let's create a switch in your app, and save its state.
 
 First, you need to define what settings your app will use so they can be accessed by your app. In your `data/` folder, create a new file named `gschema.xml`. Inside it, let's define a key for the switch:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
   <schema path="/com/github/yourusername/yourrepositoryname/" id="com.github.yourusername.yourrepositoryname">
@@ -27,7 +27,7 @@ The schema's `path` and `id` attributes are your app's ID \(`path` in a `/` form
 
 In order to interact with the settings key we just defined, we need to create a GLib.Settings object in our application. Building on previous examples, you can create a Gtk.Switch, add it to your window, create a GLib.Settings object, and bind the switch to a settings key like so:
 
-```csharp
+```vala
 protected override void activate () {
     var switch = new Gtk.Switch () {
         halign = Gtk.Align.CENTER,
@@ -96,4 +96,3 @@ To see the state saving functionality in action, you can open your app, toggle t
 {% hint style="info" %}
 If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/gsettings)
 {% endhint %}
-

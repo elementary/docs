@@ -5,7 +5,7 @@ Continuous integration testing \(also called CI\), is a way to automatically ens
 1. Navigate to your project's page on GitHub and select the "Actions" tab.
 2. Select "set up a workflow yourself". You'll then be shown the `main.yml` file with GitHub's default CI configuration. Replace the default workflow with the following:
 
-```text
+```yaml
 name: CI
 
 # This workflow will run for any pull request or pushed commit

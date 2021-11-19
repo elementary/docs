@@ -4,7 +4,7 @@ You can include additional resources with your app like icons or CSS files using
 
 In the `data` directory, create a new file called `gresource.xml` with the following contents:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/yourusername/yourrepositoryname">
@@ -48,7 +48,7 @@ Now that we have a `gresource.xml` file and have included it in the build system
 
 As we saw in the section on [`GLib.Action`](actions.md), GTK has a baked-in set of icon sizes defined under the namespace [`Gtk.IconSize`](https://valadoc.org/gtk+-3.0/Gtk.IconSize.html). When creating icons, it is important to know which of these sizes will be used and to design and hint the icon at that size. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size). Add your custom icon to the `data` directory, and then update your `gresource.xml` file to reference it:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/yourusername/yourrepositoryname">
@@ -59,7 +59,7 @@ As we saw in the section on [`GLib.Action`](actions.md), GTK has a baked-in set 
 
 If you want to use the same icon name in multiple sizes in your app, you can `alias` the icon to paths in [hicolor](https://specifications.freedesktop.org/icon-theme-spec/latest/ar01s03.html) and GTK will automatically load the correct version when its size is referenced:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/yourusername/yourrepositoryname">
@@ -73,7 +73,7 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
 
 Now we can add the GResource path to the system's built-in icon theme in the `Application` class' `activate ()` function. This will let us reference the icon name without using long paths, and automatically handle icon sizing as previously mentioned Again, don't forget to use the same RDNN'd path that was defined in `gresource.xml`:
 
-```csharp
+```vala
 protected override void activate () {
     Gtk.IconTheme.get_default ().add_resource_path ("com/github/yourusername/yourrepositoryname");
 
@@ -84,7 +84,7 @@ protected override void activate () {
 
 The last step is to create a `Gtk.Image` or `Gtk.Button` using your custom icon and add it to the main window:
 
-```csharp
+```vala
 protected override void activate () {
     Gtk.IconTheme.get_default ().add_resource_path ("/com/github/yourusername/yourrepositoryname");
 
@@ -104,4 +104,3 @@ protected override void activate () {
     main_window.show_all ();
 }
 ```
-
