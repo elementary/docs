@@ -28,17 +28,17 @@ AppCenter supports publishing apps that meet these requirements; extensions or p
 
 In general, your app's metadata should not refer to "elementary" or "elementary OS" in user-facing strings—it is assumed that all apps submitted to AppCenter are designed for elementary OS, and users don't need to be reminded of this. If there is a rare, legitimate reason for mentioning elementary, it must abide by the [elementary Brand Guidelines](https://elementary.io/brand).
 
-#### AppData and OARS
+#### MetaInfo and OARS
 
-Your app must install an [appdata.xml file](https://docs.elementary.io/develop/writing-apps/our-first-app#appdata-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
+Your app must install an [metainfo.xml file](https://docs.elementary.io/develop/writing-apps/our-first-app#metainfo-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
 
-Your appdata.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc. Screenshots referenced in your AppData should not contain marketing copy, illustrations, or other elements aside from a full-window screenshot of your app in use.
+Your metainfo.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc. Screenshots referenced in your MetaInfo should not contain marketing copy, illustrations, or other elements aside from a full-window screenshot of your app in use.
 
-Your appdata.xml file must contain a `developer_name` tag that references your name or the name of your organization.
+Your metainfo.xml file must contain a `developer_name` tag that references your name or the name of your organization.
 
-Your appdata.xml must include accurate [Open Age Rating Service \(OARS\)](https://hughsie.github.io/oars/) data. OARS uses a short, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
+Your metainfo.xml must include accurate [Open Age Rating Service \(OARS\)](https://hughsie.github.io/oars/) data. OARS uses a short, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
 
-For more information about the appdata.xml format see, see the [appstream specification](https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps).
+For more information about the metainfo.xml format see, see the [appstream specification](https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps).
 
 #### Desktop File
 
