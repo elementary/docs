@@ -22,11 +22,11 @@ This guide details:
 
 You may feel confident enough to jump straight into writing your first appp:
 
-{% page-ref page="appcenter/our-first-app.md" %}
+{% page-ref page="writing-apps/our-first-app.md" %}
 
 However, we strongly recommend to at least skim "The Basic Setup" first. Having the right setup is going to help you reach your goals faster, and a solid foundation is going to help you throughout the rest of this book.
 
-{% page-ref page="appcenter/the-basic-setup.md" %}
+{% page-ref page="writing-apps/the-basic-setup.md" %}
 
 ## AppCenter Publishing Requirements
 
