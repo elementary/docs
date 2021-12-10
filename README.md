@@ -1,22 +1,32 @@
 ---
-description: All about creating and distributing apps for elementary OS
+description: Creating and distributing apps for elementary OS
 ---
 
 # Getting Started
 
-## What We Will \(And Won't\) Cover
+## What is \(and Isn't\) Covered
 
-We're going to assume that you have absolutely no experience in writing apps for elementary OS. But we will assume some basic programming knowledge, and hopefully a little experience in Vala or at least similarly syntaxed languages. If you're not familiar with Vala, we highly encourage you to brush up on it before coming here. There are great resources \(text and video\) available for learning Vala on [Valadoc.org](https://valadoc.org/).
+No experience in writing apps for elementary OS is assumed, but basic programming knowledge is. A little experience with Vala (or at least similarly syntaxed languages) will be valuable. If you're not familiar with Vala, there are great resources (text and video) available for learning Vala on [Valadoc.org](https://valadoc.org/).
 
-We’re also not covering design too much in this guide; that’s what the [Human Interface Guidelines \(HIG\)](https://docs.elementary.io/hig/) are for, and you’re highly encouraged to take a look there before beginning your app. We're going to assume you have a basic knowledge of \(or at least a quick link to\) the HIG and focus on coding. However, elementary OS is all about great design and stellar consistency. It’s important you grasp these concepts before moving on.
+Design is covered in the [Human Interface Guidelines \(HIG\)](https://docs.elementary.io/hig/). We reference the HIG throughout this guide and it's important you grasp the concepts proposed there, but this guide is focused primarily on code.
 
 ## Writing Apps
 
-In this book, we're going to talk about building apps using GTK, Granite, and other tech available in elementary OS, setting up a build system, hosting your code for collaborative development, working with translations, a few other bits and pieces, and finally packaging and distributing your new app.
+This guide details:
+* Building apps using GTK, Granite, and other technology available in elementary OS
+* Setting up a build system
+* Hosting your code for collaborative development
+* Working with translations
+* Packaging and distributing your new app on AppCenter
+* Working with Platform APIs
 
-Some of you may feel confident enough to jump straight into coding. If that's the case, you might want to skip ahead and start writing your first app.
+You may feel confident enough to jump straight into writing your first appp:
 
-However, we strongly recommend to at least skim through the preparation step. Having the right setup is going to help you reach your goals faster, and having a solid foundation is going to help you throughout the rest of this book.
+{% page-ref page="appcenter/our-first-app.md" %}
+
+However, we strongly recommend to at least skim "The Basic Setup" first. Having the right setup is going to help you reach your goals faster, and a solid foundation is going to help you throughout the rest of this book.
+
+{% page-ref page="appcenter/the-basic-setup.md" %}
 
 ## AppCenter Publishing Requirements
 
