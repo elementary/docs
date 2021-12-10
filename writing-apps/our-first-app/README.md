@@ -98,7 +98,7 @@ To monetize your app, you also **must include your app's AppCenter Stripe key**.
 
 This file contains all the information needed to display your app in the Applications Menu and in the Dock. The one generated from AppStream Metainfo Creator looks something like this:
 
-```
+```ini
 [Desktop Entry]
 Version=1.0
 Type=Application
