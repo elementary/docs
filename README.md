@@ -6,30 +6,31 @@ description: Creating and distributing apps for elementary OS
 
 ## What is \(and Isn't\) Covered
 
-No experience in writing apps for elementary OS is assumed, but basic programming knowledge is.
-A little experience, prior [knowledge of Vala](https://valadoc.org/) (or at least similarly syntaxed languages) is valuable.
+No experience in writing apps for elementary OS is assumed, but basic programming knowledge is. A little experience with Vala (or at least similarly syntaxed languages) will be valuable. If you're not familiar with Vala, there are great resources (text and video) available for learning Vala on [Valadoc.org](https://valadoc.org/).
 
-Design is covered in [Human Interface Guidelines \(HIG\)](https://docs.elementary.io/hig/).
-By adhering to it you can match the great design and stellar consistency of elementary OS.
+Design is covered in the [Human Interface Guidelines \(HIG\)](https://docs.elementary.io/hig/). We reference the HIG throughout this guide and it's important you grasp the concepts proposed there, but this guide is focused primarily on code.
 
 ## Writing Apps
 
-This book details
-building apps using GTK, Granite, and other technology available in elementary OS,
-setting up a build system,
-hosting your code for collaborative development,
-working with translations,
-a few other bits and pieces,
-and finally packaging and distributing your new app.
+This guide details:
+* Building apps using GTK, Granite, and other technology available in elementary OS
+* Setting up a build system
+* Hosting your code for collaborative development
+* Working with translations
+* Packaging and distributing your new app on AppCenter
+* Working with Platform APIs
 
-Skip ahead and start writing your first app if confident enough to jump straight into coding,
-but do skim through the preparation step first.
-Having the right setup helps in reaching your goals faster,
-and a solid foundation comes in handy throughout the rest of this book.
+You may feel confident enough to jump straight into writing your first appp:
+
+{% page-ref page="appcenter/our-first-app.md" %}
+
+However, we strongly recommend to at least skim "The Basic Setup" first. Having the right setup is going to help you reach your goals faster, and a solid foundation is going to help you throughout the rest of this book.
+
+{% page-ref page="appcenter/the-basic-setup.md" %}
 
 ## AppCenter Publishing Requirements
 
-Correct metadata, legal specificaion, and other technical aspects are required to publish your app to users on AppCenter.
+There are also a number of technical, metadata, legal, and other requirements for publishing your app to users via AppCenter.
 
 {% page-ref page="appcenter/publishing-requirements.md" %}
 
