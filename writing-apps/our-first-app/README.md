@@ -71,7 +71,7 @@ First is a MetaInfo file. This file contains all the information needed to list 
 
 In your project's root, create a new folder called "data", and save your MetaInfo to a new file called "hello-again.metainfo.xml".
 
-For the purposes of this tutorial, screenshots are optional, but they are required for publishing in AppCenter. OARS data is also required and can be generated with the [OARS generator](https://hughsie.github.io/oars/generate.html).
+For the purposes of this tutorial, screenshots are optional, but they are required for publishing in AppCenter. OARS data is also required and can be generated with the [OARS generator](https://hughsie.github.io/oars/generate.html). There are even more [optional fields](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html) that you can read about.
 
 There are also some special custom fields for AppCenter to further brand your listing. Specifically, you can set a background color and a text color for your app's header and banner. You can do so by adding the following keys inside the `component` tag:
 
