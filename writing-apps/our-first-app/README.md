@@ -40,63 +40,38 @@ To create our first real app, we're going to need all the old stuff that we used
 
 Everything working as expected? Good. Now, let's get our app ready for other people to use.
 
-## The .desktop File
+## Metadata
 
-Every app comes with a .desktop file. This file contains all the information needed to display your app in the Applications Menu and in the Dock. Let's go ahead and make one:
+Every app comes with two metadata files that we can generate using an online tool. Open [AppStream Metainfo Creator](https://www.freedesktop.org/software/appstream/metainfocreator/#/guiapp) and fill out the form with your app's info. When you get the section titled "Launchables", make sure to select "Generate a .desktop file for me". Don't worry about generating Meson snippets, as we'll cover that in the next section. After you select "Generate", you should have two resulting files that you can copy.
 
-1. In your project's root, create a new folder called "data".
-2. Create a new file in Code and save it in the "data" folder as "hello-again.desktop".
-3. Type the following into your .desktop file. Like before, try to guess what each line does.
+### The MetaInfo File
 
-   ```ini
-   [Desktop Entry]
-   Name=Hello Again
-   GenericName=Hello World App
-   Comment=Proves that we can use Vala and Gtk
-   Categories=Utility;Education;
-   Exec=com.github.yourusername.yourrepositoryname
-   Icon=com.github.yourusername.yourrepositoryname
-   Terminal=false
-   Type=Application
-   Keywords=Hello;World;Example;
-   ```
+First is a MetaInfo file. This file contains all the information needed to list your app in AppCenter. It should look something like this:
 
-   The first line declares that this file is a "Desktop Entry" file. The next three lines are descriptions of our app: The branded name of our app, a generic name for our app, and a comment that describes our app's function. Next, we categorize our app. Then, we say what command will execute it. Finally, we give our app an icon and let the OS know that this isn't a command line app.
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.myteam.myapp</id>
 
-{% hint style="info" %}
-For more info about crafting .desktop files, check out [this HIG entry](https://docs.elementary.io/hig/desktop-integration/app-launcher).
-{% endhint %}
+  <name>My App</name>
+  <summary>Proves that we can use Vala and Gtk</summary>
 
-1. Finally, let's add this file to `git` and commit a revision:
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
 
-   ```bash
-   git add data/hello-again.desktop
-   git commit -am "Add a .desktop file"
-   git push
-   ```
+  <description>
+    <p>
+      A quick summary of your app's main selling points and features. Just a couple sentences per paragraph is best
+    </p>
+  </description>
 
-## AppData.xml
+  <launchable type="desktop-id">com.github.myteam.myapp.desktop</launchable>
+</component>
+```
 
-Every app also comes with an .appdata.xml file. This file contains all the information needed to list your app in AppCenter.
+In your project's root, create a new folder called "data", and save your MetaInfo to a new file called "hello-again.metainfo.xml".
 
-1. In your data folder, create a new file called "hello-again.appdata.xml"
-2. Type the following into your .appdata.xml file
-
-   ```xml
-   <?xml version="1.0" encoding="UTF-8"?>
-   <!-- Copyright 2019 Your Name <you@email.com> -->
-   <component type="desktop">
-     <id>com.github.yourusername.yourrepositoryname</id>
-     <metadata_license>CC0</metadata_license>
-     <name>Your App's Name</name>
-     <summary>A Catchy Tagline</summary>
-     <description>
-       <p>A quick summary of your app's main selling points and features. Just a couple sentences per paragraph is best.</p>
-     </description>
-   </component>
-   ```
-
-These are all the mandatory fields for displaying your app in AppCenter. There are plenty of other [optional fields](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html) that you can read about.
+For the purposes of this tutorial, screenshots are optional, but they are required for publishing in AppCenter. OARS data is also required and can be generated with the [OARS generator](https://hughsie.github.io/oars/generate.html). There are even more [optional fields](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html) that you can read about.
 
 There are also some special custom fields for AppCenter to further brand your listing. Specifically, you can set a background color and a text color for your app's header and banner. You can do so by adding the following keys inside the `component` tag:
 
@@ -117,8 +92,40 @@ You can also specify a suggested price in whole USD.
 Remember that AppCenter is a pay-what-you-want store. A suggested price is not a price floor. Users will still be able to choose any price they like, including 0.
 {% endhint %}
 
-To monetize your app, you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. While the new AppCenter Dashboard is under development, elementary OS 5.1 app developers can find your app's key in its [existing AppStream data](https://appstream.elementary.io/appcenter/html/bionic/main/metainfo/index.html). Developers of new apps will receive their key in the new AppCenter Dashboard once it is live.
+To monetize your app, you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. You can connect your app to Stripe and receive a new key on the [AppCenter Dashboard](https://beta.developer.elementary.io/).
 
+### The Desktop Entry File
+
+This file contains all the information needed to display your app in the Applications Menu and in the Dock. The one generated from AppStream Metainfo Creator looks something like this:
+
+```ini
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=My App
+Comment=Proves that we can use Vala and Gtk
+Categories=Development;Education;
+
+Icon=com.github.myteam.myapp
+Exec=com.github.myteam.myapp
+Terminal=false
+```
+
+Copy the contents of your Desktop Entry and save it to the data folder you created earlier. Name this new file "hello-again.desktop".
+
+{% hint style="info" %}
+For more info about crafting .desktop files, check out [this HIG entry](https://docs.elementary.io/hig/desktop-integration/app-launcher).
+{% endhint %}
+
+1. Finally, let's add both of these files to `git` and commit a revision:
+
+   ```bash
+   git add data/
+   git commit -am "Add Metadata files"
+   git push
+   ```
+   
 ## Legal Stuff
 
 Since we're going to be putting our app out into the wild, we should include some information about who wrote it and the legal usage of its source code. For this we need a new file in our project's root folder: the `LICENSE` file. This file contains a copy of the license that your code is released under. For elementary OS apps this is typically the [GNU General Public License](https://www.gnu.org/licenses/quick-guide-gplv3.html) \(GPL\). Remember the header we added to our source code? That header reminds people that your app is licensed and it belongs to you. GitHub has a built-in way to add several popular licenses to your repository. Read their [documentation for adding software licenses](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) and add a `LICENSE` file to your repository.

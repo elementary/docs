@@ -24,7 +24,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
    add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language:'c')
    ```
 
-2. Remove the lines that install your .desktop and appdata files and replace them with the following:
+2. Remove the lines that install your .desktop and metainfo files and replace them with the following:
 
    ```coffeescript
    #Translate and install our .desktop file
@@ -37,10 +37,10 @@ Now we have to make some changes to our Meson build system and add a couple new 
        install_dir: get_option('datadir') / 'applications'
    )
 
-   #Translate and install our .appdata file
+   #Translate and install our .metainfo file
    i18n.merge_file(
-       input: 'data' / 'hello-again.appdata.xml.in',
-       output: meson.project_name() + '.appdata.xml',
+       input: 'data' / 'hello-again.metainfo.xml.in',
+       output: meson.project_name() + '.metainfo.xml',
        po_dir: meson.source_root() / 'po',
        install: true,
        install_dir: get_option('datadir') / 'metainfo'
@@ -55,11 +55,11 @@ Now we have to make some changes to our Meson build system and add a couple new 
    subdir('po')
    ```
 
-4. You might have noticed in step 2 that the `merge_file` method has an `input` and `output`. We're going to append the additional extension `.in` to our .desktop and .appdata.xml files so that this method can take the untranslated files and produce translated files with the correct names.
+4. You might have noticed in step 2 that the `merge_file` method has an `input` and `output`. We're going to append the additional extension `.in` to our .desktop and .metainfo.xml files so that this method can take the untranslated files and produce translated files with the correct names.
 
    ```bash
    git mv data/hello-again.desktop data/hello-again.desktop.in
-   git mv data/hello-again.appdata.xml data/hello-again.appdata.xml.in
+   git mv data/hello-again.metainfo.xml data/hello-again.metainfo.xml.in
    ```
 
    We use the `git mv` command here instead of renaming in the file manager or with `mv` so that `git` can keep track of the file rename as part of our revision history.
@@ -78,7 +78,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
    ```text
    src/Application.vala
    data/hello-again.desktop.in
-   data/hello-again.appdata.xml.in
+   data/hello-again.metainfo.xml.in
    ```
 
 7. We have one more file to create in the "po" directory. This file will be named "LINGUAS" and it should contain the two-letter language codes for all languages you want to provide translations for. As an example, let's add German and Spanish
