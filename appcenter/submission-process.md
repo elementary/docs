@@ -20,7 +20,7 @@ Before you can publish your app, you'll need to [release it on GitHub](https://h
 This step is denoted by an up arrow icon in a green bubble.
 {% endhint %}
 
-If a new release is available on GitHub, you'll be able to submit this release for publishing. Please make sure to review [the publishing requirements](https://github.com/elementary/houston/wiki/Before-You-Publish) before submitting your app. After clicking the button, AppCenter Dashboard will automatically import your repository and begin testing. It is important to [make changes to your app's monetization status](https://github.com/elementary/houston/wiki/Monetizing-Your-App) before completing this step.
+If a new release is available on GitHub, you'll be able to submit this release for publishing. Please make sure to review [the publishing requirements](../appcenter/publishing-requirements.md) before submitting your app. After clicking the button, AppCenter Dashboard will automatically import your repository and begin testing. It is important to [make changes to your app's monetization status](../appcenter/monetizing-your-app.md) before completing this step.
 
 ## Wait for Testing
 
@@ -44,5 +44,5 @@ If your app fails either human or automated testing, new issues reports will be 
 This status is denoted by a check mark icon in a green bubble.
 {% endhint %}
 
-When your app passes automated testing and human review, it will become available in AppCenter in elementary OS. If you wish to [publish an update](https://github.com/elementary/houston/wiki/Publishing-Updates), you can restart the submission process by creating a new release on GitHub.
+When your app passes automated testing and human review, it will become available in AppCenter in elementary OS. If you wish to [publish an update](../appcenter/publishing-updates.md), you can restart the submission process by creating a new release on GitHub.
 
