@@ -59,8 +59,8 @@ Change into the build directory and use `ninja` to build. Then, if the build is 
 
 ```bash
 cd build
-sudo ninja
-sudo ninja install
+ninja
+ninja install
 ```
 
 If all went well, you should now be able to open your app from the Applications Menu and pin it to the Dock. We'll revisit Meson again later to add some more complicated behavior, but for now this is all you need to know to give your app a proper build system. If you want to explore Meson a little more on your own, you can always check out [Meson's documentation](https://mesonbuild.com/Manual.html).
