@@ -74,8 +74,7 @@ If you were about to add the "build" folder to your git repository and push it, 
 To uninstall your application, change into the build directory and we will use `ninja` once again to uninstall:
 
 ```bash
-cd build
-sudo ninja uninstall
+sudo ninja -C build uninstall
 ```
 
 If all went well, you should see command output that shows files related to your application were removed.  Again, more details can be found in [Meson's documentation](https://mesonbuild.com/Manual.html).
