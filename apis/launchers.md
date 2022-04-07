@@ -17,7 +17,7 @@ For this integration you can use the [Granite.Services.Application API](https://
 
 ## Setting Up
 
-Before writing any code, you must add the library Granite to your build system. We already installed this library during [The Basic Setup](../writing-apps/the-basic-setup.md) when we installed `elementary-sdk`. Open your meson.build file and add the new dependency to the `executable` method.
+Before writing any code, you must add the library [Granite](https://valadoc.org/granite/Granite.html) to your build system. We already installed this library during [The Basic Setup](../writing-apps/the-basic-setup.md) when we installed `elementary-sdk`. Open your `meson.build` file and add the new dependency to the `executable` method.
 
 ```coffeescript
 executable(
