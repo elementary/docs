@@ -92,7 +92,7 @@ You can also specify a suggested price in whole USD.
 Remember that AppCenter is a pay-what-you-want store. A suggested price is not a price floor. Users will still be able to choose any price they like, including 0.
 {% endhint %}
 
-To monetize your app, you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. You can connect your app to Stripe and receive a new key on the [AppCenter Dashboard](https://beta.developer.elementary.io/).
+To monetize your app, you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. You can connect your app to Stripe and receive a new key on the [AppCenter Dashboard](https://developer.elementary.io/).
 
 ### The Desktop Entry File
 
