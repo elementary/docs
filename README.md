@@ -20,7 +20,7 @@ This guide details:
 * Packaging and distributing your new app on AppCenter
 * Working with Platform APIs
 
-You may feel confident enough to jump straight into writing your first appp:
+You may feel confident enough to jump straight into writing your first app:
 
 {% page-ref page="writing-apps/our-first-app/" %}
 
