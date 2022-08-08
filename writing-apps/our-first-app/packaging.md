@@ -75,7 +75,7 @@ flatpak remove com.github.yourusername.yourrepositoryname
 Flatpak will prompt you to remove your application.
 
 ```bash
-flatpak remove com.github.yourusername.yourrepositoryname
+flatpak uninstall com.github.yourusername.yourrepositoryname --delete-data
 
 
         ID                                                          Branch           Op
