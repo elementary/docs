@@ -73,26 +73,25 @@ In your project's root, create a new folder called "data", and save your MetaInf
 
 For the purposes of this tutorial, screenshots are optional, but they are required for publishing in AppCenter. OARS data is also required and can be generated with the [OARS generator](https://hughsie.github.io/oars/generate.html). There are even more [optional fields](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html) that you can read about.
 
-There are also some special custom fields for AppCenter to further brand your listing. Specifically, you can set a background color and a text color for your app's header and banner. You can do so by adding the following keys inside the `component` tag:
+You can also specify a brand color for your app by adding the `branding` tag inside the `component` tag. Colors must be in hexidecimal, starting with `#`. The background will automatically be given a slight gradient in your app's banner.
+
+```xml
+<branding>
+  <color type="primary">#f37329</color>
+</branding>
+```
+If you want to monetize your app, you will need to add two keys inside a `custom` tag inside the `component` tag. Suggested prices should be in whole USD. you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. You can connect your app to Stripe and receive a new key on the [AppCenter Dashboard](https://developer.elementary.io/).
 
 ```xml
 <custom>
-  <value key="x-appcenter-color-primary">#603461</value>
-  <value key="x-appcenter-color-primary-text">rgb(255, 255, 255)</value>
   <value key="x-appcenter-suggested-price">5</value>
   <value key="x-appcenter-stripe">pk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</value>
 </custom>
 ```
 
-You can specify colors here in either Hexadecimal or RGB. The background color will automatically be given a slight gradient in your app's banner.
-
-You can also specify a suggested price in whole USD.
-
 {% hint style="info" %}
 Remember that AppCenter is a pay-what-you-want store. A suggested price is not a price floor. Users will still be able to choose any price they like, including 0.
 {% endhint %}
-
-To monetize your app, you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. You can connect your app to Stripe and receive a new key on the [AppCenter Dashboard](https://developer.elementary.io/).
 
 ### The Desktop Entry File
 
