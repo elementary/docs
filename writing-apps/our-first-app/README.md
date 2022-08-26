@@ -80,7 +80,7 @@ You can also specify a brand color for your app by adding the `branding` tag ins
   <color type="primary">#f37329</color>
 </branding>
 ```
-If you want to monetize your app, you will need to add two keys inside a `custom` tag inside the `component` tag. Suggested prices should be in whole USD. you also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. You can connect your app to Stripe and receive a new key on the [AppCenter Dashboard](https://developer.elementary.io/).
+If you want to monetize your app, you will need to add two keys inside a `custom` tag inside the `component` tag. Suggested prices should be in whole USD. You also **must include your app's AppCenter Stripe key**. This is a unique public key for each app and is not the same as your Stripe account's regular public key. You can connect your app to Stripe and receive a new key on the [AppCenter Dashboard](https://developer.elementary.io/).
 
 ```xml
 <custom>
