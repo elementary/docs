@@ -1,5 +1,5 @@
 ---
-description: Adding Badges, Progress Bars, and Quick Lists
+description: Adding Badges, Progress Bars, and launching Actions
 ---
 
 # Launchers
@@ -61,48 +61,78 @@ As you can see, the method `set_progress` takes a `double` value type and is a r
 
 ## Actions
 
-Actions are specific functions your app can perform without already being open; think of them as alternate and more specific entry points into your app. Actions appear in the context menu of your app icon in the Applications Menu and Dock, and are searchable by name from the Applications Menu.
+You can use any action defined in the `app` namespace as one of the entry points for your application. They appear in the context menu of your app icon in the Applications Menu and Dock, and are searchable by name from the Applications Menu. Implementing actions is covered in-depth in [the actions section](actions).
 
-Adding actions to a `.desktop` file does not involve writing any code or using any external dependencies, though your app needs a way to distinguish between actions, e.g. with command line flags.
+### D-Bus activation
 
-Actions must first be declared in a new `Actions` line in your app's .desktop file. This line should contain a `;` separated list of unique action names:
+Your app needs to support D-Bus activation in order to use actions as entry points. This does not require any changes to the application source code. All that is needed is a service file which is not unlike the `.desktop` file that you are already familiar with. Define a new `service.in` file in the `data` directory:
+
+```ini
+[D-BUS Service]
+Name=com.github.myteam.myapp
+Exec=@exec_name@ --gapplication-service
+```
+
+Notice the `@exec_name@` configurable variable and the `.in` file extension. Here we are using meson's [configuration feature](https://mesonbuild.com/Configuration.html) to specify the name of the executable. To install the service add this to your `meson.build` file:
+
+```coffeescript
+# Install D-Bus service, so that application can be started by D-Bus
+service_conf_data = configuration_data()
+service_conf_data.set('exec_name', get_option('prefix') / get_option('bindir') / meson.project_name())
+
+configure_file(
+    input: 'data' / 'service.in',
+    output: meson.project_name() + '.service',
+    configuration: service_conf_data,
+    install: true,
+    install_dir: get_option('datadir') / 'dbus-1' / 'services'
+)
+```
+
+Lastly, update the `.desktop` file by adding the `DBusActivatable` line to the `Desktop Entry` group:
 
 ```ini
 [Desktop Entry]
 Name=Hello Again
 [...]
-Actions=ActionID;
+DBusActivatable=true
 ```
 
-Then below, add the action itself using the same unique ID:
+### Declaring actions
+
+When defining a `GLib.Action` that can be used to launch the app make sure to register it inside application's `startup` method:
+
+```vala
+public override void startup () {
+	base.startup ();
+
+	var my_action = new SimpleAction ("my-action", null);
+	add_action (my_action);
+	// Add other actions, define keyboard shortcuts, etc.
+}
+```
+
+Actions must also be declared in a new `Actions` line in your app's `.desktop` file. This line should contain a `;` separated list of unique action names:
 
 ```ini
-[Desktop Action ActionID]
-Name=The name of the action
-Icon=com.github.myteam.myapp.action-id
-Exec=com.github.myteam.myapp --action-id
+[Desktop Entry]
+Name=Hello Again
+[...]
+Actions=my-action;
 ```
 
-The `Icon` line is optional and should be an icon which represents the action that will be performed. The `Exec` line is required and should be your app's executable name and any command line argument required to trigger the action.
+Then use a dedicated group, named after the unique action name, to define the details of each action:
+
+```ini
+[Desktop Action my-action]
+Name=User visible name of my action
+Icon=com.github.myteam.myapp.my-action-icon
+Exec=com.github.myteam.myapp
+```
+
+The `Icon` line is optional and should reference a dedicated icon for the action. The `Exec` line should be specified, but is used only for backwards compatibility in case your app ever runs in an environment without D-Bus activation support. Learn more from the [related Freedesktop specification](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s11.html).
 
 {% hint style="info" %}
 The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
 {% endhint %}
 
-Let's take a look at an example of an action that opens a new window of an app:
-
-```ini
-[Desktop Entry]
-Name=App Name
-Exec=com.github.yourusername.yourrepositoryname
-...
-Actions=NewWindow;
-
-[Desktop Action NewWindow]
-Name=New Window
-Exec=com.github.yourusername.yourrepositoryname -n
-```
-
-Note that just adding `-n` or any other argument will not automatically make your app open a new window; your app must handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command\_line.html).
-
-See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s10.html) for a detailed description of what keys are supported and what they do.
