@@ -7,6 +7,7 @@
 * [The Basic Setup](writing-apps/the-basic-setup.md)
 * [Hello World](writing-apps/hello-world.md)
 * [Our First App](writing-apps/our-first-app/README.md)
+  * [Metadata](writing-apps/our-first-app/metadata.md)
   * [The Build System](writing-apps/our-first-app/the-build-system.md)
   * [Translations](writing-apps/our-first-app/translations.md)
   * [Icons](writing-apps/our-first-app/icons.md)

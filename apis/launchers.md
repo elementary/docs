@@ -1,5 +1,5 @@
 ---
-description: 'Adding Badges, Progress Bars, and Quick Lists'
+description: Adding Badges, Progress Bars, and Quick Lists
 ---
 
 # Launchers
@@ -11,7 +11,7 @@ For this integration you can use the [Granite.Services.Application API](https://
 ### Current API support:
 
 | Service           | Badge Counter | Progress Bar | Actions |
-| :---------------- | :------------ | :----------- | :------ |
+| ----------------- | ------------- | ------------ | ------- |
 | Applications Menu | ✔️ Yes        | ✖️ No        | ✔️ Yes  |
 | Dock              | ✔️ Yes        | ✔️ Yes       | ✔️ Yes  |
 
@@ -31,7 +31,7 @@ executable(
 )
 ```
 
-Your app must also be a `Gtk.Application` with a correctly set `application_id` as we previously set up in Hello World.
+Your app must also be a `Gtk.Application` with a correctly set `application_id` as we previously set up in [Hello World](../writing-apps/hello-world.md#gtk.application).
 
 Though we haven't made any changes to our source code yet, change into your build directory and run `ninja` to build your project. It should still build without any errors. If you do encounter errors, double check your changes and resolve them before continuing.
 
@@ -103,6 +103,6 @@ Name=New Window
 Exec=com.github.yourusername.yourrepositoryname -n
 ```
 
-Note that just adding `-n` or any other argument will not automatically make your app open a new window; your app must handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command_line.html).
+Note that just adding `-n` or any other argument will not automatically make your app open a new window; your app must handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command\_line.html).
 
 See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s10.html) for a detailed description of what keys are supported and what they do.

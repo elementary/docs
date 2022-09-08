@@ -4,16 +4,16 @@ description: Sending Notification Bubbles with GLib.Notification
 
 # Notifications
 
-![A notification bubble](../.gitbook/assets/notification.png)
+![A notification bubble](<../.gitbook/assets/notification (1).png>)
 
 By now you've probably already seen the notification bubbles that appear on the top right of the screen. Notifications are a way to update someone about the state of your app. For example, they can inform the user that a long running background process has been completed or a new message has arrived. In this section we are going to show you just how to get them to work in your app. Let's begin by making a new project!
 
 ### Making Preparations
 
-1. Create a new folder inside of "~/Projects" called "notifications-app"
+1. Create a new folder inside of "\~/Projects" called "notifications-app"
 2. Create a new folder inside of that folder called "src" and add a file inside of it called `Application.vala`
 3. Create a `meson.build` file. If you don't remember how to set up Meson, go back to the [previous section](../writing-apps/our-first-app/the-build-system.md) and review.
-4. Remember how to [make a .desktop file](../writing-apps/our-first-app/#the-desktop-file)? Excellent! Make one for this project, but this time, since your app will be displaying notifications, add `X-GNOME-UsesNotifications=true` to the end of the file. This is needed so that users will be able to set notification preferences for your app in the system's notification settings.
+4. Remember how to [make a .desktop file](../writing-apps/our-first-app/metadata.md#desktop-entry)? Excellent! Make one for this project, but this time, since your app will be displaying notifications, add `X-GNOME-UsesNotifications=true` to the end of the file. This is needed so that users will be able to set notification preferences for your app in the system's notification settings.
 
 When using notifications, it's important that your desktop file has the same name as your application's ID. This is because elementary OS uses desktop files to find extra information about the app who sends the notification such as a default icon, or the name of the app. To keep things simple, we'll be using the same RDNN everywhere.
 

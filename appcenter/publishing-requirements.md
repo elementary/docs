@@ -22,7 +22,7 @@ Your app must come with [a Flatpak manifest](https://docs.elementary.io/develop/
 
 #### Extensions & Plugins
 
-AppCenter supports publishing apps that meet these requirements; extensions or plugins \(eg. to the Panel, System Settings, or other apps\) are not currently supported.
+AppCenter supports publishing apps that meet these requirements; extensions or plugins (eg. to the Panel, System Settings, or other apps) are not currently supported.
 
 ### Metadata Requirements
 
@@ -30,19 +30,19 @@ In general, your app's metadata should not refer to "elementary" or "elementary 
 
 #### MetaInfo and OARS
 
-Your app must install an [metainfo.xml file](https://docs.elementary.io/develop/writing-apps/our-first-app#metainfo-xml) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
+Your app must install an [metainfo.xml file](../writing-apps/our-first-app/metadata.md#metainfo) to `/usr/share/metainfo`. AppCenter uses this metadata to create a listing for your app. It cannot be displayed in AppCenter without it.
 
 Your metainfo.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc. Screenshots referenced in your MetaInfo should not contain marketing copy, illustrations, or other elements aside from a full-window screenshot of your app in use.
 
 Your metainfo.xml file must contain a `developer_name` tag that references your name or the name of your organization.
 
-Your metainfo.xml must include accurate [Open Age Rating Service \(OARS\)](https://hughsie.github.io/oars/) data. OARS uses a short, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
+Your metainfo.xml must include accurate [Open Age Rating Service (OARS)](https://hughsie.github.io/oars/) data. OARS uses a short, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
 
 For more information about the metainfo.xml format see, see the [appstream specification](https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps).
 
 #### Desktop File
 
-Your app must install a [.desktop file](https://docs.elementary.io/develop/writing-apps/our-first-app#the-desktop-file) to `/usr/share/applications`. elementary OS uses a .desktop file to display your app in the applications launcher and the dock. Without this file, your app will not be visible to users.
+Your app must install [a .desktop file](../writing-apps/our-first-app/metadata.md#desktop-entry) to `/usr/share/applications`. elementary OS uses a .desktop file to display your app in the applications launcher and the dock. Without this file, your app will not be visible to users.
 
 Your .desktop file must not contain `NoDisplay=true` or anything else that prevents it from showing up in the applications launcher.
 
@@ -70,7 +70,7 @@ Your app should not use "elementary", "Pantheon", or other elementary brand name
 
 #### Launching
 
-Your app should display its own graphical user interface on launch; it should not open another app or system component without user interaction inside your app UI. For example, if your app operates on a given file, it should display its own UI with an "Open File" button \(or similar\) before throwing an Open File dialog. If your app can request elevated permissions for certain actions, those permissions should be requested after your app's UI is shown and preferably only on-demand when actions requiring those permissions are performed.
+Your app should display its own graphical user interface on launch; it should not open another app or system component without user interaction inside your app UI. For example, if your app operates on a given file, it should display its own UI with an "Open File" button (or similar) before throwing an Open File dialog. If your app can request elevated permissions for certain actions, those permissions should be requested after your app's UI is shown and preferably only on-demand when actions requiring those permissions are performed.
 
 #### App Stores
 
@@ -100,5 +100,4 @@ Apps should generally abide by the [elementary Human Interface Guidelines](https
 
 ### Tips for Games
 
-If your game UI properly scales when the window is resized, one way to support both HiDPI and loDPI \(even if the engine doesn't out of the box\) is to launch your game maximized. That way the UI will scale up no matter the resolution or scaling factor of the display.
-
+If your game UI properly scales when the window is resized, one way to support both HiDPI and loDPI (even if the engine doesn't out of the box) is to launch your game maximized. That way the UI will scale up no matter the resolution or scaling factor of the display.
