@@ -96,6 +96,33 @@ If you want to monetize your app, you will need to add two keys inside a `custom
 Remember that AppCenter is a pay-what-you-want store. A suggested price is not a price floor. Users will still be able to choose any price they like, including 0.
 {% endhint %}
 
+### Releases
+
+Your app must have a `release` tag for every version you wish to publish in AppCenter. Release notes show up in AppCenter and should be aimed at the people who use your app. Avoid technical language and developer-facing changes and focus more on what people can expect to see in this update.
+
+```xml
+<releases>
+  <release version="1.0.0" date="2022-09-08" urgency="medium">
+    <description>
+      <p>New features:</p>
+      <ul>
+        <li>My app can now do a great new thing</li>
+      </ul>
+      <p>Fixes:</p>
+      <ul>
+        <li>An annoying behavior no longer occurs</li>
+      </ul>
+    </description>
+  </release>
+</releases>
+```
+
+{% hint style="info" %}
+Previous `release` tags can remain in your MetaInfo file forever, and we encourage it; AppCenter may use them to show changes across multiple releases of your app
+{% endhint %}
+
+You can read more about the release tag [here](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-releases), including more features and formatting options.
+
 ## Desktop Entry
 
 This file contains all the information needed to display your app in the Applications Menu and in the Dock. The one generated from AppStream Metainfo Creator looks something like this:
