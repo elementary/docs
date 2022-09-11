@@ -61,7 +61,7 @@ As you can see, the method `set_progress` takes a `double` value type and is a r
 
 ## Actions
 
-You can use any action defined in the `app` namespace as one of the entry points for your application. They appear in the context menu of your app icon in the Applications Menu and Dock, and are searchable by name from the Applications Menu. Implementing actions is covered in-depth in [the actions section](actions).
+Actions are specific functions your app can perform without already being open; think of them as alternate and more specific entry points into your app. Actions appear in the context menu of your app icon in the Applications Menu and Dock, and are searchable by name from the Applications Menu.
 
 ### D-Bus activation
 
@@ -100,19 +100,7 @@ DBusActivatable=true
 
 ### Declaring actions
 
-When defining a `GLib.Action` that can be used to launch the app make sure to register it inside application's `startup` method:
-
-```vala
-public override void startup () {
-	base.startup ();
-
-	var my_action = new SimpleAction ("my-action", null);
-	add_action (my_action);
-	// Add other actions, define keyboard shortcuts, etc.
-}
-```
-
-Actions must also be declared in a new `Actions` line in your app's `.desktop` file. This line should contain a `;` separated list of unique action names:
+You can use any action defined in the `app` namespace, i.e. registered with `GLib.Application`, as an entry point for your application. Implementing actions is covered in-depth in [the actions section](actions). They must also be declared in a new `Actions` line in your app's `.desktop` file. This line should contain a `;` separated list of action names:
 
 ```ini
 [Desktop Entry]
@@ -125,14 +113,20 @@ Then use a dedicated group, named after the unique action name, to define the de
 
 ```ini
 [Desktop Action my-action]
-Name=User visible name of my action
+Name=My Great Action
 Icon=com.github.myteam.myapp.my-action-icon
 Exec=com.github.myteam.myapp
 ```
 
-The `Icon` line is optional and should reference a dedicated icon for the action. The `Exec` line should be specified, but is used only for backwards compatibility in case your app ever runs in an environment without D-Bus activation support. Learn more from the [related Freedesktop specification](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s11.html).
+{% hint style="warning" %}
+The action name used in `.desktop` file, both in Desktop Entry and later in Desktop Action groups, needs to match exactly the name used to register the action with `GLib.Applicatin` in the source code.
+{% endhint %}
+
+The `Icon` line is optional and should be an icon which represents the action that will be performed. The `Exec` line should be specified, but is used only for backwards compatibility in case your app ever runs in an environment without D-Bus activation support.
 
 {% hint style="info" %}
 The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
 {% endhint %}
+
+See the [freedesktop.org Additional applications actions section](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s11.html) for a detailed description of what keys are supported and what they do.
 

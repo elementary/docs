@@ -55,13 +55,13 @@ Let's define a new Quit action and register it with `Application` from inside th
 
 ```vala
 public override void startup () {
-	base.startup ();
+    base.startup ();
 
-	var quit_action = new SimpleAction ("quit", null);
+    var quit_action = new SimpleAction ("quit", null);
 
-	add_action (quit_action);
-	set_accels_for_action ("app.quit",  {"<Control>q", "<Control>w"});
-	quit_action.activate.connect (quit);
+    add_action (quit_action);
+    set_accels_for_action ("app.quit",  {"<Control>q", "<Control>w"});
+    quit_action.activate.connect (quit);
 }
 ```
 
@@ -73,7 +73,7 @@ You'll notice that we do a few things here:
 * Connect the `activate` signal of our `SimpleAction` to Application's [quit method](https://valadoc.org/gio-2.0/GLib.Application.quit.html).
 
 {% hint style="info" %}
-Actions defined like this, and registered with the application, can be used as entry points into the app. You can find out more about this integration in [the launchers section](launchers#actions).
+Actions defined like this, and registered with Application, can be used as entry points into the app. You can find out more about this integration in [the launchers section](launchers#actions).
 {% endhint %}
 
 Now we can tie the action to the HeaderBar Button by assigning the `action_name` property of our Button:
@@ -123,5 +123,5 @@ var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_T
 Compile your app one last time and hover over the HeaderBar Button to see its description and associated keyboard shortcuts.
 
 {% hint style="info" %}
-If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/glib-action).
+If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/glib-action). You can learn more from `GLib.Action` [reference documentation](https://valadoc.org/gio-2.0/GLib.Action.html).
 {% endhint %}
