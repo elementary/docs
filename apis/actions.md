@@ -11,14 +11,12 @@ GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-
 Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in previous examples. Once you have that set up, let's create a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar, at the top of the window, which will contain tool items that users will interact with to trigger your app's actions.
 
 ```vala
-private Gtk.ApplicationWindow main_window;
-
 protected override void activate () {
     var header_bar = new Gtk.HeaderBar () {
         show_close_button = true
     };
 
-    main_window = new Gtk.ApplicationWindow (this) {
+    var main_window = new Gtk.ApplicationWindow (this) {
         default_height = 300,
         default_width = 300,
         title = "Actions"
@@ -63,11 +61,7 @@ public override void startup () {
 
 	add_action (quit_action);
 	set_accels_for_action ("app.quit",  {"<Control>q", "<Control>w"});
-	quit_action.activate.connect (() => {
-		if (main_window != null) {
-			main_window.destroy ();
-		}
-	});
+	quit_action.activate.connect (quit);
 }
 ```
 
@@ -76,7 +70,7 @@ You'll notice that we do a few things here:
 * Instantiate a new [`GLib.SimpleAction`](https://valadoc.org/gio-2.0/GLib.SimpleAction.html) with the name "quit"
 * Add the action to our `Gtk.Application`'s [`ActionMap`](https://valadoc.org/gio-2.0/GLib.ActionMap.html)
 * Set the "accelerators" \(keyboard shortcuts\) for "app.quit" to `<Control>q` and `<Control>w"`. Notice that the action name is prefixed with `app`; this refers to the `ActionMap` built in to `Gtk.Application`
-* Connect to the `activate` signal of our `SimpleAction` and call `destroy ()` on `main_window`. This is why we saved `main_window` in a private field.
+* Connect the `activate` signal of our `SimpleAction` to Application's [quit method](https://valadoc.org/gio-2.0/GLib.Application.quit.html).
 
 {% hint style="info" %}
 Actions defined like this, and registered with the application, can be used as entry points into the app. You can find out more about this integration in [the launchers section](launchers#actions).
