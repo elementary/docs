@@ -90,10 +90,7 @@ You can also add buttons to notifications that will trigger actions defined in t
 var quit_action = new SimpleAction ("quit", null);
 
 add_action (quit_action);
-
-quit_action.activate.connect (() => {
-    main_window.destroy ();
-});
+quit_action.activate.connect (quit);
 ```
 
 Now, we can add a button to the notification with a translatable label and the action ID.
