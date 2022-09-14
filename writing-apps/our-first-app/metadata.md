@@ -57,7 +57,7 @@ For the purposes of this tutorial, screenshots are optional, but they are requir
     <caption>The most important feature of my app</caption>
     <image>https://raw.githubusercontent.com/myteam/myapp/1.0.0/data/screenshot.png</image>
   </screenshot>
- </screenshots>
+</screenshots>
 
 ```
 
