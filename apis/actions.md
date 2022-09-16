@@ -51,21 +51,18 @@ If you compile your app, you can see that it now has a custom HeaderBar with a b
 
 ## GLib.SimpleAction
 
-Let's define a new Quit action by adding the following to the beginning of the `activate ()` method
+Let's define a new Quit action and register it with `Application` from inside the `startup` method:
 
 ```vala
-var quit_action = new SimpleAction ("quit", null);
+public override void startup () {
+    base.startup ();
 
-add_action (quit_action);
-set_accels_for_action ("app.quit",  {"<Control>q", "<Control>w"});
-```
+    var quit_action = new SimpleAction ("quit", null);
 
-and this to the end of the `activate ()` method:
-
-```vala
-quit_action.activate.connect (() => {
-    main_window.destroy ();
-});
+    add_action (quit_action);
+    set_accels_for_action ("app.quit",  {"<Control>q", "<Control>w"});
+    quit_action.activate.connect (quit);
+}
 ```
 
 You'll notice that we do a few things here:
@@ -73,9 +70,14 @@ You'll notice that we do a few things here:
 * Instantiate a new [`GLib.SimpleAction`](https://valadoc.org/gio-2.0/GLib.SimpleAction.html) with the name "quit"
 * Add the action to our `Gtk.Application`'s [`ActionMap`](https://valadoc.org/gio-2.0/GLib.ActionMap.html)
 * Set the "accelerators" \(keyboard shortcuts\) for "app.quit" to `<Control>q` and `<Control>w"`. Notice that the action name is prefixed with `app`; this refers to the `ActionMap` built in to `Gtk.Application`
-* Connect to the `activate` signal of our `SimpleAction` and call `destroy ()` on `main_window`. This must be at the end of `activate ()` because of that reference to `main_window`
+* Connect the `activate` signal of our `SimpleAction` to Application's [quit method](https://valadoc.org/gio-2.0/GLib.Application.quit.html).
 
-and now we can tie the action to the HeaderBar Button by assigning the `action_name` property of our Button:
+
+{% hint style="info" %}
+Accelerator strings follow a format defined by [`Gtk.accelerator_parse`](https://valadoc.org/gtk+-3.0/Gtk.accelerator_parse.html). You can find a list of key values [on Valadoc](https://valadoc.org/gdk-3.0/Gdk.Key.html)
+{% endhint %}
+
+Now we can tie the action to the HeaderBar Button by assigning the `action_name` property of our Button:
 
 ```vala
 var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_TOOLBAR) {
@@ -93,7 +95,7 @@ Accelerator strings follow a format defined by [`Gtk.accelerator_parse`](https:/
 
 There's one more thing we can do here to help improve your app's usability. You may have noticed that in elementary apps you can hover your pointer over tool items to see a description of the button and any available keyboard shortcuts associated with it. We can add the same thing to our Button with [`Granite.markup_accel_tooltip ()`](https://valadoc.org/granite/Granite.markup_accel_tooltip.html).
 
-First, make sure you've included Granite in the build dependencies declared in your meson.build file:
+First, make sure you've included Granite in the build dependencies declared in your `meson.build` file:
 
 ```coffeescript
 executable(
@@ -119,10 +121,8 @@ var button = new Gtk.Button.from_icon_name ("process-stop", Gtk.IconSize.LARGE_T
 };
 ```
 
-It may now be clear why we needed to declare our action at the beginning of `activate ()`: before we can get a list of the accelerators associated with the action, we have to define those accelerations and add them to the Application.
-
 Compile your app one last time and hover over the HeaderBar Button to see its description and associated keyboard shortcuts.
 
 {% hint style="info" %}
-If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/glib-action)
+If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/glib-action). You can learn more from `GLib.Action` [reference documentation](https://valadoc.org/gio-2.0/GLib.Action.html).
 {% endhint %}
