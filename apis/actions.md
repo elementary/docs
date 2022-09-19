@@ -54,7 +54,7 @@ If you compile your app, you can see that it now has a custom HeaderBar with a b
 Let's define a new Quit action and register it with `Application` from inside the `startup` method:
 
 ```vala
-public override void startup () {
+protected override void startup () {
     base.startup ();
 
     var quit_action = new SimpleAction ("quit", null);
