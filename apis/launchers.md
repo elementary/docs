@@ -1,5 +1,5 @@
 ---
-description: Adding Badges, Progress Bars, and Quick Lists
+description: Adding Badges, Progress Bars, and launching Actions
 ---
 
 # Launchers
@@ -128,4 +128,4 @@ The `Icon` line is optional and should be an icon which represents the action th
 The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
 {% endhint %}
 
-See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s10.html) for a detailed description of what keys are supported and what they do.
+See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s11.html) for a detailed description of what keys are supported and what they do.
