@@ -1,5 +1,5 @@
 ---
-description: Adding Badges, Progress Bars, and Quick Lists
+description: Adding Badges, Progress Bars, and launching Actions
 ---
 
 # Launchers
@@ -105,4 +105,4 @@ Exec=com.github.yourusername.yourrepositoryname -n
 
 Note that just adding `-n` or any other argument will not automatically make your app open a new window; your app must handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command\_line.html).
 
-See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s10.html) for a detailed description of what keys are supported and what they do.
+See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s11.html) for a detailed description of what keys are supported and what they do.
