@@ -63,46 +63,65 @@ As you can see, the method `set_progress` takes a `double` value type and is a r
 
 Actions are specific functions your app can perform without already being open; think of them as alternate and more specific entry points into your app. Actions appear in the context menu of your app icon in the Applications Menu and Dock, and are searchable by name from the Applications Menu.
 
-Adding actions to a `.desktop` file does not involve writing any code or using any external dependencies, though your app needs a way to distinguish between actions, e.g. with command line flags.
+### D-Bus activation
 
-Actions must first be declared in a new `Actions` line in your app's .desktop file. This line should contain a `;` separated list of unique action names:
+Your app needs to support D-Bus activation in order to use actions as entry points. This does not require any changes to the application source code. All that is needed is a service file which is not unlike the `.desktop` file that you are already familiar with. Create a new `.service` file in the `data` directory:
+
+```ini
+[D-BUS Service]
+Name=com.github.myteam.myapp
+Exec=com.github.myteam.myapp --gapplication-service
+```
+
+To install the service add the following to your `meson.build` file:
+
+```coffeescript
+# Install D-Bus service, so that application can be started by D-Bus
+install_data(
+    'data' / 'myapp.service',
+    install_dir: get_option('datadir') / 'dbus-1' / 'services',
+    rename: meson.project_name() + '.service',
+)
+
+Lastly, update the `.desktop` file by adding the `DBusActivatable` line to the `Desktop Entry` group:
 
 ```ini
 [Desktop Entry]
 Name=Hello Again
 [...]
-Actions=ActionID;
+DBusActivatable=true
 ```
 
-Then below, add the action itself using the same unique ID:
+### Declaring actions
 
-```ini
-[Desktop Action ActionID]
-Name=The name of the action
-Icon=com.github.myteam.myapp.action-id
-Exec=com.github.myteam.myapp --action-id
-```
-
-The `Icon` line is optional and should be an icon which represents the action that will be performed. The `Exec` line is required and should be your app's executable name and any command line argument required to trigger the action.
-
-{% hint style="info" %}
-The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
-{% endhint %}
-
-Let's take a look at an example of an action that opens a new window of an app:
+You can use any action defined in the `app` namespace, i.e. registered with `GLib.Application`, as an entry point for your application. Implementing actions is covered in-depth in [the actions section](actions). They must also be declared in a new `Actions` line in your app's `.desktop` file. This line should contain a `;` separated list of action names:
 
 ```ini
 [Desktop Entry]
-Name=App Name
-Exec=com.github.yourusername.yourrepositoryname
-...
-Actions=NewWindow;
-
-[Desktop Action NewWindow]
-Name=New Window
-Exec=com.github.yourusername.yourrepositoryname -n
+Name=Hello Again
+[...]
+Actions=my-action;
 ```
 
-Note that just adding `-n` or any other argument will not automatically make your app open a new window; your app must handle and interpret command line arguments. The [GLib.Application API](https://valadoc.org/gio-2.0/GLib.Application.html) provides many examples and an extensive documentation on how to handle these arguments, particularly the [command\_line signal](https://valadoc.org/gio-2.0/GLib.Application.command\_line.html).
+Then use a dedicated group, named after the unique action name, to define the details of each action:
+
+```ini
+[Desktop Action my-action]
+Name=My Great Action
+Icon=com.github.myteam.myapp.my-action-icon
+Exec=com.github.myteam.myapp
+```
+
+{% hint style="warning" %}
+The action name used in `.desktop` file, both in Desktop Entry and later in Desktop Action groups, needs to match exactly the name used to register the action with `GLib.Application` in the source code.
+{% endhint %}
+
+The `Icon` line is optional and should be an icon which represents the action that will be performed. The `Exec` line should be specified, but is used only for backwards compatibility in case your app ever runs in an environment without D-Bus activation support.
+
+The action name should not include your app's name, as it will always be displayed alongside your app. The action icon should also not be your app icon, as it may be shown in the menu for your app icon, or badged on top of the app icon.
 
 See the [freedesktop.org Additional applications actions section](https://standards.freedesktop.org/desktop-entry-spec/latest/ar01s11.html) for a detailed description of what keys are supported and what they do.
+
+{% hint style="info" %}
+If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/glib-action).
+{% endhint %}

@@ -4,7 +4,7 @@ description: 'Creating tool items, GLib.Actions, and keyboard shortcuts'
 
 # Actions
 
-GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, and tie them to [`Actionable`](https://valadoc.org/gtk+-3.0/Gtk.Actionable.html) widgets in your app like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip.
+GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, use them as entry points for your app and tie them to [`Actionable`](https://valadoc.org/gtk+-3.0/Gtk.Actionable.html) widgets like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip.
 
 ## Gtk.HeaderBar
 
@@ -89,6 +89,10 @@ Compile your app again and see that you can now quit the app either through the 
 
 {% hint style="info" %}
 Accelerator strings follow a format defined by [`Gtk.accelerator_parse`](https://valadoc.org/gtk+-3.0/Gtk.accelerator_parse.html). You can find a list of key values [on Valadoc](https://valadoc.org/gdk-3.0/Gdk.Key.html)
+{% endhint %}
+
+{% hint style="info" %}
+Actions defined like this, and registered with Application, can be used as entry points into the app. You can find out more about this integration in [the launchers section](launchers#actions).
 {% endhint %}
 
 ## Granite.markup\_accel\_tooltip
