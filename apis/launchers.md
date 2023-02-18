@@ -65,29 +65,23 @@ Actions are specific functions your app can perform without already being open; 
 
 ### D-Bus activation
 
-Your app needs to support D-Bus activation in order to use actions as entry points. This does not require any changes to the application source code. All that is needed is a service file which is not unlike the `.desktop` file that you are already familiar with. Define a new `service.in` file in the `data` directory:
+Your app needs to support D-Bus activation in order to use actions as entry points. This does not require any changes to the application source code. All that is needed is a service file which is not unlike the `.desktop` file that you are already familiar with. Create a new `.service` file in the `data` directory:
 
 ```ini
 [D-BUS Service]
 Name=com.github.myteam.myapp
-Exec=@exec_name@ --gapplication-service
+Exec=com.github.myteam.myapp --gapplication-service
 ```
 
-Notice the `@exec_name@` configurable variable and the `.in` file extension. Here we are using meson's [configuration feature](https://mesonbuild.com/Configuration.html) to specify the name of the executable. To install the service add this to your `meson.build` file:
+To install the service add the following to your `meson.build` file:
 
 ```coffeescript
 # Install D-Bus service, so that application can be started by D-Bus
-service_conf_data = configuration_data()
-service_conf_data.set('exec_name', get_option('prefix') / get_option('bindir') / meson.project_name())
-
-configure_file(
-    input: 'data' / 'service.in',
-    output: meson.project_name() + '.service',
-    configuration: service_conf_data,
-    install: true,
-    install_dir: get_option('datadir') / 'dbus-1' / 'services'
+install_data(
+    'data' / 'myapp.service',
+    install_dir: get_option('datadir') / 'dbus-1' / 'services',
+    rename: meson.project_name() + '.service',
 )
-```
 
 Lastly, update the `.desktop` file by adding the `DBusActivatable` line to the `Desktop Entry` group:
 
@@ -119,7 +113,7 @@ Exec=com.github.myteam.myapp
 ```
 
 {% hint style="warning" %}
-The action name used in `.desktop` file, both in Desktop Entry and later in Desktop Action groups, needs to match exactly the name used to register the action with `GLib.Applicatin` in the source code.
+The action name used in `.desktop` file, both in Desktop Entry and later in Desktop Action groups, needs to match exactly the name used to register the action with `GLib.Application` in the source code.
 {% endhint %}
 
 The `Icon` line is optional and should be an icon which represents the action that will be performed. The `Exec` line should be specified, but is used only for backwards compatibility in case your app ever runs in an environment without D-Bus activation support.
