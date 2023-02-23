@@ -1,7 +1,5 @@
 # Publishing Updates
 
-After your app has been published in AppCenter, you can issue a new update at any time by [creating a new release](https://github.com/elementary/houston/wiki/Submission-Process). This will begin the submission process again for your app.
-
 ## Updating Screenshots
 
 Screenshots are uploaded to the AppCenter screenshot server at publication time. The URL referenced in your MetaInfo file will be automatically replaced during publication and any changes you make to images hosted at the remote URL will not be reflected in AppCenter.
@@ -29,7 +27,7 @@ Release descriptions should be accurate, concise, and written for a typical user
 
 …while a poor one would be:
 
-> * Fix bug \#1234; rewrote method to be async
+> * Fix bug #1234; rewrote method to be async
 > * Linted all the code, removed trailing whitespace
 > * Refactored utils
 > * Updated VAPIs
@@ -39,4 +37,3 @@ Previous release descriptions can remain in your MetaInfo file in perpetuity; Ap
 ## GitHub User/Org Name Changes
 
 AppCenter **does not support changing your GitHub username or organization name**, as we rely on the unique RDNN of your app to avoid conflicts—and there is not an automated way to change the RDNN throughout the whole stack from AppCenter Dashboard down to the .deb files built and hosted in the AppCenter repository. **If you change your GitHub username or organization name associated with your app, you will no longer be able to publish updates to your app** without changing its name and branding. If you have ended up in this situation, you will receive an issue filed against your app with more details and with some options.
-
