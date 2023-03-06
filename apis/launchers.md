@@ -67,11 +67,13 @@ Actions are specific functions your app can perform without already being open; 
 
 Your app needs to support D-Bus activation in order to use actions as entry points. This does not require any changes to the application source code. All that is needed is a service file which is not unlike the `.desktop` file that you are already familiar with. Create a new `.service` file in the `data` directory:
 
+{% code title="myapp.service" %}
 ```ini
 [D-BUS Service]
 Name=com.github.myteam.myapp
 Exec=com.github.myteam.myapp --gapplication-service
 ```
+{% endcode %}
 
 To install the service add the following to your `meson.build` file:
 
@@ -82,26 +84,30 @@ install_data(
     install_dir: get_option('datadir') / 'dbus-1' / 'services',
     rename: meson.project_name() + '.service',
 )
+```
 
 Lastly, update the `.desktop` file by adding the `DBusActivatable` line to the `Desktop Entry` group:
 
 ```ini
 [Desktop Entry]
-Name=Hello Again
+Version=1.0
+Type=Application
+Name=MyApp
 [...]
 DBusActivatable=true
 ```
 
 ### Declaring actions
 
-You can use any action defined in the `app` namespace, i.e. registered with `GLib.Application`, as an entry point for your application. Implementing actions is covered in-depth in [the actions section](actions). They must also be declared in a new `Actions` line in your app's `.desktop` file. This line should contain a `;` separated list of action names:
+You can use any action defined in the `app` namespace, i.e. registered with `GLib.Application`, as an entry point for your application. Implementing actions is covered in-depth in [the actions section](actions/). They must also be declared in a new `Actions` line in your app's `.desktop` file. This line should contain a `;` separated list of action names:
 
-```ini
-[Desktop Entry]
-Name=Hello Again
-[...]
-Actions=my-action;
-```
+<pre class="language-ini"><code class="lang-ini">[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MyApp
+<strong>[...]
+</strong>Actions=my-action;
+</code></pre>
 
 Then use a dedicated group, named after the unique action name, to define the details of each action:
 
