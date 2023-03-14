@@ -69,6 +69,16 @@ If all went well, you should now be able to open your app from the Applications 
 If you were about to add the "build" folder to your git repository and push it, stop! This binary was built for your computer and we don't want to redistribute it. In fact, we built your app in a separate folder like this so that we can easily delete or ignore the "build" folder and it won't mess up our app's source code.
 {% endhint %}
 
+## Uninstalling the application
+
+To uninstall your application, change into the build directory and we will use `ninja` once again to uninstall:
+
+```bash
+sudo ninja -C build uninstall
+```
+
+If all went well, you should see command output that shows files related to your application were removed.  Again, more details can be found in [Meson's documentation](https://mesonbuild.com/Manual.html).
+
 ## Review
 
 Let's review all we've learned to do:
@@ -78,10 +88,10 @@ Let's review all we've learned to do:
 * License our app under the GPL and declare our app's authors in a standardized manner
 * Create a .desktop file using RDNN that tells the computer how to display our app in the Applications Menu and the Dock
 * Set up a Meson build system that contains all the rules for building our app and installing it cleanly
+* Uninstall our application cleanly
 
 That's a lot! You're well on your way to becoming a bona fide app developer for elementary OS. Give yourself a pat on the back, then take some time to play around with this example. Change the names of files and see if you can still build and install them properly. Ask another developer to clone your repo from GitHub and see if it builds and installs cleanly on their computer. If so, you've just distributed your first app! When you're ready, we'll move onto the next section: Translations.
 
 {% hint style="info" %}
 If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/meson-build-system)
 {% endhint %}
-

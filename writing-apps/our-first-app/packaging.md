@@ -62,3 +62,29 @@ This tells Flatpak Builder to build the manifest we just wrote into a clean `bui
 
 That wasn't too bad, right? We'll set up more complicated packaging in the future, but this is all that is required to submit your app to AppCenter Dashboard for it to be built, packaged, and distributed. If you'd like you can always read [more about Flatpak](https://docs.flatpak.org/en/latest/introduction.html).
 
+## Uninstalling the application
+
+Ninja and Flatpak both provide commands to uninstalling the application.  It is recommended to use the provided method in both cases.
+
+To remove our application with Flatpak, we will use Flatpak's `remove` command:
+
+```bash
+flatpak remove com.github.yourusername.yourrepositoryname
+```
+
+Flatpak will prompt you to remove your application.
+
+```bash
+flatpak uninstall com.github.yourusername.yourrepositoryname --delete-data
+
+
+        ID                                                          Branch           Op
+ 1.     com.github.yourusername.yourrepositoryname                  master           r
+ 2.     com.github.yourusername.yourrepositoryname.Locale           master           r
+
+Proceed with these changes to the user installation? [Y/n]:
+```
+
+> Note: You can append `-y` to the command to bypass the dialog confirmation prompt
+
+If you'd like you can always read [more about Flatpak remove](https://docs.flatpak.org/en/latest/using-flatpak.html#remove-an-application).
