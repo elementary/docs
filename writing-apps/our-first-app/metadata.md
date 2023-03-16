@@ -58,7 +58,6 @@ For the purposes of this tutorial, screenshots are optional, but they are requir
     <image>https://raw.githubusercontent.com/myteam/myapp/1.0.0/data/screenshot.png</image>
   </screenshot>
 </screenshots>
-
 ```
 
 {% hint style="info" %}
