@@ -8,6 +8,8 @@ GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-
 
 ## Gtk.HeaderBar
 
+<figure><img src="../.gitbook/assets/Screenshot from 2023-03-16 12.56.21.png" alt="A Gtk.Application with a HeaderBar containing a large image button"><figcaption></figcaption></figure>
+
 Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in [previous examples](../writing-apps/our-first-app/). Once you have that set up, let's create a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar, at the top of the window, which will contain tool items that users will interact with to trigger your app's actions.
 
 {% code title="Application.vala" %}
@@ -106,6 +108,8 @@ Actions defined like this, and registered with Application, can be used as entry
 ## Granite.markup\_accel\_tooltip
 
 You may have noticed that in elementary apps you can hover your pointer over tool items to see a description of the button and any available keyboard shortcuts associated with it. We can add the same thing to our Button with [`Granite.markup_accel_tooltip ()`](https://valadoc.org/granite/Granite.markup\_accel\_tooltip.html).
+
+<figure><img src="../.gitbook/assets/Screenshot from 2023-03-16 12.56.21 (1).png" alt=""><figcaption></figcaption></figure>
 
 First, make sure you've included Granite in the build dependencies declared in your `meson.build` file, then set the `tooltip_markup` property of your HeaderBar Button:
 
