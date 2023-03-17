@@ -14,14 +14,15 @@ Popovers are a very flexible container widget that can contain any other widgets
 
 <figure><img src="../.gitbook/assets/Screenshot from 2023-03-16 13.14.36.png" alt=""><figcaption></figcaption></figure>
 
-Create a new MenuButton and add it to the end of the HeaderBar. Use the `icon-name` property to give it an icon, and add `Granite.STYLE_CLASS_LARGE_ICONS` to make it bigger just like we did in the [Actions](../apis/actions.md#gtk.headerbar) section with our image Button. You can also set the `primary` property to `true` which will make this menu open when pressing the keyboard shorcut `F10`.
+Create a new MenuButton and add it to the end of the HeaderBar. Use the `icon-name` property to give it an icon, and add `Granite.STYLE_CLASS_LARGE_ICONS` to make it bigger just like we did in the [Actions](../apis/actions.md#gtk.headerbar) section with our image Button. You can also set the `primary` property to `true` which will make this menu open when pressing the keyboard shorcut `F10`. Finally, add a tooltip to make the keyboard shortcut more discoverable.
 
 {% code title="Application.vala" %}
 ```vala
 protected override void activate () {
     var menu_button = new Gtk.MenuButton () {
         icon_name = "open-menu",
-        primary = true
+        primary = true,
+        tooltip_markup = Granite.markup_accel_tooltip ({"F10"}, "Menu")
     };
     menu_button.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
 
