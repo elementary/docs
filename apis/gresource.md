@@ -53,10 +53,6 @@ Now that we have a `gresource.xml` file and have included it in the build system
 
 You can provide custom icons and have your app automatically refer to them by name and choose the correct size by adding them your Gresource file under the namespace `/icons`. For this to work properly, your resource path must match your application's ID.
 
-{% hint style="info" %}
-When creating icons, it is important to know which of these sizes will be used and to design and hint the icon at that size. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size).
-{% endhint %}
-
 Add a custom icon to the `data` directory, and then update your `gresource.xml` file to reference it:
 
 ```xml
@@ -81,6 +77,10 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
   </gresource>
 </gresources>
 ```
+
+{% hint style="info" %}
+When creating icons, it is important to know which sizes will be used and to design and hint the icon at that size. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size).
+{% endhint %}
 
 The last step is to create a Gtk.Image or Gtk.Button using your custom icon and add it to the main window:
 
