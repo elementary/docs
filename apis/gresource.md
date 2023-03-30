@@ -1,21 +1,27 @@
+---
+description: >-
+  Include additional resources with your app like icons or CSS files using
+  GResource
+---
+
 # Custom Resources
 
-You can include additional resources with your app like icons or CSS files using GResource. When using GResource, these files will be compiled into your app's binary, ensuring they're available and loaded when your app launches. Regardless of which type of resource you'd like to include, you'll need to create a `gresource.xml` file and include it in your build system. Make sure to start with a `Gtk.Application` as described in the [previous section](../writing-apps/our-first-app/the-build-system.md)
+When using GResource, custom resource files will be compiled into your app's binary, ensuring they're available and loaded when your app launches. Regardless of which type of resource you'd like to include, you'll need to create a `gresource.xml` file and include it in your build system.
 
-In the `data` directory, create a new file called `gresource.xml` with the following contents:
+Make sure to start with a `Gtk.Application` as described in the [previous section](../writing-apps/our-first-app/the-build-system.md). In the `data` directory, create a new file called `gresource.xml` like the one below. Then update your meson build file to include steps to build the resource into your binary. Make sure to update the resource prefix to match your app's RDNN.
 
+{% tabs %}
+{% tab title="gresource.xml" %}
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/yourusername/yourrepositoryname">
+  <gresource prefix="com/github/mteam/myapp">
   </gresource>
 </gresources>
 ```
+{% endtab %}
 
-For now, this resource doesn't include any files. We'll come back to that in the following sections. Make sure to update the resource prefix to match your app's RDNN.
-
-Now add the following lines to `meson.build`, somewhere before the `executable` step:
-
+{% tab title="meson.build" %}
 ```coffeescript
 # Include the GNOME module
 gnome = import('gnome')
@@ -26,32 +32,37 @@ gresource = gnome.compile_resources(
     'data' / 'gresource.xml',
     source_dir: 'data'
 )
-```
 
-and finally, add the gresource to your `executable` step:
-
-```coffeescript
+# Add the gresource to the executable step to be build into the app binary
 executable(
     meson.project_name(),
     gresource,
-    'src/Application.vala',
+    'src' / 'Application.vala',
     dependencies: [
-        dependency('gtk+-3.0')
+        dependency('gtk4')
     ],
     install: true
 )
 ```
+{% endtab %}
+{% endtabs %}
 
 Now that we have a `gresource.xml` file and have included it in the build system, we can add files and reference them in our app.
 
 ## Icons
 
-As we saw in the section on [`GLib.Action`](actions.md), GTK has a baked-in set of icon sizes defined under the namespace [`Gtk.IconSize`](https://valadoc.org/gtk+-3.0/Gtk.IconSize.html). When creating icons, it is important to know which of these sizes will be used and to design and hint the icon at that size. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size). Add your custom icon to the `data` directory, and then update your `gresource.xml` file to reference it:
+You can provide custom icons and have your app automatically refer to them by name and choose the correct size by adding them your Gresource file under the namespace `/icons`. For this to work properly, your resource path must match your application's ID.
+
+{% hint style="info" %}
+When creating icons, it is important to know which of these sizes will be used and to design and hint the icon at that size. For more information about creating and hinting icons, check out the [Human Interface Guidelines](https://docs.elementary.io/hig/reference/iconography#size).
+{% endhint %}
+
+Add a custom icon to the `data` directory, and then update your `gresource.xml` file to reference it:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/yourusername/yourrepositoryname">
+  <gresource prefix="com/github/myteam/myapp/icons">
     <file compressed="true" preprocess="xml-stripblanks">custom-icon.svg</file>
   </gresource>
 </gresources>
@@ -62,7 +73,7 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/yourusername/yourrepositoryname">
+  <gresource prefix="com/github/myteam/myapp/icons">
     <file alias="24x24/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-24.svg</file>
     <file alias="24x24@2/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-24.svg</file>
     <file alias="32x32/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-32.svg</file>
@@ -71,36 +82,25 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
 </gresources>
 ```
 
-Now we can add the GResource path to the system's built-in icon theme in the `Application` class' `activate ()` function. This will let us reference the icon name without using long paths, and automatically handle icon sizing as previously mentioned Again, don't forget to use the same RDNN'd path that was defined in `gresource.xml`:
+The last step is to create a Gtk.Image or Gtk.Button using your custom icon and add it to the main window:
 
 ```vala
 protected override void activate () {
-    Gtk.IconTheme.get_default ().add_resource_path ("com/github/yourusername/yourrepositoryname");
-
-    var main_window = new Gtk.ApplicationWindow (this);
-    main_window.show_all ();
-}
-```
-
-The last step is to create a `Gtk.Image` or `Gtk.Button` using your custom icon and add it to the main window:
-
-```vala
-protected override void activate () {
-    Gtk.IconTheme.get_default ().add_resource_path ("/com/github/yourusername/yourrepositoryname");
-
     // This will create an image with an icon size of 32px
-    var image = new Gtk.Image.from_icon_name ("custom-icon", Gtk.IconSize.DND);
-
-    // This will create a button with an icon size of 24px
-    var button = new Gtk.Button.from_icon_name ("custom-icon", Gtk.IconSize.LARGE_TOOLBAR);
-
-    var grid = new Gtk.Grid () {
-        column_spacing = 12
+    var image = new Gtk.Image.from_icon_name ("custom-icon") {
+        pixel_size = 32
     };
-    grid.add (image);
-    grid.add (button);
 
-    var main_window = new Gtk.ApplicationWindow (this);
-    main_window.show_all ();
+    // This will create a button with an icon size of 16px
+    var button = new Gtk.Button.from_icon_name ("custom-icon");
+
+    var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
+    box.append (image);
+    box.append (button);
+
+    var main_window = new Gtk.ApplicationWindow (this) {
+        child = box
+    };
+    main_window.present ();
 }
 ```
