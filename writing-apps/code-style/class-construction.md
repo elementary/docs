@@ -56,7 +56,7 @@ construct {
 }
 ```
 
-When using GObject-style construction, a constructor should only contain code that parses arguments and sets property values with the `Object ()` call. All other class contruction logic happens in the `construct` block. Code in the `construct` block runs every time an instance of this object is created, regardless of the constructor used.
+When using GObject-style construction, a constructor should only contain code that parses arguments and sets property values with the `Object ()` call. All other class construction logic happens in the `construct` block. Code in the `construct` block runs every time an instance of this object is created, regardless of the constructor used.
 
 ## Declaring Multiple Constructors
 
@@ -86,7 +86,7 @@ public class Row : Object {
 }
 ```
 
-To see how this style of class construction scales and keeps code organized, let's look at a more complex example. Say we want to display a list of devices. Each device lives in its own row, which is denoted by the class `Row`. In this example, sometimes we have access to a `Device` object which stores the `name` and `icon` properties of the device, but for some devices we have to pass in those properties manually to construct our row. We can acheive this by declaring two constructors:
+To see how this style of class construction scales and keeps code organized, let's look at a more complex example. Say we want to display a list of devices. Each device lives in its own row, which is denoted by the class `Row`. In this example, sometimes we have access to a `Device` object which stores the `name` and `icon` properties of the device, but for some devices we have to pass in those properties manually to construct our row. We can achieve this by declaring two constructors:
 
 - a default constructor that takes two arguments: `string name` and `Icon icon`
 - a separate, named constructor which takes one argument: a `Device` object

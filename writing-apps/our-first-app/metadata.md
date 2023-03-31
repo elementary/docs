@@ -72,7 +72,7 @@ We use the [Open Age Rating Service (OARS)](https://hughsie.github.io/oars/) sta
 
 ### Branding
 
-You can also specify a brand color for your app by adding the `branding` tag inside the `component` tag. Colors must be in hexidecimal, starting with `#`. The background will automatically be given a slight gradient in your app's banner.
+You can also specify a brand color for your app by adding the `branding` tag inside the `component` tag. Colors must be in hexadecimal, starting with `#`. The background will automatically be given a slight gradient in your app's banner.
 
 ```xml
 <branding>

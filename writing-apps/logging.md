@@ -27,7 +27,7 @@ Start your app with `G_MESSAGES_DEBUG=all` to print debug messages
 Use info log level to log informational messages as well as interesting runtime events. These logs are also immediately visible on a status console, and should be kept to a minimum.
 
 ```vala
-info ("An event occured");
+info ("An event occurred");
 ```
 
 ## Message
@@ -35,7 +35,7 @@ info ("An event occured");
 Use the message log level to output a message.
 
 ```vala
-message ("An event occured");
+message ("An event occurred");
 ```
 
 ## Warning
@@ -55,7 +55,7 @@ Start your app with `G_DEBUG=fatal-warnings` to exit the program at the first ca
 Critical log level is used when there is a severe application failure that should be investigated immediately.
 
 ```vala
-critical ("A major issue occured! Uh oh!");
+critical ("A major issue occurred! Uh oh!");
 ```
 
 {% hint style="info" %}
