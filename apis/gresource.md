@@ -15,7 +15,7 @@ Make sure to start with a `Gtk.Application` as described in the [previous sectio
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="com/github/mteam/myapp">
+  <gresource prefix="com/github/myteam/myapp">
   </gresource>
 </gresources>
 ```
