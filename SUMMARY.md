@@ -27,6 +27,7 @@
 * [State Saving](apis/state-saving.md)
 * [Custom Resources](apis/gresource.md)
 * [Color Scheme](apis/color-scheme.md)
+* [System Settings](apis/system-settings.md)
 * [Valadoc](https://valadoc.org)
 
 ## AppCenter
