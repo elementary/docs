@@ -112,6 +112,10 @@ Your app must have a `release` tag for every version you wish to publish in AppC
         <li>An annoying behavior no longer occurs</li>
       </ul>
     </description>
+    <issues>
+      <issue url="https://github.com/myteam/myapp/issues/42">Crash when opening invalid file</issue>
+      <issue url="https://github.com/myteam/myapp/issues/47">High RAM usage over time</issue>
+    </issues>
   </release>
 </releases>
 ```
