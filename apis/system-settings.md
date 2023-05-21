@@ -10,7 +10,7 @@ elementary OS implements a special `settings://` URI scheme for linking to Syste
 
 ## Opening a link
 
-First, make sure you've included Granite in the build dependencies declared in your `meson.build` file:
+First, make sure you've included recent enough version of Granite and Gtk in the build dependencies declared in your `meson.build` file:
 
 {% code title="meson.build" %}
 ```coffeescript
@@ -18,8 +18,8 @@ executable(
     meson.project_name(),
     'src' / 'Application.vala',
     dependencies: [
-        dependency('granite-7'),
-        dependency('gtk4')
+        dependency('granite-7', version: '>= 7.3.0'),
+        dependency('gtk4', version: '>= 4.10.0')
     ],
     install: true
 )
@@ -31,15 +31,18 @@ Then you can open Network settings by launching `Granite.SettingsUri.NETWORK`:
 ```vala
 var button = new Gtk.Button.with_label ("Change network settings");
 button.clicked.connect (() => {
-    try {
-        AppInfo.launch_default_for_uri (Granite.SettingsUri.NETWORK, null);
-    } catch (Error e) {
-        warning ("Failed to open network settings: %s", e.message);
-    }
+    var launcher = new Gtk.UriLauncher (Granite.SettingsUri.NETWORK);
+    launcher.launch.begin(null, null, (obj, res) => {
+        try {
+            launcher.launch.end (res);
+        } catch (Error e) {
+            warning ("Failed to open network settings: %s", e.message);
+        }
+    });
 });
 ```
 
-You can find out more about the `launch_default_for_uri` function in [its documentation](https://valadoc.org/gio-2.0/GLib.AppInfo.launch_default_for_uri.html).
+You can find out more about the `Gtk.UriLauncher` in [its documentation](https://valadoc.org/gtk4/Gtk.UriLauncher.html).
 
 ## Use cases
 
