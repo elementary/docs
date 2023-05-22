@@ -97,19 +97,15 @@ Remember that AppCenter is a pay-what-you-want store. A suggested price is not a
 
 ### Releases
 
-Your app must have a `release` tag for every version you wish to publish in AppCenter. Release notes show up in AppCenter and should be aimed at the people who use your app. Avoid technical language and developer-facing changes and focus more on what people can expect to see in this update.
+Your app must have a `release` tag for every version you wish to publish in AppCenter, including the initial release.
 
 ```xml
 <releases>
-  <release version="1.0.0" date="2022-09-08" urgency="medium">
+  <release version="1.0.0" date="2022-09-08">
     <description>
-      <p>New features:</p>
+      <p>Initial release, includes features such as:</p>
       <ul>
-        <li>My app can now do a great new thing</li>
-      </ul>
-      <p>Fixes:</p>
-      <ul>
-        <li>An annoying behavior no longer occurs</li>
+        <li>Application can be launched</li>
       </ul>
     </description>
   </release>
@@ -117,10 +113,8 @@ Your app must have a `release` tag for every version you wish to publish in AppC
 ```
 
 {% hint style="info" %}
-Previous `release` tags can remain in your MetaInfo file forever, and we encourage it; AppCenter may use them to show changes across multiple releases of your app
+This is an example of a minimum release tag. For more details on available features and advice on writing engaging release notes see the [Publishing Updates section](../../appcenter/publishing-updates.md).
 {% endhint %}
-
-You can read more about the release tag [here](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-releases), including more features and formatting options.
 
 ## Desktop Entry
 
