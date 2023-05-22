@@ -8,7 +8,7 @@ Screenshots are uploaded to the AppCenter screenshot server at publication time.
 If you change the UI of your app in an update, you **must** update your screenshots
 {% endhint %}
 
-## Release Descriptions
+## Release Details
 
 You must add accurate release descriptions to your metainfo.xml file when publishing an update. For more information on formatting, see the [FreeDesktop.org AppStream documentation](https://www.freedesktop.org/software/appstream/docs/sect-Metadata-Releases.html#spec-releases) for the `<releases />` tag. The version in your release should match the latest version submitted to AppCenter.
 
@@ -32,7 +32,7 @@ Release descriptions should be accurate, concise, and written for a typical user
 > * Refactored utils
 > * Updated VAPIs
 
-For each release you can also list issues from your issue tracker (e.g. GitHub) that have been resolved. For now only the `generic` issue type is supported, and you must provide the `url` property. For example:
+With each release you can also list issues from your issue tracker (e.g. GitHub) that have been resolved. For now only the `generic` issue type is supported, and you must provide the `url` property. The value of the tag must be the title of the issue that it links to. For example:
 
 ```xml
 <release version="1.1.0 date="2023-05-21">
