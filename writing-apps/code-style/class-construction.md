@@ -111,7 +111,7 @@ Note that in both cases, we handle the arguments in the constructor, while the a
 
 ```vala
 construct {
-    var icon = new Gtk.Image.from_gicon (icon, Gtk.IconSize.DND);
+    var icon = new Gtk.Image.from_gicon (icon);
     var label = new Gtk.Label (name);
 }
 ```
