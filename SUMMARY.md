@@ -13,7 +13,7 @@
   * [Icons](writing-apps/our-first-app/icons.md)
   * [Packaging](writing-apps/our-first-app/packaging.md)
   * [Continuous Integration](writing-apps/our-first-app/continuous-integration.md)
-* [Creating Layouts](writing-apps/creating-layouts.md)
+* [Boxes and Grids](writing-apps/creating-layouts.md)
 * [Popovers](writing-apps/popovers.md)
 * [Code Style](writing-apps/code-style/README.md)
   * [GObject-style Construction](writing-apps/code-style/class-construction.md)
