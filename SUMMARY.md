@@ -15,6 +15,7 @@
   * [Continuous Integration](writing-apps/our-first-app/continuous-integration.md)
 * [Boxes and Grids](writing-apps/creating-layouts.md)
 * [Popovers](writing-apps/popovers.md)
+* [Panes](writing-apps/panes.md)
 * [Code Style](writing-apps/code-style/README.md)
   * [GObject-style Construction](writing-apps/code-style/class-construction.md)
 * [Creating Logs](writing-apps/logging.md)

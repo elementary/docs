@@ -113,7 +113,7 @@ Your app must have a `release` tag for every version you wish to publish in AppC
 ```
 
 {% hint style="info" %}
-This is an example of a minimum release tag. For more details on available features and advice on writing engaging release notes see the [Publishing Updates section](../../appcenter/publishing-updates.md).
+For more details on available features and advice on writing engaging release notes see [Publishing Updates](../../appcenter/publishing-updates.md#release-notes).
 {% endhint %}
 
 ## Desktop Entry
