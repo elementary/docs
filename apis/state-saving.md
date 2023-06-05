@@ -37,7 +37,6 @@ protected override void activate () {
     var main_window = new Gtk.ApplicationWindow (this) {
         default_height = 300,
         default_width = 300,
-        title = "Hello World",
         child = useless_switch
     };
     main_window.present ();
