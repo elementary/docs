@@ -29,20 +29,20 @@ In order to interact with the settings key we just defined, we need to create a 
 
 ```vala
 protected override void activate () {
-    var switch = new Gtk.Switch () {
+    var useless_switch = new Gtk.Switch () {
         halign = Gtk.Align.CENTER,
         valign = Gtk.Align.CENTER
     };
 
     var main_window = new Gtk.ApplicationWindow (this) {
         default_height = 300,
-        default_width = 300
+        default_width = 300,
+        child = useless_switch
     };
-    main_window.add (switch);
-    main_window.show_all ();
+    main_window.present ();
 
     var settings = new GLib.Settings ("com.github.yourusername.yourrepositoryname");
-    settings.bind ("useless-setting", switch, "active", GLib.SettingsBindFlags.DEFAULT);
+    settings.bind ("useless-setting", useless_switch, "active", GLib.SettingsBindFlags.DEFAULT);
 }
 ```
 

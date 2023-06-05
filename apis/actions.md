@@ -4,13 +4,13 @@ description: Creating tool items, GLib.Actions, and keyboard shortcuts
 
 # Actions
 
-GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, use them as entry points for your app and tie them to [`Actionable`](https://valadoc.org/gtk+-3.0/Gtk.Actionable.html) widgets like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip.
+GTK and GLib have a powerful API called [`GLib.Action`](https://valadoc.org/gio-2.0/GLib.Action.html) which can be used to define the primary actions of your app, assign them keyboard shortcuts, use them as entry points for your app and tie them to [`Actionable`](https://valadoc.org/gtk4/Gtk.Actionable.html) widgets like Buttons and Menu Items. In this section, we're going to create a Quit action for your app with an assigned keyboard shortcut and a Button that shows that shortcut in a tooltip.
 
 ## Gtk.HeaderBar
 
 <figure><img src="../.gitbook/assets/Screenshot from 2023-03-16 12.56.21.png" alt="A Gtk.Application with a HeaderBar containing a large image button"><figcaption></figcaption></figure>
 
-Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in [previous examples](../writing-apps/our-first-app/). Once you have that set up, let's create a new [`Gtk.HeaderBar`](https://valadoc.org/gtk+-3.0/Gtk.HeaderBar.html). Typically your app will have a HeaderBar, at the top of the window, which will contain tool items that users will interact with to trigger your app's actions.
+Begin by creating a `Gtk.Application` with a `Gtk.ApplicationWindow` as you've done in [previous examples](../writing-apps/our-first-app/). Once you have that set up, let's create a new [`Gtk.HeaderBar`](https://valadoc.org/gtk4/Gtk.HeaderBar.html). Typically your app will have a HeaderBar, at the top of the window, which will contain tool items that users will interact with to trigger your app's actions.
 
 {% code title="Application.vala" %}
 ```vala
@@ -32,7 +32,7 @@ protected override void activate () {
 
 Since we're using this HeaderBar as our app's main titlebar, we need to set `show_title_buttons` to `true` so that GTK knows to include window controls. We can then override our Window's built-in titlebar with the `titlebar` property.
 
-Now, create a new [`Gtk.Button`](https://valadoc.org/gtk+-3.0/Gtk.Button.html) with a big colorful icon and add it to the HeaderBar:
+Now, create a new [`Gtk.Button`](https://valadoc.org/gtk4/Gtk.Button.html) with a big colorful icon and add it to the HeaderBar:
 
 {% code title="Application.vala" %}
 ```vala
@@ -98,7 +98,7 @@ Now we can tie the action to the HeaderBar Button by assigning the `action_name`
 Build and run your app again and see that you can now quit the app either through the defined keyboard shortcuts or by clicking the Button in the HeaderBar.
 
 {% hint style="info" %}
-Accelerator strings follow a format defined by [`Gtk.accelerator_parse`](https://valadoc.org/gtk+-3.0/Gtk.accelerator\_parse.html). You can find a list of key values [on Valadoc](https://valadoc.org/gdk-3.0/Gdk.Key.html)
+Accelerator strings follow a format defined by [`Gtk.accelerator_parse`](https://valadoc.org/gtk4/Gtk.accelerator\_parse.html). You can find a list of key values [on Valadoc](https://valadoc.org/gtk4/Gdk.Key.html)
 {% endhint %}
 
 {% hint style="info" %}

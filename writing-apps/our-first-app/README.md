@@ -1,6 +1,6 @@
 # Our First App
 
-In the previous chapter, we created a "Hello World!" app to show off our vala and Gtk skills. But what if we wanted to share our new app with a friend? They'd have to know which packages to include with the `valac` command we used to build our app, and after they'd built it they'd have to run it from the build directory like we did. Clearly, we need to do some more stuff to make our app fit for people to use, to make it a _real_ app.
+In the previous chapter, we created a "Hello World!" app to show off our Vala and Gtk skills. But what if we wanted to share our new app with a friend? They'd have to know which packages to include with the `valac` command we used to build our app, and after they'd built it they'd have to run it from the build directory like we did. Clearly, we need to do some more stuff to make our app fit for people to use, to make it a _real_ app.
 
 ## Hello (again) World!
 
@@ -12,7 +12,7 @@ To create our first real app, we're going to need all the old stuff that we used
     ```vala
     /*
      * SPDX-License-Identifier: GPL-3.0-or-later
-     * SPDX-FileCopyrightText: 2021 Your Name <you@email.com>
+     * SPDX-FileCopyrightText: 2023 Your Name <you@email.com>
      */
     ```
 3. Now, let's create a `Gtk.Application`, a `Gtk.ApplicationWindow`, and set the window's default properties. Refer back to the last chapter if you need a refresher.
@@ -22,11 +22,11 @@ To create our first real app, we're going to need all the old stuff that we used
     var label = new Gtk.Label ("Hello Again World!");
     ```
 
-    Don't forget to add it to your window and show the window's contents:
+    Don't forget to add it to your window and show the it:
 
     ```vala
-    main_window.add (label);
-    main_window.show_all ();
+    main_window.child = label;
+    main_window.present ();
     ```
 5. Build "Application.vala" just to make sure it all works. If something goes wrong here, feel free to refer back to the last chapter and remember to check your terminal output for any hints.
 6.  Initialize the branch, add your files to the project, and write a commit message using what you learned in the last chapter. Lastly, make sure you've created a new repository for your project on GitHub push your first revision with `git`:

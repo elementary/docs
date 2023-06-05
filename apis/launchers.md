@@ -24,8 +24,8 @@ executable(
     meson.project_name(),
     'src/Application.vala',
     dependencies: [
-        dependency('gtk+-3.0'),
-        dependency('granite', version: '>=5.2.4') # 5.2.4 is the first release to support the Launcher API
+        dependency('granite-7'),
+        dependency('gtk4')
     ],
     install: true
 )
