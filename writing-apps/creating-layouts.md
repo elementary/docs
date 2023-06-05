@@ -11,8 +11,8 @@ Just like when we add a Button or Label, we need to create our `Gtk.Box`. As alw
 ```vala
 var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
 ```
-
-Remember that Button and Label accepted an argument \(a String\) in the creation method \(that’s the stuff in parentheses and quotes\). As shown above, `Gtk.Box` accepts two arguments in the creation method -- [orientation](https://valadoc.org/gtk4/Gtk.Orientation) and spacing. Here, we’ve declared that when we add widgets to our box, they should stack vertically.
+—
+Remember that Button and Label accepted an argument \(a String\) in the creation method \(that’s the stuff in parentheses and quotes\). As shown above, `Gtk.Box` accepts two arguments in the creation method—[orientation](https://valadoc.org/gtk4/Gtk.Orientation) and spacing. Here, we’ve declared that when we add widgets to our box, they should stack vertically.
 
 Let’s add some stuff to the Box:
 
@@ -121,7 +121,7 @@ swap_button.clicked.connect (() => {
 });
 ```
 
-You’ll notice in the example code above that we’ve created a 2 x 2 grid with buttons on the left and labels on the right. When the top button clicked t top label goes from blank to “Hello World!” and when the bottom button clicked the labels are swapped. Notice how we gave the buttons labels that directly call out what they do to the other labels.
+You’ll notice in the example code above that we’ve created a 2 x 2 grid with buttons on the left and labels on the right. When the top button is clicked the top label goes from blank to “Hello World!” and when the bottom button clicked the labels are swapped. Notice how we gave the buttons labels that directly call out what they do to the other labels.
 
 ## Review
 
@@ -131,4 +131,4 @@ Let’s recap what we learned in this section:
 * We set the properties of `Gtk.Grid` including its spacing
 * We added multiple widgets into a single Gtk.Grid using the attach method to create complex layouts containing Buttons and Labels that did cool stuff.
 
-Now that you understand more about Gtk, Grids, and using Buttons to alter the properties of other widgets, try packing other kinds of widgets into a window like a Image and changing other properties of [Labels](https://valadoc.org/gtk4/Gtk.Label) like `width_chars` and `ellipsize`. Don’t forget to play around with the attach method and widgets that span across multiple rows and columns. Remember that Valadoc is super helpful for learning more about the methods and properties associated with widgets.
+Now that you understand more about Gtk, Boxes, Grids, and using Buttons to alter the properties of other widgets, try packing other kinds of widgets into a window like a Image and changing other properties of [Labels](https://valadoc.org/gtk4/Gtk.Label) like `width_chars` and `ellipsize`. Don’t forget to play around with the attach method and widgets that span across multiple rows and columns. Remember that Valadoc is super helpful for learning more about the methods and properties associated with widgets.
