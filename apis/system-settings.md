@@ -10,7 +10,7 @@ elementary OS implements a special `settings://` URI scheme for linking to Syste
 
 ## Opening a link
 
-First, make sure you've included recent enough version of Granite and Gtk in the build dependencies declared in your `meson.build` file. You can get those dependencies by using the elementary Flatpak runtime version `7.3` or newer:
+First, make sure you've included recent enough version of Granite and Gtk in the build dependencies declared in your `meson.build` file. You can get those dependencies by using the elementary Flatpak runtime version `7.2` or newer:
 
 {% tabs %}
 {% tab title="meson.build" %}
@@ -29,7 +29,7 @@ executable(
 {% tab title="Flatpak manifest" %}
 ```yaml
 runtime: io.elementary.Platform
-runtime-version: '7.3'
+runtime-version: '7.2'
 sdk: io.elementary.Sdk
 ```
 {% endtab %}
