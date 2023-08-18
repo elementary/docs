@@ -1,6 +1,6 @@
 # State Saving
 
-Apps should automatically save their state in elementary OS, allowing a user to re-open a closed app and pick up right where they left off. To do so, we utilize `GSettings` via [`GLib.Settings`](https://valadoc.org/gio-2.0/GLib.Settings.html). GSettings allows your app to save certain stateful information in the form of booleans, strings, arrays, and more. It's a great solution for window size and position as well as whether certain modes are enabled or not. Note that GSettings is ideal for small amounts of configuration or stateful data, but user data \(i.e. documents\) should be stored on the disk.
+Apps should automatically save their state in elementary OS, allowing a user to re-open a closed app and pick up right where they left off. To do so, we utilize `GSettings` via [`GLib.Settings`](https://valadoc.org/gio-2.0/GLib.Settings.html). GSettings allows your app to save certain stateful information in the form of booleans, strings, arrays, and more. It's a great solution for window size and position as well as whether certain modes are enabled or not. Note that GSettings is ideal for small amounts of configuration or stateful data, but user data (i.e. documents) should be stored on the disk.
 
 For the simplest example, let's create a switch in your app, and save its state.
 
@@ -21,17 +21,17 @@ First, you need to define what settings your app will use so they can be accesse
 </schemalist>
 ```
 
-The schema's `path` and `id` attributes are your app's ID \(`path` in a `/` format while `id` is the standard dot-separated format\). Note the key's `name` and `type` attributes: the name is a string to reference the setting, while in this case `type="b"` defines the setting as a boolean. The key's summary and description are developer-facing and are exposed in developer tools like dconf Editor.
+The schema's `path` and `id` attributes are your app's ID (`path` in a `/` format while `id` is the standard dot-separated format). Note the key's `name` and `type` attributes: the name is a string to reference the setting, while in this case `type="b"` defines the setting as a boolean. The key's summary and description are developer-facing and are exposed in developer tools like dconf Editor.
 
 ## Use The Settings Object
 
-In order to interact with the settings key we just defined, we need to create a GLib.Settings object in our application. Building on previous examples, you can create a Gtk.Switch, add it to your window, create a GLib.Settings object, and bind the switch to a settings key like so:
+In order to interact with the settings key we just defined, we need to create a GLib.Settings object in our application. Building on previous examples, you can create a Gtk.Switch, add it to your window, create a Settings object, and bind the switch to a settings key like so:
 
 ```vala
 protected override void activate () {
     var useless_switch = new Gtk.Switch () {
-        halign = Gtk.Align.CENTER,
-        valign = Gtk.Align.CENTER
+        halign = CENTER,
+        valign = CENTER
     };
 
     var main_window = new Gtk.ApplicationWindow (this) {
@@ -41,8 +41,8 @@ protected override void activate () {
     };
     main_window.present ();
 
-    var settings = new GLib.Settings ("com.github.yourusername.yourrepositoryname");
-    settings.bind ("useless-setting", useless_switch, "active", GLib.SettingsBindFlags.DEFAULT);
+    var settings = new Settings ("com.github.yourusername.yourrepositoryname");
+    settings.bind ("useless-setting", useless_switch, "active", DEFAULT);
 }
 ```
 
@@ -52,6 +52,7 @@ You can read more about [`GLib.Settings.bind ()` on Valadoc](https://valadoc.org
 
 We need to add the new GSchema XML file to our build system so it is included at install time. Create a file `data/meson.build` and type the following:
 
+{% code title="data/meson.build" lineNumbers="true" %}
 ```coffeescript
 install_data (
     'gschema.xml',
@@ -59,28 +60,15 @@ install_data (
     rename: meson.project_name() + '.gschema.xml'
 )
 ```
+{% endcode %}
 
 This ensures your gschema.xml file is installed, and renames it with your app's ID to avoid filename conflicts.
 
-We'll also need to add a small Python script to tell Meson to compile our schemas. Create a new folder and a file `meson/post_install.py` that contains the following:
-
-```python
-#!/usr/bin/env python3
-
-import os
-import subprocess
-
-schemadir = os.path.join(os.environ['MESON_INSTALL_PREFIX'], 'share', 'glib-2.0', 'schemas')
-
-if not os.environ.get('DESTDIR'):
-    print('Compiling gsettings schemas...')
-    subprocess.call(['glib-compile-schemas', schemadir])
-```
-
-Be sure to add the following lines to the end of the meson.build file in your source root so that Meson knows where to find the additional instructions we've added:
+Be sure to add the following lines to the end of the meson.build file in your source root so that Meson will compile the installed schemas:
 
 ```coffeescript
-meson.add_install_script('meson/post_install.py')
+gnome = import('gnome')
+gnome.post_install(glib_compile_schemas: true)
 
 subdir('data')
 ```
