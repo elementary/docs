@@ -102,7 +102,7 @@ Accelerator strings follow a format defined by [`Gtk.accelerator_parse`](https:/
 {% endhint %}
 
 {% hint style="info" %}
-Actions defined like this, and registered with Application, can be used as entry points into the app. You can find out more about this integration in [the launchers section](launchers/#actions).
+Actions defined like this, and registered with Application, can be used as entry points into the app. You can find out more about this integration in [the launchers section](./launchers#actions).
 {% endhint %}
 
 ## Granite.markup\_accel\_tooltip
