@@ -96,7 +96,7 @@ While AppCenter Dashboard supports repositories with dashes and underscores, it 
 
 ### Human Interface Guidelines
 
-Apps should generally abide by the [elementary Human Interface Guidelines](https://docs.elementary.io/hig/), especially with regards to [Desktop Integration](https://docs.elementary.io/hig/desktop-integration). Guidelines around [Notifications](https://docs.elementary.io/hig/widgets/providing-feedback#notifications) may be strictly enforced, as it is important that apps behave as expected by users.
+Apps should generally abide by the [elementary Human Interface Guidelines](https://docs.elementary.io/hig/). Guidelines around [Notifications](https://docs.elementary.io/hig/widgets/providing-feedback#notifications) may be strictly enforced, as it is important that apps behave as expected by users.
 
 ### Tips for Games
 
