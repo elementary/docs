@@ -52,6 +52,12 @@ modules:
         path: .
 ```
 
+Before we run a test build, we need to install the `io.elementary` Flatpak SDK as a user:
+
+```bash
+flatpak install --user io.elementary.Sdk//6
+```
+
 To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
 
 ```bash
@@ -59,6 +65,16 @@ flatpak-builder build com.github.yourusername.yourrepositoryname.yml --user --in
 ```
 
 This tells Flatpak Builder to build the manifest we just wrote into a clean `build` folder the same as we did for Meson. Plus, we install the built Flatpak package locally for our user. If all goes well, congrats! You've just built and installed your app as a Flatpak.
+
+
+Don't forget to add `.flatpak-builder` to your `.gitignore` file:
+
+```bash
+echo '.flatpak-builder' >> .gitignore
+git add .gitignore
+git commit -am "Added .flatpak-builder to .gitignore"
+git push
+```
 
 That wasn't too bad, right? We'll set up more complicated packaging in the future, but this is all that is required to submit your app to AppCenter Dashboard for it to be built, packaged, and distributed. If you'd like you can always read [more about Flatpak](https://docs.flatpak.org/en/latest/introduction.html).
 
