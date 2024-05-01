@@ -34,7 +34,7 @@ Your app must install an [metainfo.xml file](../writing-apps/our-first-app/metad
 
 Your metainfo.xml file must contain a `screenshot` tag that references a screenshot of your app with elementary OS default settings including the GTK stylesheet, icons, window button position, etc. Screenshots referenced in your MetaInfo should not contain marketing copy, illustrations, or other elements aside from a full-window screenshot of your app in use.
 
-Your metainfo.xml file must contain a `developer_name` tag that references your name or the name of your organization.
+Your metainfo.xml file must contain a [`developer`](https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-developer) tag that references your name or the name of your organization.
 
 Your metainfo.xml must include accurate [Open Age Rating Service (OARS)](https://hughsie.github.io/oars/) data. OARS uses a short, self-reported survey that only takes a few moments to output the required XML. Reviewers will check this data for accuracy in order for your app to be published.
 
