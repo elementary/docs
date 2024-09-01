@@ -79,8 +79,8 @@ flatpak uninstall io.github.yourusername.yourrepositoryname --delete-data
 
 
         ID                                                          Branch           Op
- 1.     io.github.yourusername.yourrepositoryname                  master           r
- 2.     io.github.yourusername.yourrepositoryname.Locale           master           r
+ 1.     io.github.yourusername.yourrepositoryname                   master           r
+ 2.     io.github.yourusername.yourrepositoryname.Locale            master           r
 
 Proceed with these changes to the user installation? [Y/n]:
 ```
