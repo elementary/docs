@@ -34,7 +34,7 @@ jobs:
         # This is the name of the Bundle file we're building and can be anything you like
         bundle: MyApp.flatpak
         # This uses your app's RDNN ID
-        manifest-path: com.github.yourusername.yourrepositoryname.yml
+        manifest-path: io.github.yourusername.yourrepositoryname.yml
 
         # You can automatically run any of the tests you've created as part of this workflow
         run-tests: true

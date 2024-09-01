@@ -16,11 +16,11 @@ Did you commit and push to GitHub for each step? Keep up these good habits and l
 
 ## Flatpak Manifest
 
-The Flatpak manifest file describes your app's build dependencies and required permissions. Create a `com.github.yourusername.yourrepositoryname.yml` file in your project root with the following contents:
+The Flatpak manifest file describes your app's build dependencies and required permissions. Create a `io.github.yourusername.yourrepositoryname.yml` file in your project root with the following contents:
 
 ```yaml
 # This is the same ID that you've used in meson.build and other files
-app-id: com.github.yourusername.yourrepositoryname
+app-id: io.github.yourusername.yourrepositoryname
 
 # Instead of manually specifying a long list of build and runtime dependencies,
 # we can use a convenient pre-made runtime and SDK. For this example, we'll be
@@ -31,7 +31,7 @@ sdk: io.elementary.Sdk
 
 # This should match the exec line in your .desktop file and usually is the same
 # as your app ID
-command: com.github.yourusername.yourrepositoryname
+command: io.github.yourusername.yourrepositoryname
 
 # Here we can specify the kinds of permissions our app needs to run. Since we're
 # not using hardware like webcams, making sound, or reading external files, we
@@ -55,7 +55,7 @@ modules:
 To run a test build and install your app, we can use `flatpak-builder` with a few arguments:
 
 ```bash
-flatpak-builder build com.github.yourusername.yourrepositoryname.yml --user --install --force-clean
+flatpak-builder build io.github.yourusername.yourrepositoryname.yml --user --install --force-clean
 ```
 
 This tells Flatpak Builder to build the manifest we just wrote into a clean `build` folder the same as we did for Meson. Plus, we install the built Flatpak package locally for our user. If all goes well, congrats! You've just built and installed your app as a Flatpak.
@@ -69,18 +69,18 @@ Ninja and Flatpak both provide commands to uninstalling the application.  It is 
 To remove our application with Flatpak, we will use Flatpak's `remove` command:
 
 ```bash
-flatpak remove com.github.yourusername.yourrepositoryname
+flatpak remove io.github.yourusername.yourrepositoryname
 ```
 
 Flatpak will prompt you to remove your application.
 
 ```bash
-flatpak uninstall com.github.yourusername.yourrepositoryname --delete-data
+flatpak uninstall io.github.yourusername.yourrepositoryname --delete-data
 
 
         ID                                                          Branch           Op
- 1.     com.github.yourusername.yourrepositoryname                  master           r
- 2.     com.github.yourusername.yourrepositoryname.Locale           master           r
+ 1.     io.github.yourusername.yourrepositoryname                  master           r
+ 2.     io.github.yourusername.yourrepositoryname.Locale           master           r
 
 Proceed with these changes to the user installation? [Y/n]:
 ```

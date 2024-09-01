@@ -91,7 +91,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
 8. Now it's time to go back to your build directory and generate some new files using Terminal! The first one is our translation template or `.pot` file:
 
    ```bash
-   ninja com.github.yourusername.yourrepositoryname-pot
+   ninja io.github.yourusername.yourrepositoryname-pot
    ```
 
    After running this command you should notice a new file in the po directory containing all of the translatable strings for your app.
@@ -99,7 +99,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
 9. Now we can use this template file to generate translation files for each of the languages we listed in the LINGUAS file with the following command:
 
    ```bash
-   ninja com.github.yourusername.yourrepositoryname-update-po
+   ninja io.github.yourusername.yourrepositoryname-update-po
    ```
 
    You should notice two new files in your po directory called `de.po` and `es.po`. These files are now ready for translators to localize your app!

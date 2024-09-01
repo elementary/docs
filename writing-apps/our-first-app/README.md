@@ -27,7 +27,7 @@ The results should look like this:
  public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
-            application_id: "com.github.yourusername.yourrepositoryname",
+            application_id: "io.github.yourusername.yourrepositoryname",
             flags: ApplicationFlags.FLAGS_NONE
         );
     }
