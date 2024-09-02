@@ -23,7 +23,7 @@ First is a MetaInfo file. This file contains all the information needed to list 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.github.myteam.myapp</id>
+  <id>io.github.myteam.myapp</id>
 
   <name>My App</name>
   <summary>Proves that we can use Vala and Gtk</summary>
@@ -37,7 +37,7 @@ First is a MetaInfo file. This file contains all the information needed to list 
     </p>
   </description>
 
-  <launchable type="desktop-id">com.github.myteam.myapp.desktop</launchable>
+  <launchable type="desktop-id">io.github.myteam.myapp.desktop</launchable>
 </component>
 ```
 
@@ -129,8 +129,8 @@ Name=My App
 Comment=Proves that we can use Vala and Gtk
 Categories=Development;Education;
 
-Icon=com.github.myteam.myapp
-Exec=com.github.myteam.myapp
+Icon=io.github.myteam.myapp
+Exec=io.github.myteam.myapp
 Terminal=false
 ```
 

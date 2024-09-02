@@ -15,7 +15,7 @@ Make sure to start with a `Gtk.Application` as described in the [previous sectio
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="com/github/myteam/myapp">
+  <gresource prefix="io/github/myteam/myapp">
   </gresource>
 </gresources>
 ```
@@ -58,7 +58,7 @@ Add a custom icon to the `data` directory, and then update your `gresource.xml` 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="com/github/myteam/myapp/icons">
+  <gresource prefix="io/github/myteam/myapp/icons">
     <file compressed="true" preprocess="xml-stripblanks">custom-icon.svg</file>
   </gresource>
 </gresources>
@@ -69,7 +69,7 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="com/github/myteam/myapp/icons">
+  <gresource prefix="io/github/myteam/myapp/icons">
     <file alias="24x24/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-24.svg</file>
     <file alias="24x24@2/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-24.svg</file>
     <file alias="32x32/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-32.svg</file>

@@ -23,7 +23,7 @@ In this file, we're going to create a special class called a `Gtk.Application`. 
 public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
-            application_id: "com.github.yourusername.yourrepositoryname",
+            application_id: "io.github.yourusername.yourrepositoryname",
             flags: ApplicationFlags.FLAGS_NONE
         );
     }

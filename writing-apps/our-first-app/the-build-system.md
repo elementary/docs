@@ -10,7 +10,7 @@ Create a new file in your project's root folder called "meson.build". We've incl
 
 ```coffeescript
 # project name and programming language
-project('com.github.yourusername.yourrepositoryname', 'vala', 'c')
+project('io.github.yourusername.yourrepositoryname', 'vala', 'c')
 
 # Create a new executable, list the files we want to compile, list the dependencies we need, and install
 executable(

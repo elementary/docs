@@ -70,8 +70,8 @@ Your app needs to support D-Bus activation in order to use actions as entry poin
 {% code title="myapp.service" %}
 ```ini
 [D-BUS Service]
-Name=com.github.myteam.myapp
-Exec=com.github.myteam.myapp --gapplication-service
+Name=io.github.myteam.myapp
+Exec=io.github.myteam.myapp --gapplication-service
 ```
 {% endcode %}
 
@@ -114,8 +114,8 @@ Then use a dedicated group, named after the unique action name, to define the de
 ```ini
 [Desktop Action my-action]
 Name=My Great Action
-Icon=com.github.myteam.myapp.my-action-icon
-Exec=com.github.myteam.myapp
+Icon=io.github.myteam.myapp.my-action-icon
+Exec=io.github.myteam.myapp
 ```
 
 {% hint style="warning" %}

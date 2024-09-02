@@ -11,7 +11,7 @@ First, you need to define what settings your app will use so they can be accesse
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema path="/com/github/yourusername/yourrepositoryname/" id="com.github.yourusername.yourrepositoryname">
+  <schema path="/io/github/yourusername/yourrepositoryname/" id="io.github.yourusername.yourrepositoryname">
     <key name="useless-setting" type="b">
       <default>false</default>
       <summary>Useless Setting</summary>
@@ -41,7 +41,7 @@ protected override void activate () {
     };
     main_window.present ();
 
-    var settings = new Settings ("com.github.yourusername.yourrepositoryname");
+    var settings = new Settings ("io.github.yourusername.yourrepositoryname");
     settings.bind ("useless-setting", useless_switch, "active", DEFAULT);
 }
 ```
@@ -79,7 +79,7 @@ Compile and install your app to see it in action!
 GSettings are installed at install time, not compile time. So you'll need to run `ninja install` to avoid crashes from not-yet-installed settings.
 {% endhint %}
 
-To see the state saving functionality in action, you can open your app, toggle the switch, close it, then re-open it. The switch should retain its previous state. To see it under the hood, open dconf Editor, navigate to your app's settings at com.github.yourusername.yourrepositoryname, and watch the `useless-setting` update in real time when you toggle your switch.
+To see the state saving functionality in action, you can open your app, toggle the switch, close it, then re-open it. The switch should retain its previous state. To see it under the hood, open dconf Editor, navigate to your app's settings at io.github.yourusername.yourrepositoryname, and watch the `useless-setting` update in real time when you toggle your switch.
 
 {% hint style="info" %}
 If you're having trouble, you can view the full example code [here on GitHub](https://github.com/vala-lang/examples/tree/gsettings)
