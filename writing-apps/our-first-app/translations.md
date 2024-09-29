@@ -31,7 +31,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
    i18n.merge_file(
        input: 'data' / 'hello-again.desktop.in',
        output: meson.project_name() + '.desktop',
-       po_dir: meson.source_root() / 'po',
+       po_dir: meson.project_source_root() / 'po',
        type: 'desktop',
        install: true,
        install_dir: get_option('datadir') / 'applications'
@@ -41,7 +41,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
    i18n.merge_file(
        input: 'data' / 'hello-again.metainfo.xml.in',
        output: meson.project_name() + '.metainfo.xml',
-       po_dir: meson.source_root() / 'po',
+       po_dir: meson.project_source_root() / 'po',
        install: true,
        install_dir: get_option('datadir') / 'metainfo'
    )
@@ -68,7 +68,7 @@ Now we have to make some changes to our Meson build system and add a couple new 
 
    ```coffeescript
    i18n.gettext(meson.project_name(),
-       args: '--directory=' + meson.source_root(),
+       args: '--directory=' + meson.project_source_root(),
        preset: 'glib'
    )
    ```

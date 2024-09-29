@@ -9,8 +9,11 @@ The next thing we need is a build system. The build system that we're going to b
 Create a new file in your project's root folder called "meson.build". We've included some comments along the way to explain what each section does. You don't have to copy those, but type the rest into that file:
 
 ```coffeescript
-# project name and programming language
-project('io.github.yourusername.yourrepositoryname', 'vala', 'c')
+# project name, programming language, and required meson version
+project('io.github.yourusername.yourrepositoryname',
+    'vala', 'c',
+    meson_version: '>= 0.56.0'
+)
 
 # Create a new executable, list the files we want to compile, list the dependencies we need, and install
 executable(
