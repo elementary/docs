@@ -50,10 +50,10 @@ Don't forget to add these files to `git` and push to GitHub.
 Now that we have a build system, let's try it out. Configure the build directory using the Meson command in Terminal:
 
 ```bash
-meson build --prefix=/usr
+meson setup build --prefix=/usr
 ```
 
-This command tells Meson to get ready to build our app using the prefix "/usr" and that we want to build our app in a clean directory called "build". The `meson` command defaults to installing our app locally, but we want to install our app for all users on the computer.
+This command tells Meson to get ready to build our app using the prefix "/usr" and that we want to build our app in a clean directory called "build". The `meson setup` command defaults to installing our app locally, but we want to install our app for all users on the computer.
 
 Change into the build directory and use `ninja` to build. Then, if the build is successful, install with `ninja install`:
 
