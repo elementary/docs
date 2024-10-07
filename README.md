@@ -8,7 +8,9 @@ description: Creating and distributing apps for elementary OS
 
 ### Do I need to know Vala?
 
-Major experience with Vala is not assumed, but basic programming knowledge is and experience with similarly syntaxed languages will be valuable. If you're not familiar with Vala, there are great resources—text and video—available for learning Vala on [Valadoc.org](https://valadoc.org/).
+The examples in this documentation use Vala, but the libraries and concepts used to build apps for elementary OS also work with a number of popular languages like C, Python, Go, Rust, etc. We don't assume extensive expertise in Vala in this guide, but basic programming knowledge and experience with object-oriented programming languages will be valuable.
+
+If you're not familiar with Vala and want to learn, there are great resources available on [the Vala website](https://vala.dev/)
 
 ### Does this guide cover design principles?
 
