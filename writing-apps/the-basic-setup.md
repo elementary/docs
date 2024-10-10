@@ -6,7 +6,7 @@ Before we even think about writing code, you'll need a certain basic setup. This
 * Setting up the Git version control system
 * Getting and using the elementary developer "SDK"
 
-We’re going to assume that you’re working from a clean installation of elementary OS 5.1 Hera or later. This is important as the instructions you’re given may reference apps that are not present \(or even available\) in other GNU/Linux based operating systems like Ubuntu. It is possible to apply the principles of this guide to Ubuntu development, but it may be more difficult to follow along.
+We’re going to assume that you’re working from a clean installation of elementary OS 5.1 Hera or later. This is important as the instructions you’re given may reference apps that are not present (or even available) in other GNU/Linux based operating systems like Ubuntu. It is possible to apply the principles of this guide to Ubuntu development, but it may be more difficult to follow along.
 
 ## GitHub
 
@@ -14,36 +14,32 @@ GitHub is an online platform for hosting code, reporting issues, tracking milest
 
 ## Git
 
-To download and upload to GitHub, you'll need the Terminal program `git`. Git is a type of [version control system](https://en.wikipedia.org/wiki/Version_control) that allows multiple developers to collaboratively develop and maintain code while keeping track of each version along the way.
+To download and upload to GitHub, you'll need the Terminal program `git`. Git is a type of [version control system](https://en.wikipedia.org/wiki/Version\_control) that allows multiple developers to collaboratively develop and maintain code while keeping track of each version along the way.
 
 If you're ready, let's get you set up to use Git:
 
-1. Open the Terminal and install Git
+1.  Open the Terminal and install Git
 
-   ```bash
-   sudo apt install git
-   ```
+    ```bash
+    sudo apt install git
+    ```
+2.  We need to inform Git who we are so that when we upload code it is attributed correctly. Inform Git of your identity with the following commands
 
-2. We need to inform Git who we are so that when we upload code it is attributed correctly. Inform Git of your identity with the following commands
+    ```bash
+    git config --global user.name "Your Name"
+    git config --global user.email "You@email.com"
+    ```
+3.  To authenticate and transfer code securely, you’ll need to generate an [SSH](https://en.wikipedia.org/wiki/Secure\_Shell) key pair (a kind of fingerprint for your computer) and import your public key to GitHub. Type the following in Terminal:
 
-   ```bash
-   git config --global user.name "Your Name"
-   git config --global user.email "You@email.com"
-   ```
-
-3. To authenticate and transfer code securely, you’ll need to generate an [SSH](https://en.wikipedia.org/wiki/Secure_Shell) key pair \(a kind of fingerprint for your computer\) and import your public key to GitHub. Type the following in Terminal:
-
-   ```bash
-   ssh-keygen -t ed25519 -C "your_email@example.com"
-   ```
-
+    ```bash
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+    ```
 4. When prompted, press Enter to accept the default file name for your key. You can choose to protect your key with a password or press Enter again to use no password when pushing code.
-5. Now we're going to import your public key to GitHub. View your public SSH key with the following command, then copy the text that appears
+5.  Now we're going to import your public key to GitHub. View your public SSH key with the following command, then copy the text that appears
 
-   ```bash
-   cat ~/.ssh/id_ed25519.pub
-   ```
-
+    ```bash
+    cat ~/.ssh/id_ed25519.pub
+    ```
 6. Visit [your SSH keys page](https://github.com/settings/keys) and click the green button in the upper right-hand corner that says "New SSH key". Paste your key in the "Key" box and give it a title.
 
 We're all done! Now you can download source code hosted on GitHub and upload your own code. We'll revisit using `git` in a bit, but for now you're set up.
@@ -68,7 +64,7 @@ The first piece of our "SDK" is Code. This comes by default with elementary OS. 
 
 ![Terminal icon](https://elementary.io/images/icons/apps/128/utilities-terminal.svg)
 
-We’re going to use Terminal in order to compile our code, push revisions to GitHub \(using `git`\), and other good stuff. Throughout this guide, we’ll be issuing Terminal commands. You should assume that any command is executed from the directory “Projects” in your home folder unless otherwise stated. Since elementary OS doesn’t come with that folder by default, you’ll need to create it.
+We’re going to use Terminal in order to compile our code, push revisions to GitHub (using `git`), and other good stuff. Throughout this guide, we’ll be issuing Terminal commands. You should assume that any command is executed from the directory “Projects” in your home folder unless otherwise stated. Since elementary OS doesn’t come with that folder by default, you’ll need to create it.
 
 Open Terminal and issue the following command:
 
@@ -88,22 +84,21 @@ sudo apt install elementary-sdk
 
 ### Flatpak
 
-On elementary OS 6 beta and newer, you should already have the required Flatpak remote and platform pre-installed. On earlier versions or other OSes, you can add the remote and install the Flatpak platform and SDK:
+On elementary OS you will already have the required Flatpak remote and platform pre-installed. On other Linux OSes, you can add the remote and install the Flatpak platform and SDK:
 
 {% tabs %}
-    {% tab title="elementary OS" %}
-        ```bash
-        flatpak install -y appcenter io.elementary.Sdk
-        ```
-    {% endtab %}
+{% tab title="elementary OS" %}
+```bash
+flatpak install -y appcenter io.elementary.Sdk
+```
+{% endtab %}
 
-    {% tab title="Other Linux OS" %}
-        ```bash
-        flatpak remote-add --if-not-exists --system appcenter https://flatpak.elementary.io/repo.flatpakrepo
-        flatpak install -y appcenter io.elementary.Platform io.elementary.Sdk
-        ```
-    {% endtab %}
+{% tab title="Other Linux OS" %}
+```bash
+flatpak remote-add --if-not-exists --system appcenter https://flatpak.elementary.io/repo.flatpakrepo
+flatpak install -y appcenter io.elementary.Platform io.elementary.Sdk
+```
+{% endtab %}
 {% endtabs %}
 
 And with that, we're ready to dive into development! Let's move on!
-
