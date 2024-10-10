@@ -91,20 +91,15 @@ sudo apt install elementary-sdk
 On elementary OS 6 beta and newer, you should already have the required Flatpak remote and platform pre-installed. On earlier versions or other OSes, you can add the remote and install the Flatpak platform and SDK:
 
 {% tabs %}
-    {% tab title="OS 8 and Above" %}
-
-    {% endtab %}
-
-    {% tab title="OS 6 and Above" %}
-        ```bash
+    {% tab title="elementary OS" %}
         flatpak install -y appcenter io.elementary.Sdk
-        ```
     {% endtab %}
-{% tab title="Before OS 6" %}
-    ```bash
-    flatpak remote-add --if-not-exists --system appcenter https://flatpak.elementary.io/repo.flatpakrepo
-    flatpak install -y appcenter io.elementary.Platform io.elementary.Sdk
-    ```
+
+    {% tab title="Other Linux OS" %}
+        ```bash
+        flatpak remote-add --if-not-exists --system appcenter https://flatpak.elementary.io/repo.flatpakrepo
+        flatpak install -y appcenter io.elementary.Platform io.elementary.Sdk
+        ```
     {% endtab %}
 {% endtabs %}
 
