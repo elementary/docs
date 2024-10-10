@@ -92,7 +92,9 @@ On elementary OS 6 beta and newer, you should already have the required Flatpak 
 
 {% tabs %}
     {% tab title="elementary OS" %}
+        ```bash
         flatpak install -y appcenter io.elementary.Sdk
+        ```
     {% endtab %}
 
     {% tab title="Other Linux OS" %}
