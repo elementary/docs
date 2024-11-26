@@ -20,7 +20,7 @@ jobs:
 
     # This job runs in a special container designed for building Flatpaks for AppCenter
     container:
-      image: ghcr.io/elementary/flatpak-platform/runtime:7.2
+      image: ghcr.io/elementary/flatpak-platform/runtime:8
       options: --privileged
 
     # Steps represent a sequence of tasks that will be executed as part of the job
