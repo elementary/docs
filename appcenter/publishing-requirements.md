@@ -20,6 +20,10 @@ Your app must not attempt to modify other apps or system programs.
 
 Your app must come with [a Flatpak manifest](https://docs.elementary.io/develop/writing-apps/our-first-app/packaging). elementary OS uses Flatpak packages to manage software installation and updates. Your app cannot be downloaded without it.
 
+Your Flatpak manifest must use the elementary runtime. Manifests using for example the GNOME runtime will faill to build since that runtime is not available in the AppCenter remote.
+
+Your sandbox holes must be reasonable as decided by app reviewers. Generally you should aim for your app to be as tightly sandboxed as possible and provide an explanation for any sandbox holes your app requires. AppCenter will warn about sandbox holes when downloading your app.
+
 #### Extensions & Plugins
 
 AppCenter supports publishing apps that meet these requirements; extensions or plugins (eg. to the Panel, System Settings, or other apps) are not currently supported.
