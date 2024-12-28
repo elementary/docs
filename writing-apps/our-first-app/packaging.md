@@ -20,7 +20,7 @@ The Flatpak manifest file describes your app's build dependencies and required p
 
 ```yaml
 # This is the same ID that you've used in meson.build and other files
-app-id: io.github.yourusername.yourrepositoryname
+id: io.github.yourusername.yourrepositoryname
 
 # Instead of manually specifying a long list of build and runtime dependencies,
 # we can use a convenient pre-made runtime and SDK. For this example, we'll be
