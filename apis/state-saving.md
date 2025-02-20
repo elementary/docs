@@ -75,10 +75,6 @@ subdir('data')
 
 Compile and install your app to see it in action!
 
-{% hint style="warning" %}
-GSettings are installed at install time, not compile time. So you'll need to run `ninja install` to avoid crashes from not-yet-installed settings.
-{% endhint %}
-
 To see the state saving functionality in action, you can open your app, toggle the switch, close it, then re-open it. The switch should retain its previous state. To see it under the hood, open dconf Editor, navigate to your app's settings at io.github.yourusername.yourrepositoryname, and watch the `useless-setting` update in real time when you toggle your switch.
 
 {% hint style="info" %}
