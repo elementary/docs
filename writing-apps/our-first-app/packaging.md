@@ -8,7 +8,7 @@ If you want to get really good really fast, you're going to want to practice. Re
 
 1. Create a new branch folder "hello-packaging"
 2. Set up our directory structure including the "src" and "data" folders.
-3. Add your Copying, .desktop, .metainfo.xml, icons, and source code.
+3. Add your LICENSE, .desktop, .metainfo.xml, icons, and source code.
 4. Now set up the Meson build system and translations.
 5. Test everything!
 
