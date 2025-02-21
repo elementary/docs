@@ -48,6 +48,15 @@ if (condition) {
 // other code
 ```
 
+An exception is admitted for cases of series of lines that end with a closing bracket and semi-colon:
+
+```vala
+my_function_name (
+    // ...
+    // ...
+);
+```
+
 ## Indentation
 
 ### Vala
