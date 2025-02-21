@@ -20,16 +20,16 @@ Let’s add some stuff to the Box:
 
 ```vala
 var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-box.append (new Gtk.Label (_("Label 1")));
-box.append (new Gtk.Label (_("Label 2")));
+box.append (new Gtk.Label ("Label 1"));
+box.append (new Gtk.Label ("Label 2"));
 ```
 
 Add the box to a window using the `child` property:
 
 ```vala
 var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-box.append (new Gtk.Label (_("Label 1")));
-box.append (new Gtk.Label (_("Label 2")));
+box.append (new Gtk.Label ("Label 1"));
+box.append (new Gtk.Label ("Label 2"));
 
 var main_window = new Gtk.ApplicationWindow (this) {
     child = box
@@ -44,11 +44,11 @@ While we can use `Gtk.Box` to create single row or single column layouts with th
 
 ```vala
 // First we create all the widgets we want to lay out in our grid
-var hello_button = new Gtk.Button.with_label (_("Hello"));
-var hello_label = new Gtk.Label (_("Label 1");
+var hello_button = new Gtk.Button.with_label ("Hello");
+var hello_label = new Gtk.Label ("Label 1");
 
-var goodbye_button = new Gtk.Button.with_label (_("Goodbye"));
-var goodbye_label = new Gtk.Label (_("Label 2"));
+var goodbye_button = new Gtk.Button.with_label ("Goodbye");
+var goodbye_label = new Gtk.Label ("Label 2");
 
 // Then we create a new Grid and set its spacing properties
 var grid = new Gtk.Grid () {
