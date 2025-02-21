@@ -129,6 +129,71 @@ Build and run your app again, and press the "Notify" button. Notice that the not
 Remember that `SimpleAction`s added in the `Application` class with `add_action ()` are automatically added in the `app` namespace. Notifications can't trigger actions defined in other namespaces like `win`.
 {% endhint %}
 
+## Default Action
+
+You may have noticed that when you click on a new notification, a new window pops up. This is happening because the notification has a default action that is executed when the user clicks on it. If you don't set it, it will `activate` your application, where we create a new window and present it.
+
+You can change the default action using  [`set_default_action ()`](https://valadoc.org/gio-2.0/GLib.Notification.set\_default\_action.html)
+
+```vala
+notify_button.clicked.connect (() => {
+    var notification = new Notification ("Hello World");
+    notification.set_body ("This is my first notification!");
+    notification.set_default_action ("app.quit");
+
+    send_notification (null, notification);
+});
+```
+
+If you want to avoid creating a new window every time your application is activated, you need to store your main window in an instance variable and check if it has already been shown.
+
+Add an instance variable `main_window` to the top of your class.
+
+{% code title="Application.vala" %}
+```vala
+private Gtk.ApplicationWindow main_window;
+```
+{% endcode %}
+
+Now you can use this variable to store your window.
+
+{% code title="Application.vala" %}
+```vala
+protected override void activate () {
+    if (main_window == null) {
+        var notify_button = new Gtk.Button.with_label ("Notify");
+    
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12
+        };
+        box.append (notify_button);
+    
+        var headerbar = new Gtk.HeaderBar () {
+            show_title_buttons = true
+        };
+    
+        main_window = new Gtk.ApplicationWindow (this) {
+            child = box,
+            title = "MyApp",
+            titlebar = headerbar
+        };
+        
+        notify_button.clicked.connect (() => {
+            var notification = new Notification ("Hello World");
+            notification.set_body ("This is my first notification!");
+    
+            send_notification (null, notification);
+        });
+    }
+
+    main_window.present ();
+}
+```
+{% endcode %}
+
 ## Priority
 
 Notifications also have priority. When a notification is set as `URGENT` it will stay on the screen until either you interact with it, or your application withdraws it. To make an urgent notification, use the [`set_priority ()`](https://valadoc.org/gio-2.0/GLib.Notification.set\_priority.html) function
