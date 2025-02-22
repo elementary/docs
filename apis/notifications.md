@@ -145,49 +145,43 @@ notify_button.clicked.connect (() => {
 });
 ```
 
-If you want to avoid creating a new window every time your application is activated, you need to store your main window in an instance variable and check if it has already been shown.
+If you want to avoid creating a new window every time your application is activated, you need to check if there is a window in [`Gtk.Application.active_window`](https://valadoc.org/gtk4/Gtk.Application.active\_window.html) and present it instead.
 
-Add an instance variable `main_window` to the top of your class.
-
-{% code title="Application.vala" %}
-```vala
-private Gtk.ApplicationWindow main_window;
-```
-{% endcode %}
-
-Now you can use this variable to store your window.
 
 {% code title="Application.vala" %}
 ```vala
 protected override void activate () {
-    if (main_window == null) {
-        var notify_button = new Gtk.Button.with_label ("Notify");
-    
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
-            margin_top = 12,
-            margin_end = 12,
-            margin_bottom = 12,
-            margin_start = 12
-        };
-        box.append (notify_button);
-    
-        var headerbar = new Gtk.HeaderBar () {
-            show_title_buttons = true
-        };
-    
-        main_window = new Gtk.ApplicationWindow (this) {
-            child = box,
-            title = "MyApp",
-            titlebar = headerbar
-        };
-        
-        notify_button.clicked.connect (() => {
-            var notification = new Notification ("Hello World");
-            notification.set_body ("This is my first notification!");
-    
-            send_notification (null, notification);
-        });
+    if (active_window != null) {
+        active_window.present ();
+        return;
     }
+
+    var notify_button = new Gtk.Button.with_label ("Notify");
+
+    var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
+        margin_top = 12,
+        margin_end = 12,
+        margin_bottom = 12,
+        margin_start = 12
+    };
+    box.append (notify_button);
+
+    var headerbar = new Gtk.HeaderBar () {
+        show_title_buttons = true
+    };
+
+    main_window = new Gtk.ApplicationWindow (this) {
+        child = box,
+        title = "MyApp",
+        titlebar = headerbar
+    };
+    
+    notify_button.clicked.connect (() => {
+        var notification = new Notification ("Hello World");
+        notification.set_body ("This is my first notification!");
+
+        send_notification (null, notification);
+    });
 
     main_window.present ();
 }
