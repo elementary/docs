@@ -133,7 +133,7 @@ Remember that `SimpleAction`s added in the `Application` class with `add_action 
 
 You may have noticed that when you click on a new notification, a new window pops up. This is happening because the notification has a default action that is executed when the user clicks on it. If you don't set it, it will `activate` your application, where we create a new window and present it.
 
-You can change the default action using  [`set_default_action ()`](https://valadoc.org/gio-2.0/GLib.Notification.set\_default\_action.html)
+You can change the default action using  [`set_default_action ()`](https://valadoc.org/gio-2.0/GLib.Notification.set\_default\_action.html). The default action has to be in the `app` namespace. If you are unsure what that means, see [the actions section](actions.md).
 
 ```vala
 notify_button.clicked.connect (() => {
@@ -146,7 +146,6 @@ notify_button.clicked.connect (() => {
 ```
 
 If you want to avoid creating a new window every time your application is activated, you need to check if there is a window in [`Gtk.Application.active_window`](https://valadoc.org/gtk4/Gtk.Application.active\_window.html) and present it instead.
-
 
 {% code title="Application.vala" %}
 ```vala
