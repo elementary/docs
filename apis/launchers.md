@@ -65,24 +65,30 @@ Actions are specific functions your app can perform without already being open; 
 
 ### D-Bus activation
 
-Your app needs to support D-Bus activation in order to use actions as entry points. This does not require any changes to the application source code. All that is needed is a service file which is not unlike the `.desktop` file that you are already familiar with. Create a new `.service` file in the `data` directory:
+Your app needs to support D-Bus activation in order to use actions as entry points. This does not require any changes to the application source code. All that is needed is a service file which is not unlike the `.desktop` file that you are already familiar with. Create a new `.service.in` file in the `data` directory:
 
-{% code title="myapp.service" %}
+{% code title="myapp.service.in" %}
 ```ini
 [D-BUS Service]
 Name=io.github.myteam.myapp
-Exec=io.github.myteam.myapp --gapplication-service
+Exec=@BINDIR@/io.github.myteam.myapp --gapplication-service
 ```
 {% endcode %}
 
 To install the service add the following to your `meson.build` file:
 
 ```coffeescript
+bindir = get_option('prefix') / get_option('bindir')
+
+conf_data = configuration_data()
+conf_data.set('BINDIR', bindir)
+
 # Install D-Bus service, so that application can be started by D-Bus
-install_data(
-    'data' / 'myapp.service',
-    install_dir: get_option('datadir') / 'dbus-1' / 'services',
-    rename: meson.project_name() + '.service',
+onfigure_file(
+    input: 'data' / 'myapp.service.in',
+    output: meson.project_name() + '.service',
+    configuration: conf_data,
+    install_dir: get_option('datadir') / 'dbus-1' / 'services'
 )
 ```
 
