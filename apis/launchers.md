@@ -84,7 +84,7 @@ conf_data = configuration_data()
 conf_data.set('BINDIR', bindir)
 
 # Install D-Bus service, so that application can be started by D-Bus
-onfigure_file(
+configure_file(
     input: 'data' / 'myapp.service.in',
     output: meson.project_name() + '.service',
     configuration: conf_data,
