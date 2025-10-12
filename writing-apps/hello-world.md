@@ -24,7 +24,7 @@ public class MyApp : Gtk.Application {
     public MyApp () {
         Object (
             application_id: "io.github.yourusername.yourrepositoryname",
-            flags: ApplicationFlags.FLAGS_NONE
+            flags: ApplicationFlags.DEFAULT_FLAGS
         );
     }
 
