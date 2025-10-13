@@ -28,7 +28,7 @@ The results should look like this:
     public MyApp () {
         Object (
             application_id: "io.github.yourusername.yourrepositoryname",
-            flags: ApplicationFlags.FLAGS_NONE
+            flags: ApplicationFlags.DEFAULT_FLAGS
         );
     }
 
