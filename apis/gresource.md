@@ -64,7 +64,7 @@ Add a custom icon to the `data` directory, and then update your `gresource.xml` 
 </gresources>
 ```
 
-If you want to use the same icon name in multiple sizes in your app, you can `alias` the icon to paths in [hicolor](https://specifications.freedesktop.org/icon-theme-spec/latest/ar01s03.html) and GTK will automatically load the correct version when its size is referenced:
+If you want to use the same icon name in multiple sizes in your app or it is a symbolic icon, you must `alias` the icon to paths in [hicolor](https://specifications.freedesktop.org/icon-theme-spec/latest/ar01s03.html) and GTK will automatically load the correct version when its size is referenced:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -74,6 +74,8 @@ If you want to use the same icon name in multiple sizes in your app, you can `al
     <file alias="24x24@2/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-24.svg</file>
     <file alias="32x32/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-32.svg</file>
     <file alias="32x32@2/actions/custom-icon.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-32.svg</file>
+    <!--Icons under the -symbolic namespace will be automatically recolored to match text color-->
+    <file alias="scalable/actions/custom-icon-symbolic.svg" compressed="true" preprocess="xml-stripblanks">custom-icon-symbolic.svg</file>
   </gresource>
 </gresources>
 ```
