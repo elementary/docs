@@ -8,7 +8,7 @@ The following are **hard requirements for all apps submitted to AppCenter**. Bot
 
 ### Technical Requirements
 
-Your app must be hosted in a [GitHub repository](https://docs.elementary.io/develop/writing-apps/hello-world#pushing-to-github). AppCenter Dashboard works by importing source code from a GitHub repository and building it in a clean environment. To ensure reproducible builds, transparency, and auditability, binaries cannot be uploaded or included alongside the source code to be installed on users' devices.
+Your app must be hosted in a public repository. Your app is published to AppCenter by importing source code from there and building it in a clean environment. To ensure reproducible builds, transparency, and auditability, binaries cannot be uploaded or included alongside the source code to be installed on users' devices.
 
 Your app may be written in any language, but the front-end must be a native Gtk3 or Gtk4 app. Web, Electron, Qt, Java, and other non-native app front-ends will be rejected during the review process. A game may be excepted from this requirement so long as it uses native window decorations and is generally usable on both loDPI and HiDPI displays.
 
