@@ -48,6 +48,29 @@ if (condition) {
 // other code
 ```
 
+The placement of empty lines after blocks ending with a closing bracket and semicolon is not regulated. You may add an empty line if it improves readability.
+
+```vala
+var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12) {
+    margin_top = 12,
+    margin_bottom = 12
+};
+box.append (new Gtk.Button.with_label ("Click me!"));
+
+var titlebar = new Gtk.Grid () {
+    visible = false
+};
+
+var main_window = new Gtk.ApplicationWindow (this) {
+    title = "MyApp",
+    child = box,
+    titlebar = headerbar
+};
+main_window.present ();
+
+// other code
+```
+
 ## Indentation
 
 ### Vala
