@@ -6,6 +6,14 @@ We have a few requirements and suggestions for publishing your app to AppCenter.
 
 The following are **hard requirements for all apps submitted to AppCenter**. Both automated and human reviews will check these requirements before each app and app update is approved and released to users.
 
+### Use of Generative AI
+
+[Our policy against use of generative AI](https://github.com/elementary/.github/blob/master/CONTRIBUTING.md#use-of-generative-ai) is also applied to app submission.
+
+Your app must not include AI generated content, including, but not limited to, code, packaging, documentation, and artworks. Reviewers may reject submission of apps that can include AI generated content at their discretion, without further review.
+
+AI used only for research, discussion, or debugging is not disallowed when no generated material is included in your app.
+
 ### Technical Requirements
 
 Your app must be hosted in a public repository. Your app is published to AppCenter by importing source code from there and building it in a clean environment. To ensure reproducible builds, transparency, and auditability, binaries cannot be uploaded or included alongside the source code to be installed on users' devices.
