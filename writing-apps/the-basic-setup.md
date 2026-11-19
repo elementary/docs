@@ -82,6 +82,19 @@ sudo updatectl enable --now ext-sdk && sudo systemd-sysext refresh
 
 You only have to do this once, the sdk will auto-update as you receive core OS updates.
 
+### Building/running non-flatpak apps from source
+
+Building and running your non-flatpak elementary OS app from source usually takes 3 steps:
+1. Configuring: `meson build --prefix=/usr``cd build`
+2. Running ninja in build: `cd ./build && ninja`
+3. Installing your app: `sysext-install MY_APP_NAME .`
+
+> To avoid issues caused by broken app builds, the app will be auto-removed on reboot.
+> Add `--persistant` to the sysext-install command to keep your app across reboots.
+
+To uninstall the app, either reboot or run `sysext-remove MY_APP_NAME --type sysext`
+
+
 ### Flatpak
 
 On elementary OS you will already have the required Flatpak remote and platform pre-installed. On other Linux OSes, you can add the remote and install the Flatpak platform and SDK:
