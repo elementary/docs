@@ -18,29 +18,27 @@ To download and upload to GitHub, you'll need the Terminal program `git`. Git is
 
 If you're ready, let's get you set up to use Git:
 
-1.  Open the Terminal and install Git
+> On elementary OS 9 and newer, git is preinstalled. For other operating systems, refer to the [git install doc](https://git-scm.com/install/linux).
 
-    ```bash
-    sudo apt install git
-    ```
-2.  We need to inform Git who we are so that when we upload code it is attributed correctly. Inform Git of your identity with the following commands
+
+1.  We need to inform Git who we are so that when we upload code it is attributed correctly. Inform Git of your identity with the following commands
 
     ```bash
     git config --global user.name "Your Name"
     git config --global user.email "You@email.com"
     ```
-3.  To authenticate and transfer code securely, you’ll need to generate an [SSH](https://en.wikipedia.org/wiki/Secure\_Shell) key pair (a kind of fingerprint for your computer) and import your public key to GitHub. Type the following in Terminal:
+2.  To authenticate and transfer code securely, you’ll need to generate an [SSH](https://en.wikipedia.org/wiki/Secure\_Shell) key pair (a kind of fingerprint for your computer) and import your public key to GitHub. Type the following in Terminal:
 
     ```bash
     ssh-keygen -t ed25519 -C "your_email@example.com"
     ```
-4. When prompted, press Enter to accept the default file name for your key. You can choose to protect your key with a password or press Enter again to use no password when pushing code.
-5.  Now we're going to import your public key to GitHub. View your public SSH key with the following command, then copy the text that appears
+3. When prompted, press Enter to accept the default file name for your key. You can choose to protect your key with a password or press Enter again to use no password when pushing code.
+4.  Now we're going to import your public key to GitHub. View your public SSH key with the following command, then copy the text that appears
 
     ```bash
     cat ~/.ssh/id_ed25519.pub
     ```
-6. Visit [your SSH keys page](https://github.com/settings/keys) and click the green button in the upper right-hand corner that says "New SSH key". Paste your key in the "Key" box and give it a title.
+5. Visit [your SSH keys page](https://github.com/settings/keys) and click the green button in the upper right-hand corner that says "New SSH key". Paste your key in the "Key" box and give it a title.
 
 We're all done! Now you can download source code hosted on GitHub and upload your own code. We'll revisit using `git` in a bit, but for now you're set up.
 
@@ -79,8 +77,23 @@ mkdir Projects
 In order to build apps you're going to need their development libraries. We can fetch a basic set of libraries and other development tools with the following terminal command:
 
 ```bash
-sudo apt install elementary-sdk
+sudo updatectl enable --now ext-sdk && sudo systemd-sysext refresh
 ```
+
+You only have to do this once, the sdk will auto-update as you receive core OS updates.
+
+### Building/running unsandboxed apps from source
+
+Building and running your non-flatpak elementary OS app from source usually takes 3 steps:
+1. Configuring: `meson build --prefix=/usr``cd build`
+2. Running ninja in build: `cd ./build && ninja`
+3. Installing your app: `sysext-install MY_APP_NAME .`
+
+> To avoid issues caused by broken app builds, the app will be auto-removed on reboot.
+> Add `--persistant` to the sysext-install command to keep your app across reboots.
+
+To uninstall the app, either reboot or run `sysext-remove MY_APP_NAME --type sysext`
+
 
 ### Flatpak
 
