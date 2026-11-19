@@ -82,7 +82,7 @@ sudo updatectl enable --now ext-sdk && sudo systemd-sysext refresh
 
 You only have to do this once, the sdk will auto-update as you receive core OS updates.
 
-### Building/running non-flatpak apps from source
+### Building/running unsandboxed apps from source
 
 Building and running your non-flatpak elementary OS app from source usually takes 3 steps:
 1. Configuring: `meson build --prefix=/usr``cd build`
